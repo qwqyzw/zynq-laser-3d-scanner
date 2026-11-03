@@ -1,0 +1,114 @@
+{
+  "status": "passed",
+  "hardware_accessed": false,
+  "manifest_sha256": "8cf278944da684d3429924f650686c03b39633f7c4cbed29af5bfc965f97eaac",
+  "replays": [
+    {
+      "run_id": "1dc3e96264d24698946fc74a4ca3e7f8",
+      "frames_replayed": 180,
+      "float_warnings": [
+        {
+          "source": "scan/point_001/exp_20/images/pl_00_actual.bin",
+          "integer_reference_bit_exact": true,
+          "float_reference_authoritative": false,
+          "float_reference_diagnostic_only": true,
+          "valid_equal": true,
+          "float_validity_mismatch_columns": [],
+          "float_coordinate_mismatch_columns": [
+            409
+          ],
+          "max_pixel_difference": 15.55560302734375,
+          "float_equal_peak_ties": [],
+          "float_tie_diagnostic_only": false,
+          "float_reference_warning": true
+        }
+      ],
+      "integer_PL_all_bit_exact": true
+    },
+    {
+      "run_id": "a96a1b3168544a76b9f5af9b3b95c050",
+      "frames_replayed": 211,
+      "float_warnings": [
+        {
+          "source": "scan/point_025/exp_5/images/pl_02_actual.bin",
+          "integer_reference_bit_exact": true,
+          "float_reference_authoritative": false,
+          "float_reference_diagnostic_only": true,
+          "valid_equal": true,
+          "float_validity_mismatch_columns": [],
+          "float_coordinate_mismatch_columns": [
+            234
+          ],
+          "max_pixel_difference": 27.353057861328125,
+          "float_equal_peak_ties": [],
+          "float_tie_diagnostic_only": false,
+          "float_reference_warning": true
+        },
+        {
+          "source": "scan/point_035/exp_5/images/pl_00_actual.bin",
+          "integer_reference_bit_exact": true,
+          "float_reference_authoritative": false,
+          "float_reference_diagnostic_only": true,
+          "valid_equal": false,
+          "float_validity_mismatch_columns": [
+            233
+          ],
+          "float_coordinate_mismatch_columns": [],
+          "max_pixel_difference": 0.001861572265625,
+          "float_equal_peak_ties": [],
+          "float_tie_diagnostic_only": false,
+          "float_reference_warning": true
+        }
+      ],
+      "integer_PL_all_bit_exact": true
+    },
+    {
+      "run_id": "b740c691b7d14df7a764b0a1c7707566",
+      "frames_replayed": 156,
+      "float_warnings": [
+        {
+          "source": "scan/point_022/exp_20/images/pl_01_actual.bin",
+          "integer_reference_bit_exact": true,
+          "float_reference_authoritative": false,
+          "float_reference_diagnostic_only": true,
+          "valid_equal": true,
+          "float_validity_mismatch_columns": [],
+          "float_coordinate_mismatch_columns": [
+            187
+          ],
+          "max_pixel_difference": 37.06231689453125,
+          "float_equal_peak_ties": [],
+          "float_tie_diagnostic_only": false,
+          "float_reference_warning": true
+        },
+        {
+          "source": "scan/point_025/exp_20/images/pl_02_actual.bin",
+          "integer_reference_bit_exact": true,
+          "float_reference_authoritative": false,
+          "float_reference_diagnostic_only": true,
+          "valid_equal": false,
+          "float_validity_mismatch_columns": [
+            254
+          ],
+          "float_coordinate_mismatch_columns": [],
+          "max_pixel_difference": 0.001953125,
+          "float_equal_peak_ties": [],
+          "float_tie_diagnostic_only": false,
+          "float_reference_warning": true
+        }
+      ],
+      "integer_PL_all_bit_exact": true
+    }
+  ],
+  "total_real_frames_replayed": 547,
+  "PL_integer_corruption_rejected": true,
+  "float_diagnostic_exception_nonfatal": true,
+  "per_point_quality_and_hardware_sources_unchanged": true,
+  "complete37poses222frames360_feedback_still_required": true,
+  "geometry_unchanged": true,
+  "current_failed_run_cleanup_verified": {
+    "kind": "managed86_trial",
+    "run_id": "a96a1b3168544a76b9f5af9b3b95c050",
+    "record_validated": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "client_date": "2026-10-20",
+  "board_clock_incorrect": true,
+  "static_result": "board_passed",
+  "cases": 56,
+  "actual_hex_files": 56,
+  "actual_csv_files": 56,
+  "records_per_frame": 640,
+  "valid_mismatches": 0,
+  "max_coordinate_difference_px": 0.00390625,
+  "clock_mhz": 50.0,
+  "return_zip_crc_passed": true,
+  "return_zip_sha256": "0f9e5452e774672ba5e1fa1e4d0df86cfa15d74b2eecaf35af58aaf86750a8da",
+  "board_clock_note": "Board RTC not set; internal result directory timestamps are 2025-05-04. Session date is client 2026-10-20."
+}

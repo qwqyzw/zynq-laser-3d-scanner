@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "compared_cases": 2,
+  "results": [
+    {
+      "sample": "flat_zero",
+      "mode": "core",
+      "passed": true,
+      "actual_valid_columns": 200,
+      "expected_valid_columns": 200,
+      "format_error_columns": [],
+      "valid_mismatch_columns": [],
+      "over_tolerance_columns": [],
+      "max_common_error_px": 0.00390625,
+      "tolerance_px": 0.25
+    },
+    {
+      "sample": "flat_zero",
+      "mode": "full",
+      "passed": true,
+      "actual_valid_columns": 200,
+      "expected_valid_columns": 200,
+      "format_error_columns": [],
+      "valid_mismatch_columns": [],
+      "over_tolerance_columns": [],
+      "max_common_error_px": 0.00390625,
+      "tolerance_px": 0.25
+    }
+  ],
+  "note": "Actual RTL output; expected files are read only after simulation."
+}

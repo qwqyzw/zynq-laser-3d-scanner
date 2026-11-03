@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "hardware_accessed": false,
+  "actual_worker_closure_statement_executed": true,
+  "strict_good_preserved": true,
+  "no_common_columns_warns_without_fabrication": true,
+  "geometric_mismatch_warns": true,
+  "incomplete_or_nonfinite_motor_span_rejected": true
+}

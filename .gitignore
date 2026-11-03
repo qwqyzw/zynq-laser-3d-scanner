@@ -15,3 +15,10 @@
 !/14_integrated_release_20261020/implementation/*.jou
 !/17_button_scan_release_20261020/implementation/*.log
 !/17_button_scan_release_20261020/implementation/*.jou
+
+# Local Vivado/XSim outputs; evidence/ contains reviewed summaries.
+/11_fpga_project/reports/
+/11_fpga_project/results/axi_out/
+/11_fpga_project/results/rtl_out/
+/11_fpga_project/results/comparison/
+/11_fpga_project/results/extra/actual/

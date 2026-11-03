@@ -2,7 +2,7 @@
 
 本目录包含最近实测快照及本次新增的Python优化和PL接入代码。执行状态不能混淆：
 
-- scan_fixed_exposure.py、fixed_exposure_worker.py：支持显式曝光5/20等硬件允许的整数值；通过PerPoseExposureCamera调用，不直接导入worker。旧PS默认20兼容历史流程，PL适配器默认5。读回、指纹、恢复/释放及质量检查不放宽，见[相机曝光配置](相机曝光配置.md)。
+- scan_fixed_exposure.py、fixed_exposure_worker.py：支持显式曝光5/20等硬件允许的整数值；通过PerPoseExposureCamera调用，不直接导入worker。旧PS默认20兼容历史流程，PL适配器默认5。读回、指纹、恢复/释放及质量检查不放宽，见[相机曝光配置](camera_exposure.md)。
 - motor_readonly.py、motor_arduino.py、motor_position.py及两个motor_arduino C文件：已在原base环境实测；需要兼容iop_arduino与9600 Emm。
 - motor_uartlite.py：当前14联合发布的转台后端，ARM直接访问AXI UARTLite，9600 8N1。已在同一overlay完成查询、两次1RPM有限移动及停止，无需切换base。
 - rotation_scan.py、scan_checked_exposure.py：旧PS识别扫描基线已实测。rotation_scan.run_hardware_scan会加载base，不用于PL联合扫描。
