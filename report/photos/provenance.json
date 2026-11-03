@@ -1,0 +1,35 @@
+[
+  {
+    "file": "board_closeup.jpg",
+    "original_filename": "codex-clipboard-2b0238ca-8523-4bc5-b152-a1b474379d63.jpg",
+    "role": "board_closeup",
+    "bytes": 561159,
+    "width": 1706,
+    "height": 1279,
+    "sha256": "ebf3767312dcc690bc0105c57bb3b29cc3877ae673ea5544d1dcb8b847ad96a9",
+    "byte_identical_original": true,
+    "pixel_edits": false
+  },
+  {
+    "file": "system_oblique.jpg",
+    "original_filename": "codex-clipboard-a4e28cfa-6e33-4be8-a8cc-d3fb565d9e5e.jpg",
+    "role": "oblique_global_angle_not_measured",
+    "bytes": 457397,
+    "width": 1706,
+    "height": 1279,
+    "sha256": "35b40b7cebbe94e0ee542c4b0893c0ee726c8a4d5b166b151e57fa1d665733cc",
+    "byte_identical_original": true,
+    "pixel_edits": false
+  },
+  {
+    "file": "system_front.jpg",
+    "original_filename": "codex-clipboard-7e49022a-c607-4d9c-b05d-a3cfdd9f361a.jpg",
+    "role": "front_global",
+    "bytes": 481893,
+    "width": 1706,
+    "height": 1279,
+    "sha256": "498e8cc22c8f276bbfadc62f9d1ef366cb8c67b522ae800554edf6a2dbe48554",
+    "byte_identical_original": true,
+    "pixel_edits": false
+  }
+]
