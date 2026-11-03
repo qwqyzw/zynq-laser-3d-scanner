@@ -1,0 +1,18 @@
+{
+  "version": "20261102.relocation_axis_height.v1",
+  "geometry_sha256": "6a14cb739ccf39162d561721dc9f73143d3f09d5004b200f1b64b7251db527c5",
+  "source_calibration": "99_relocation_calibration_20261102",
+  "original61_reconstruction_sha256": "86639366b3fabf0f7624d8a77c8d995132c8493e14d5ceea1eb25335712ae962",
+  "activated": false,
+  "files": {
+    "axis_acceptance_report.json": "3c8aecfe03b77c0aae0168a453fc02d7581e6d512159da3c4b1ba966fd8c5bf8",
+    "laser_candidate.json": "8708055a68973165a5ae7947e09aaa5bac651f78c37bf18c1e7b80e2d29a4d71",
+    "laser_holdout_report.json": "43adb0431834e2cf7e35311eb912c31656bae36ee361ed2e6e6e6e9d6c8e8d1e",
+    "axis_candidate.json": "03718983286e0ad1ba6c9b5b2f07fbe9fc0b68d1368d5e644b252f6019a01340",
+    "geometry_evidence.py": "1a2efc28a4985a79e6a78e8a8d224bdb12b52f5c8497ab279716fb1537fef242",
+    "laser_training_report.json": "739c7b10f884a70d4bae7be3043ec3325b5caf42950e792d254a596ea0e24255",
+    "current_geometry.json": "6a14cb739ccf39162d561721dc9f73143d3f09d5004b200f1b64b7251db527c5",
+    "geometry_runtime.py": "a902deb179f3ae1cb3e8765f02c03a55911febd0267dc0740e378c5809582ad1",
+    "axis_capture_receipt.json": "ea205ea2601a1e8c3540f92f73bec10f37c1fb7ca0d1abf9f525158f3f7c1fc4"
+  }
+}

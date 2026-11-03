@@ -1,0 +1,184 @@
+{
+  "module": "laser_stripe_axi",
+  "abi_version": "1.0",
+  "identification": 1280529457,
+  "local_address_bits": 16,
+  "mapped_window_bytes": 65536,
+  "data_bits": 32,
+  "clock_target_hz": 50000000,
+  "status_bits": {
+    "busy": 0,
+    "done": 1,
+    "error": 2,
+    "resetting": 3,
+    "error_code_lsb": 8,
+    "error_code_width": 4
+  },
+  "commands": {
+    "START": 1,
+    "ABORT": 2,
+    "CLEAR": 4
+  },
+  "registers": [
+    {
+      "name": "CONTROL",
+      "offset": 0,
+      "offset_hex": "0x00",
+      "access": "WO",
+      "reset": 0,
+      "description": "命令：1 START、2 ABORT、4 CLEAR，0无操作；命令只允许单独使用，读回0"
+    },
+    {
+      "name": "STATUS",
+      "offset": 4,
+      "offset_hex": "0x04",
+      "access": "RO",
+      "reset": 0,
+      "description": "bit0 busy、bit1 done、bit2 error、bit3 resetting；bits11:8错误码"
+    },
+    {
+      "name": "IP_ID",
+      "offset": 8,
+      "offset_hex": "0x08",
+      "access": "RO",
+      "reset": 1280529457,
+      "description": "固定识别值LST1"
+    },
+    {
+      "name": "VERSION",
+      "offset": 12,
+      "offset_hex": "0x0C",
+      "access": "RO",
+      "reset": 65536,
+      "description": "寄存器ABI版本1.0"
+    },
+    {
+      "name": "X0",
+      "offset": 16,
+      "offset_hex": "0x10",
+      "access": "RW",
+      "reset": 0,
+      "description": "ROI左边界，包含"
+    },
+    {
+      "name": "Y0",
+      "offset": 20,
+      "offset_hex": "0x14",
+      "access": "RW",
+      "reset": 0,
+      "description": "ROI上边界，包含"
+    },
+    {
+      "name": "X1",
+      "offset": 24,
+      "offset_hex": "0x18",
+      "access": "RW",
+      "reset": 640,
+      "description": "ROI右边界，不包含"
+    },
+    {
+      "name": "Y1",
+      "offset": 28,
+      "offset_hex": "0x1C",
+      "access": "RW",
+      "reset": 480,
+      "description": "ROI下边界，不包含"
+    },
+    {
+      "name": "THRESHOLD_Q8",
+      "offset": 32,
+      "offset_hex": "0x20",
+      "access": "RW",
+      "reset": 3072,
+      "description": "0至65535；12分对应3072"
+    },
+    {
+      "name": "MIN_RUN",
+      "offset": 36,
+      "offset_hex": "0x24",
+      "access": "RW",
+      "reset": 8,
+      "description": "0为core，8为full，其他值非法"
+    },
+    {
+      "name": "INPUT_BYTES",
+      "offset": 40,
+      "offset_hex": "0x28",
+      "access": "RO",
+      "reset": 1228800,
+      "description": "整帧输入字节数"
+    },
+    {
+      "name": "OUTPUT_BYTES",
+      "offset": 44,
+      "offset_hex": "0x2C",
+      "access": "RO",
+      "reset": 2560,
+      "description": "640条输出字节数"
+    },
+    {
+      "name": "WIDTH",
+      "offset": 48,
+      "offset_hex": "0x30",
+      "access": "RO",
+      "reset": 640,
+      "description": "固定图像宽度"
+    },
+    {
+      "name": "HEIGHT",
+      "offset": 52,
+      "offset_hex": "0x34",
+      "access": "RO",
+      "reset": 480,
+      "description": "固定图像高度"
+    },
+    {
+      "name": "COMPLETED_FRAMES",
+      "offset": 56,
+      "offset_hex": "0x38",
+      "access": "RO",
+      "reset": 0,
+      "description": "完成输出的帧数，32位回绕；错误和ABORT不递增"
+    },
+    {
+      "name": "CYCLES_LOW",
+      "offset": 60,
+      "offset_hex": "0x3C",
+      "access": "RO",
+      "reset": 0,
+      "description": "本次或最后一次事务周期计数低32位"
+    },
+    {
+      "name": "CYCLES_HIGH",
+      "offset": 64,
+      "offset_hex": "0x40",
+      "access": "RO",
+      "reset": 0,
+      "description": "周期计数高32位"
+    }
+  ],
+  "errors": {
+    "1": "invalid ROI/threshold/min_run",
+    "2": "invalid input pixel padding or TKEEP",
+    "3": "TLAST/length error",
+    "4": "invalid core state"
+  },
+  "axi_responses": {
+    "OKAY": 0,
+    "SLVERR": 2
+  },
+  "start_validation": {
+    "roi": "0<=x0<x1<=640;0<=y0<y1<=480",
+    "threshold_q8": [
+      0,
+      65535
+    ],
+    "min_run": [
+      0,
+      8
+    ],
+    "validate_full_32bit_shadows": true
+  },
+  "ordering": "single outstanding write response; independent AW/W buffering; independent read channel",
+  "board_tested": false
+}

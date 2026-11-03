@@ -1,0 +1,5 @@
+{
+  "synthetic_tests_only": true,
+  "returncode": 0,
+  "output": "test_closed_mesh_and_outward_orientation (__main__.Checks) ... ok\ntest_duplicate_traceability (__main__.Checks) ... ok\ntest_mesh_vertices_exactly_reference_retained_measurements (__main__.Checks) ... ok\ntest_outlier_removed_and_remaining_samples_not_moved (__main__.Checks) ... ok\ntest_planar_sparse_and_nonfinite_fail (__main__.Checks) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.211s\n\nOK\n"
+}

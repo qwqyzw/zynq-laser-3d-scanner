@@ -1,0 +1,9 @@
+Two stages x four buttons, ASYNC_REG FF count=8
+bd_i/button_sync_0/inst/sync_meta_reg[0] LOC=SLICE_X45Y107
+bd_i/button_sync_0/inst/sync_meta_reg[1] LOC=SLICE_X47Y106
+bd_i/button_sync_0/inst/sync_meta_reg[2] LOC=SLICE_X45Y109
+bd_i/button_sync_0/inst/sync_meta_reg[3] LOC=SLICE_X47Y108
+bd_i/button_sync_0/inst/sync_stable_reg[0] LOC=SLICE_X45Y107
+bd_i/button_sync_0/inst/sync_stable_reg[1] LOC=SLICE_X47Y106
+bd_i/button_sync_0/inst/sync_stable_reg[2] LOC=SLICE_X45Y109
+bd_i/button_sync_0/inst/sync_stable_reg[3] LOC=SLICE_X47Y108

@@ -1,0 +1,425 @@
+{
+  "status": "independent33p5_holdout_passed_axis_pending",
+  "execution_role": "zynq",
+  "machine": "armv7l",
+  "holdout_height_mm": 33.5,
+  "holdout_used_for_fit": false,
+  "geometry_deployed": false,
+  "axis_validation_pending": false,
+  "metric_accuracy_accepted": false,
+  "motor_commands_sent": false,
+  "limits": {
+    "minimum_measured_columns": 20,
+    "maximum_plane_p95_mm": 2.0,
+    "maximum_height_absolute_p95_mm": 3.0
+  },
+  "limits_source": "same rough preview holdout limits as frozen93/check_height33p5.py",
+  "exposure_selection_policy": "prefer5 if image quality passed and >=20 top-interior columns, otherwise20; do not choose based on height errors",
+  "fixed_reference_checks": [
+    {
+      "image": "height33p5_capture_01/camera_session/bright_after_session/bright_00.png",
+      "sha256": "013811c07308faa3581beabfa01d49feab8216f66bdf0b433079c2b75283b85a",
+      "parts": [
+        {
+          "rect": [
+            140,
+            184,
+            172,
+            212
+          ],
+          "correlation": 0.9847264885902405,
+          "shift_px": 0.0,
+          "peak_margin": 0.6925585269927979,
+          "passed": true
+        },
+        {
+          "rect": [
+            447,
+            195,
+            477,
+            222
+          ],
+          "correlation": 0.9902653694152832,
+          "shift_px": 0.0,
+          "peak_margin": 0.5657268464565277,
+          "passed": true
+        },
+        {
+          "rect": [
+            85,
+            319,
+            123,
+            351
+          ],
+          "correlation": 0.9687419533729553,
+          "shift_px": 0.0,
+          "peak_margin": 0.3894667625427246,
+          "passed": true
+        },
+        {
+          "rect": [
+            476,
+            346,
+            513,
+            376
+          ],
+          "correlation": 0.9909780621528625,
+          "shift_px": 0.0,
+          "peak_margin": 0.4612053632736206,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "image": "height33p5_capture_01/camera_session/bright_after_session/bright_01.png",
+      "sha256": "8ba7280f68fd13f55ea517e4139f2598e4c37ace64666626d8714bbe5f97704a",
+      "parts": [
+        {
+          "rect": [
+            140,
+            184,
+            172,
+            212
+          ],
+          "correlation": 0.9845172166824341,
+          "shift_px": 0.0,
+          "peak_margin": 0.690422534942627,
+          "passed": true
+        },
+        {
+          "rect": [
+            447,
+            195,
+            477,
+            222
+          ],
+          "correlation": 0.9907875061035156,
+          "shift_px": 0.0,
+          "peak_margin": 0.5735560655593872,
+          "passed": true
+        },
+        {
+          "rect": [
+            85,
+            319,
+            123,
+            351
+          ],
+          "correlation": 0.9594308733940125,
+          "shift_px": 0.0,
+          "peak_margin": 0.3730267882347107,
+          "passed": true
+        },
+        {
+          "rect": [
+            476,
+            346,
+            513,
+            376
+          ],
+          "correlation": 0.9879108667373657,
+          "shift_px": 0.0,
+          "peak_margin": 0.45987504720687866,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "image": "height33p5_capture_01/camera_session/bright_after_session/bright_02.png",
+      "sha256": "d9eaa63ca01f85037d4781ac8c5b455450a132b8b98fccb55025089c831f92b9",
+      "parts": [
+        {
+          "rect": [
+            140,
+            184,
+            172,
+            212
+          ],
+          "correlation": 0.9769657254219055,
+          "shift_px": 0.0,
+          "peak_margin": 0.6830367743968964,
+          "passed": true
+        },
+        {
+          "rect": [
+            447,
+            195,
+            477,
+            222
+          ],
+          "correlation": 0.986316442489624,
+          "shift_px": 0.0,
+          "peak_margin": 0.5655161738395691,
+          "passed": true
+        },
+        {
+          "rect": [
+            85,
+            319,
+            123,
+            351
+          ],
+          "correlation": 0.9517123103141785,
+          "shift_px": 0.0,
+          "peak_margin": 0.3642968535423279,
+          "passed": true
+        },
+        {
+          "rect": [
+            476,
+            346,
+            513,
+            376
+          ],
+          "correlation": 0.9830412864685059,
+          "shift_px": 0.0,
+          "peak_margin": 0.4555710554122925,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "image": "height33p5_capture_01/camera_session/bright_before_session/bright_00.png",
+      "sha256": "019b8e4e1b0284fc40ed14ed15bd5e3308e176a906cd9a8533af79f240331f56",
+      "parts": [
+        {
+          "rect": [
+            140,
+            184,
+            172,
+            212
+          ],
+          "correlation": 0.9823456406593323,
+          "shift_px": 0.0,
+          "peak_margin": 0.6901001334190369,
+          "passed": true
+        },
+        {
+          "rect": [
+            447,
+            195,
+            477,
+            222
+          ],
+          "correlation": 0.987951934337616,
+          "shift_px": 0.0,
+          "peak_margin": 0.5662998855113983,
+          "passed": true
+        },
+        {
+          "rect": [
+            85,
+            319,
+            123,
+            351
+          ],
+          "correlation": 0.9697973132133484,
+          "shift_px": 0.0,
+          "peak_margin": 0.3752394914627075,
+          "passed": true
+        },
+        {
+          "rect": [
+            476,
+            346,
+            513,
+            376
+          ],
+          "correlation": 0.98844313621521,
+          "shift_px": 0.0,
+          "peak_margin": 0.46393609046936035,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "image": "height33p5_capture_01/camera_session/bright_before_session/bright_01.png",
+      "sha256": "cb7f40e9e7a07da397bbda68f9249daf722fa5da090e1ec0505f3212d352159d",
+      "parts": [
+        {
+          "rect": [
+            140,
+            184,
+            172,
+            212
+          ],
+          "correlation": 0.9812676906585693,
+          "shift_px": 0.0,
+          "peak_margin": 0.6912364363670349,
+          "passed": true
+        },
+        {
+          "rect": [
+            447,
+            195,
+            477,
+            222
+          ],
+          "correlation": 0.9871706962585449,
+          "shift_px": 0.0,
+          "peak_margin": 0.5639651119709015,
+          "passed": true
+        },
+        {
+          "rect": [
+            85,
+            319,
+            123,
+            351
+          ],
+          "correlation": 0.9672760367393494,
+          "shift_px": 0.0,
+          "peak_margin": 0.3703312873840332,
+          "passed": true
+        },
+        {
+          "rect": [
+            476,
+            346,
+            513,
+            376
+          ],
+          "correlation": 0.9876659512519836,
+          "shift_px": 0.0,
+          "peak_margin": 0.46343517303466797,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "image": "height33p5_capture_01/camera_session/bright_before_session/bright_02.png",
+      "sha256": "8d8af14c1591f873e57a4c85951aec20b9f2d90c423edd9eeb05505f36f168fd",
+      "parts": [
+        {
+          "rect": [
+            140,
+            184,
+            172,
+            212
+          ],
+          "correlation": 0.9813727736473083,
+          "shift_px": 0.0,
+          "peak_margin": 0.6891535520553589,
+          "passed": true
+        },
+        {
+          "rect": [
+            447,
+            195,
+            477,
+            222
+          ],
+          "correlation": 0.9876794219017029,
+          "shift_px": 0.0,
+          "peak_margin": 0.5658230185508728,
+          "passed": true
+        },
+        {
+          "rect": [
+            85,
+            319,
+            123,
+            351
+          ],
+          "correlation": 0.967589795589447,
+          "shift_px": 0.0,
+          "peak_margin": 0.3774716854095459,
+          "passed": true
+        },
+        {
+          "rect": [
+            476,
+            346,
+            513,
+            376
+          ],
+          "correlation": 0.9877381920814514,
+          "shift_px": 0.0,
+          "peak_margin": 0.46376943588256836,
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "top_mask_polygon_px": [
+    [
+      235.0,
+      190.0
+    ],
+    [
+      375.0,
+      198.0
+    ],
+    [
+      374.0,
+      280.0
+    ],
+    [
+      224.0,
+      271.0
+    ]
+  ],
+  "mask_source_preview_sha256": "ea1e7a284b8cf6a0a442c913ec80d93e7bbfae32765f294f5197c35a7487745c",
+  "mask_source": "visual interior of observed box top, selected before reading height errors",
+  "exposures": [
+    {
+      "exposure": 5,
+      "quality_passed": true,
+      "total_valid_columns": 188,
+      "top_columns": 139,
+      "source_pixels_sha256": "8ee175b377e639f36cf158bb2b91699b360eb3ff137bf9e7799ff932e8b63ec5",
+      "integer_bit_exact_all_three_frames": true,
+      "height_median_mm": 31.930651271403406,
+      "height_min_mm": 31.37084470039659,
+      "height_max_mm": 32.47307460175992,
+      "height_median_error_mm": -1.5693487285965944,
+      "height_p95_absolute_error_mm": 1.9736636256141165,
+      "plane_p95_residual_mm": 1.6412469273084338
+    },
+    {
+      "exposure": 20,
+      "quality_passed": true,
+      "total_valid_columns": 138,
+      "top_columns": 74,
+      "source_pixels_sha256": "52e3aee7c37e7a17fd919730f9dc114fbde116bf8d81aec8a54b37a297c10e2b",
+      "integer_bit_exact_all_three_frames": true,
+      "height_median_mm": 31.955656099227326,
+      "height_min_mm": 31.451084498358966,
+      "height_max_mm": 32.20274955039261,
+      "height_median_error_mm": -1.5443439007726738,
+      "height_p95_absolute_error_mm": 1.8886519742361507,
+      "plane_p95_residual_mm": 1.5715641572229717
+    }
+  ],
+  "selected_exposure": 5,
+  "independent_check": {
+    "exposure": 5,
+    "quality_passed": true,
+    "total_valid_columns": 188,
+    "top_columns": 139,
+    "source_pixels_sha256": "8ee175b377e639f36cf158bb2b91699b360eb3ff137bf9e7799ff932e8b63ec5",
+    "integer_bit_exact_all_three_frames": true,
+    "height_median_mm": 31.930651271403406,
+    "height_min_mm": 31.37084470039659,
+    "height_max_mm": 32.47307460175992,
+    "height_median_error_mm": -1.5693487285965944,
+    "height_p95_absolute_error_mm": 1.9736636256141165,
+    "plane_p95_residual_mm": 1.6412469273084338
+  },
+  "gates": {
+    "minimum20_top_columns": true,
+    "plane_p95_le2mm": true,
+    "height_absolute_p95_le3mm": true,
+    "all_four_fixed_references_passed": true,
+    "training_frozen_unchanged": true,
+    "old_geometry_unchanged": true
+  },
+  "training_report_sha256": "739c7b10f884a70d4bae7be3043ec3325b5caf42950e792d254a596ea0e24255",
+  "source_capture_report_sha256": "0dd337e86245527cbd0aa8b06b3e4a3515f907d296a6c03c2d9fc1e26719f65a"
+}

@@ -1,0 +1,7 @@
+{
+  "client_date": "2026-10-21",
+  "user_confirmed_full_turn_clearance": true,
+  "user_reply": "台面只有物品和棋盘，没有随转电线，一圈内不会碰撞",
+  "scope": "one forward360-degree turn followed by bounded reverse to original unwrapped feedback origin",
+  "automatic_resume_after_failure": false
+}

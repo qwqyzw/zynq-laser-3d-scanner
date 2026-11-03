@@ -1,0 +1,8 @@
+{
+  "files": {
+    "shape_models.py": "8a90f90ec8e6848e09952c0fec1ca0dfeadb99e0b3231467b9117aca79a24532",
+    "model_worker.py": "8fd9d1ceb12df96b868bce9e685df4a5dd09926f3ce0156de0da164127b4a785",
+    "viewer_template.html": "48a3de571fe11a041c9d8ef91e00ae5357207aad6fd7742b03a38703555449e4"
+  },
+  "schema": "zynq_multi_shape_display_v1"
+}

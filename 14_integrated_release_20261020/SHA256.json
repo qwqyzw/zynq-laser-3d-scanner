@@ -1,0 +1,127 @@
+{
+  "version": "20261020.pl_uart.v1",
+  "client_date": "2026-10-20",
+  "original_export_names": [
+    "laser_motor_uart.bit",
+    "laser_motor_uart.hwh"
+  ],
+  "files": [
+    {
+      "path": "implementation/motor_uart_audit_drc.rpt",
+      "bytes": 31054,
+      "sha256": "b916fb89d2de2493f569b95e2d7610d3c55c95f2e375a083b98bd0b5948c6953"
+    },
+    {
+      "path": "implementation/motor_uart_build_verification.json",
+      "bytes": 5434,
+      "sha256": "0103d34b8a13067163c8d165c4eebcd9390804b868ccc27a3fa80a2a97236aa9"
+    },
+    {
+      "path": "implementation/motor_uart_design_summary.txt",
+      "bytes": 1152,
+      "sha256": "9651e4669183254142d78f8553331cf6dc704d23c2c5b46bee5c028b7329e5b5"
+    },
+    {
+      "path": "implementation/motor_uart_hardware_audit.txt",
+      "bytes": 349,
+      "sha256": "0606873661bef8bcac7f4782921be5ef614d11222a836f4341753b0a5346a005"
+    },
+    {
+      "path": "implementation/motor_uart_impl_check_timing.rpt",
+      "bytes": 3382,
+      "sha256": "bba60628f15984bb589789ccc03f34326e5fcb80e91da363238e7cfed948df0a"
+    },
+    {
+      "path": "implementation/motor_uart_impl_clocks.rpt",
+      "bytes": 1666,
+      "sha256": "dce77af93d2cd5ae1c1cc06006b22e28bccd778e3f588495fd55476d225d7abb"
+    },
+    {
+      "path": "implementation/motor_uart_impl_drc.rpt",
+      "bytes": 31031,
+      "sha256": "4d2ca1e9190873641a327ba77e6ed350c434458eed44a3c0345b3026c97c188b"
+    },
+    {
+      "path": "implementation/motor_uart_impl_io.rpt",
+      "bytes": 124715,
+      "sha256": "112fc30dbb5fd51052c3e7ebaf84db1484d2c864d2e3dc78937f851949054396"
+    },
+    {
+      "path": "implementation/motor_uart_impl_timing.rpt",
+      "bytes": 60257,
+      "sha256": "2dfa0d97f6bcbb2d5f375195b1e8d04a5fe7970f0cd33584a5a4d60b63f0b01e"
+    },
+    {
+      "path": "implementation/motor_uart_impl_utilization.rpt",
+      "bytes": 11755,
+      "sha256": "11637e2328b5de58cfdde1df1a520a16f58a2b27c2d00d9ddc09dd50268fd7ab"
+    },
+    {
+      "path": "implementation/motor_uart_synth_drc.rpt",
+      "bytes": 24372,
+      "sha256": "7e5aeae70a6ca5259f6ac2466b7f56b25ecfa4fc0e58cfe2fef6d4300419647f"
+    },
+    {
+      "path": "implementation/motor_uart_synth_timing.rpt",
+      "bytes": 58805,
+      "sha256": "a071f3dd402198c1888defb488608d1129966304fb434048d1c3b8a3a5c55f94"
+    },
+    {
+      "path": "implementation/motor_uart_synth_utilization.rpt",
+      "bytes": 23696,
+      "sha256": "8b5d9cbca43158ceaf32706e1179859b7240999b9946f0494bdd8a3c486b79ae"
+    },
+    {
+      "path": "laser_motor.bit",
+      "bytes": 4045765,
+      "sha256": "a348abc89a2ffbbab508771869334e7b4e45bff1f0dd57ea2b6d9a1208a1736e"
+    },
+    {
+      "path": "laser_motor.hwh",
+      "bytes": 344356,
+      "sha256": "2c7bc9faada4333f037f56cbe384d788f82f00f3f2d1c0353f53c0a1e015fad3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1978,
+      "sha256": "4b10696d7fa9ab5af721c758887d5409f752928c0c1070d9811a6b9898b5e603"
+    }
+  ],
+  "source_sha256": {
+    "04_runtime/fixed_exposure_worker.py": "7fa3cfbbd4f340f54062fb48966cd10c454c50420ad8ce0bf96158da09d8580e",
+    "04_runtime/geometric_calibration.py": "a15c87ff6aafca95977e2e8f92f597e026b3971f1204e3588524810b06af01f2",
+    "04_runtime/geometry_core.py": "d8d13290cabb65c0cd5c0aee112ff46a9fc6caff70d33a0c8f7194cbcfff8368",
+    "04_runtime/host_image_fast.py": "660e4f217c341ce9e69fe13b9128e7da1ec32fb161f36eb04b56b66931036acd",
+    "04_runtime/laser_horizontal_check.py": "b300aa4011e7c4ed9d93d512f8cc2ef3794d38183bec0351d664f5901dc32ca5",
+    "04_runtime/laser_stripe.py": "fcc8b9a45a4d1e4f60f4c43d9c6ad2e80e64f86b93358eaeebb6e3032be62859",
+    "04_runtime/laser_vertical_fast.py": "c95c1a52a2439b3127f7620afef3d89a2d991d955ea4b1cddb230d15e62bab42",
+    "04_runtime/motor_arduino.py": "a61ebfbcf8fe50b25c80a8ac134440417f3aea7c5c2c8c423acaae9602e2910c",
+    "04_runtime/motor_position.py": "26ea14a00817284744f0100e68abe8ef7279d57fb10eea4b79a3c923b6a1782a",
+    "04_runtime/motor_readonly.py": "d582a41e9bc96a44b5f1eb9c83d9136849b991a7da1c0b59f16263251da87740",
+    "04_runtime/motor_uartlite.py": "716ff3b94e687953d24f6f240446b2731f254f59b82b27068b8c5022bd16bb85",
+    "04_runtime/pl_runtime.py": "8fd15475c52ea177ddd0b507a3c033c9ac4a5d9710c31de7941db1ecc2bae7be",
+    "04_runtime/pl_scan_camera.py": "f134f86803debae4a8852648b728fccb456c148c49586d85987ede1fab040fbd",
+    "04_runtime/quality_from_stripes.py": "fd6ee088f427faf3f3580920854696a712cc22659895539b482b2fc4f6fb35a8",
+    "04_runtime/quality_from_stripes_fast.py": "e029abbc65825ec1dfa345d9a7df4780ffa3645a722dfb7a0f73eaabaed0e805",
+    "04_runtime/rig_workflow.py": "42e0df8c660fa35a4ee7db860164cc89c4fd392976a432b97629199aa1fcba78",
+    "04_runtime/rotation_axis.py": "f607e230842194128de564df7300cdec4295b97496fd09221c2b81a7cebf8545",
+    "04_runtime/rotation_scan.py": "bdc37194136330e617dbafc44470e734ade49429f3e2b87a20d991582e554c45",
+    "04_runtime/scan_camera.py": "41e831e9ea53a98e6af1334333c22ef39a6480585be7c399d151b8136024e271",
+    "04_runtime/scan_camera_worker.py": "707b15d6e9990d33a3e68ebcc885522cbec89563f967855dcf65570097a6a6cf",
+    "04_runtime/scan_checked_exposure.py": "3fce384f723e3671ee63a4fa62be87c499bdaca756ace44d82e97fb8fba2adce",
+    "04_runtime/scan_fixed_exposure.py": "d462f479b4f0e199981b127a32c86ebfd45b46e6aa3a2b14481359df768530c4",
+    "04_runtime/scan_simulation.py": "683b88114ef3168fec0b254c31853fe5b084ebb914a34433ffe91d47e3c3539e",
+    "04_runtime/scan_stripe_quality.py": "7a92c3a548051114b40b30c8202c25790de15b4e6d87b9ce08fda3cf1e048fbb",
+    "04_runtime/turntable_coordinates.py": "4c8c4e70a9f24cb8ae3a1e64c9972faa7954f9736ee4847f15abb11beb9c91f5",
+    "09_tools/run_integrated_board.py": "3e6f0f8641bc3aee8bda232a8f71d9f1da4550dfc3e181928055fad6c69f8ed7",
+    "11_fpga_project/constraints/motor_uart.xdc": "83c41b607e06dc46acb10e7a7141052f0eccfe1ffd5694f425084d1bca15f9f6",
+    "11_fpga_project/rtl/laser_stripe_axi.sv": "4395e28c589982d011c576bfaf3f541a0998424b4e280eeb86f6499a17ca91db",
+    "11_fpga_project/rtl/laser_stripe_core.sv": "161bf3b5e63a20a0b229a0c7cbf76b7e47d61734e12c8815d3369d360d0d778c",
+    "11_fpga_project/scripts/audit_motor_uart_overlay.tcl": "a3682a300ab55d2e22bf07e0b635c3cce4b912052977f00a89198d84e92064df",
+    "11_fpga_project/scripts/build_motor_uart_overlay.tcl": "b58c345f4b75dd2b7abe732b553ff081d6b46766ee2be0792da4bdd795e0505e",
+    "11_fpga_project/scripts/project.py": "fe964e90666cc696e00039093a4775557ecaa41d774e3925f122db90d9fa654a",
+    "11_fpga_project/third_party/pynq_z2/base_official.xdc": "05d99c9032ceb21b2f6850955dd897a14a30d77ebda21d57867daa65caef2d3b",
+    "11_fpga_project/third_party/pynq_z2/ps7_settings.tcl": "f82950a8a31c88c19937f90c91af3ec9ff80e25266b8e495aeba130bae67588c"
+  },
+  "static_release_preserved": true
+}

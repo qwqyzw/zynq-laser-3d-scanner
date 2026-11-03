@@ -1,0 +1,80 @@
+{
+  "version": "20261024.surface_milestone1.evidence",
+  "files": [
+    {
+      "path": "algorithm_previews/c4b6366bde684795ac579992890dab47/artifact_manifest.json",
+      "bytes": 1249,
+      "sha256": "b92dd9baf4a03bea9fd3dc4af9c86686eb8962e0e5c0aa19399815fb400709ea"
+    },
+    {
+      "path": "algorithm_previews/c4b6366bde684795ac579992890dab47/denoised_points.ply",
+      "bytes": 29428,
+      "sha256": "44177191804519d9735c727075f6c8e2be88a951794c196027af8090428106cd"
+    },
+    {
+      "path": "algorithm_previews/c4b6366bde684795ac579992890dab47/ESTIMATED_CONVEX_SURFACE.ply",
+      "bytes": 4490,
+      "sha256": "e723eb64c41f815abe83880b3e7f43538b0b8972a4fd07803e5a50a1d10ca3b9"
+    },
+    {
+      "path": "algorithm_previews/c4b6366bde684795ac579992890dab47/measured_points.ply",
+      "bytes": 29428,
+      "sha256": "9921e7c3ba0b7c66525635eb6f9f7752efc8de980d41110e12d0e63aa082cc14"
+    },
+    {
+      "path": "algorithm_previews/c4b6366bde684795ac579992890dab47/model_metadata.json",
+      "bytes": 2886,
+      "sha256": "22a42fe4ef773a23485ef7c1ea6673f4cb2d23eb313da23901e65c22a86ec964"
+    },
+    {
+      "path": "algorithm_previews/c4b6366bde684795ac579992890dab47/model_preview.png",
+      "bytes": 16372,
+      "sha256": "a4a18604050ff650fc17158da2b9427e68ec5e7c5c2a3f4f7b8faf2efc0418a2"
+    },
+    {
+      "path": "algorithm_previews/c4b6366bde684795ac579992890dab47/model_viewer.html",
+      "bytes": 63758,
+      "sha256": "d0e726cf82d0aec15b94f4655dc7fc9f721a8d6a8e68dba52f00c07f323f75dd"
+    },
+    {
+      "path": "algorithm_previews/c4b6366bde684795ac579992890dab47/point_decisions.csv",
+      "bytes": 5853,
+      "sha256": "999e6d67269938936e7ebbca4714bcd498b6b5f1122551c7baaa5f46e9a13fba"
+    },
+    {
+      "path": "algorithm_previews/c4b6366bde684795ac579992890dab47/surface_support.csv",
+      "bytes": 2419,
+      "sha256": "9eae5a501c3658397e53b37192ec3b9e180be42351fe7c61ea7d03835a0f7c64"
+    },
+    {
+      "path": "last_algorithm_preview.json",
+      "bytes": 3370,
+      "sha256": "80d375e4c7d863429f09f00f7a98f8cd6d8d8b8ae2ed84d0bf5c98d4cc27c8d5"
+    },
+    {
+      "path": "pc_received_preview.json",
+      "bytes": 285,
+      "sha256": "e716deea0f1ad60de3bfd926a1676748922ebcbbc59f81868035828556bda226"
+    },
+    {
+      "path": "surface_model.py",
+      "bytes": 10344,
+      "sha256": "251579390e664f09ab66360fdd30e411ca8e633f777ad1e4bbf71ea34afaa0bb"
+    },
+    {
+      "path": "test_results.json",
+      "bytes": 521,
+      "sha256": "e08802091ddd0eb69663810cf9cc86c46ab865dad3325a9c93766d993922ac65"
+    },
+    {
+      "path": "test_surface_model.py",
+      "bytes": 1920,
+      "sha256": "45c0b403c713ff32fa14ba5df78359ccf217cab9b37a0e7322f9d3371619864d"
+    },
+    {
+      "path": "viewer_template.html",
+      "bytes": 5508,
+      "sha256": "aa753f334d971eaa97181f99e3f4ea37b736d020a64df386d17bb9bbed8690e0"
+    }
+  ]
+}

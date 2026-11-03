@@ -1,0 +1,40 @@
+{
+  "status": {
+    "schema_version": 1,
+    "session_id": "5c5cb0e71f91421ab70ee15da3f4c9ae",
+    "run_id": null,
+    "state": "ready",
+    "mode": "diagnostic_preview",
+    "client_date": "2026-10-24",
+    "process_id": 14762,
+    "child_pid": null,
+    "diagnostic_preview_only": true
+  },
+  "latest_result": {
+    "schema_version": 1,
+    "session_id": "8f2f328ddc46477c81c60f9fd33401a5",
+    "run_id": "fbe202ea60714a0ea605716d8068b8fc",
+    "state": "failed",
+    "discarded": true,
+    "discard_event_id": "b3bcc6425dc146a09a993be86aae51b2",
+    "error": "User cancelled; scan discarded",
+    "result_kind": "diagnostic_preview",
+    "diagnostic_preview_only": true,
+    "alignment_validated": false,
+    "metric_accuracy_accepted": false
+  },
+  "diagnostics": {
+    "status": 2,
+    "completed_frames": 501,
+    "mm2s_sr": 4098,
+    "s2mm_sr": 4098
+  },
+  "camera_free": true,
+  "bitfile": "/home/xilinx/jupyter_notebooks/integrated_uart_20261020_193135/teammate_complete_20261020/17_button_scan_release_20261020/laser_motor_button.bit",
+  "fclk0_mhz": 50.0,
+  "boot_id": "96986873-2feb-4c94-93fb-d56837117cbf",
+  "service_active": "active",
+  "service_enabled": "enabled",
+  "new_PL_transactions": 0,
+  "motion_commands_sent": 0
+}

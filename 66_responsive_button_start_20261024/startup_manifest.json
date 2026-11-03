@@ -1,0 +1,8 @@
+{
+  "version": "20261024.responsive_start.v1",
+  "base_manifest_sha256": "33b50a6ecf2c98923f078506a45cee8ef4d6f391b3ecc64e307c057e30a334db",
+  "files": {
+    "responsive_button_service.py": "d0b41ffa96a717a505d475e2eeae86cd3cf1caafd30e6bdc2791e29b8cfc6ba4",
+    "test_responsive_start.py": "44458fd663cf0544e4902e85e767a4a5118ae4ad01059aef42ce6fc511e258ec"
+  }
+}

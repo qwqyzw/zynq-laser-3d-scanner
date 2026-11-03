@@ -1,0 +1,7 @@
+{
+  "schema": "nonempty_failure_lifecycle_v1",
+  "files": {
+    "failure_reason.py": "2d93c233f23b0eb8f34605590d90070500929533605ab6f367745059db8a4aed",
+    "lifecycle_service.py": "4d36d4e962225259266eb1595b70f53443fc0158f460fa936d4c8fca796ea2cf"
+  }
+}

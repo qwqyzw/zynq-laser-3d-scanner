@@ -1,0 +1,36 @@
+{
+  "version": "20261024.consensus_dual_button.v1",
+  "base73_manifest_sha256": "26ff568739272e68da2c6cd8aef5473234f0ddd0a7406a0919fa930003ef146f",
+  "profile": {
+    "angular_step_deg": 10,
+    "exposures": [
+      5,
+      20
+    ],
+    "frames_per_exposure": 3,
+    "actual_PL_transactions": 222,
+    "temporal_support": 2,
+    "original_common10_preserved": true,
+    "surface_fitting": "deferred"
+  },
+  "files": {
+    "button_audit.py": "c0d189fa22cd614d8534c6a8d4dd5588875038d5093f517cd109fad44e99fa98",
+    "cleanup74.py": "f4ec8be35721975c55fa06efcc53b1af1553ce2179d88ce8dbc7d00df07debfd",
+    "diagnostic_camera.py": "89112eab2966ccfcb0b013e22e338defc2d01e52d21f57b7a3418343751e6981",
+    "dual_button_service.py": "3f20bfb700d43c03eabc7c23af22909ddddb86c32e17d004b1465988920d0368",
+    "fuse_measured_profiles.py": "2f72f2bd3c17ce332df88330b37a12531e64caf3455bf98771960e61a0cbf994",
+    "locked_switchable_camera_worker.py": "c69c7c77f81968a5d2eb140c6fb6f86b9024ca4428d52ec0ae7ec67cd4c34c29",
+    "optimized_dual_scan.py": "abd9d2c6eac0d39ed7bc7608c43c8a0e7bd3436ff7d2cacc00ca005010140b9c",
+    "release74.py": "f7a887a597d2bba1e0a9184c17ebb85bdc0ec35c57df7717abb95ed08fc0c521",
+    "switchable_pl_camera.py": "7a6fbc355f3a2aee060608298e971eb6fa142c394d5e1bd7a94742bb20ceae99",
+    "temporal_consensus.py": "9b614ffe68a817b3254b1a31b5bc3a11776ebc06ecb1bffe9670e51aaa61fc0c",
+    "test_cleanup74.py": "037395cc5d35481a07d148637c05b906107e4cdf804cfedb4c71d206eb9ac9d2",
+    "test_dual_service.py": "89bbeaa213746fea94ba0e6f330fadfaace67f1eb31d1940ddfb106a78962bd5",
+    "test_fusion_priority.py": "eaf1419b1ba553884d0b92116e85c4dbbfbc1cfe0a06e39a28fc62e98c4ea27b",
+    "test_temporal_consensus.py": "4719756ea463c9def5c5b8b71f0a758eb4aabf6bc9bbf7894ddf15ed20f2f0e8"
+  },
+  "inherited_files": {
+    "65_side_signal_optimization_20261024/locked_switch_benchmark_01/report.json": "b2d0629c81902366654d911e555e96c30ce60edde0ce50aa6d6a925e18c9b071",
+    "65_side_signal_optimization_20261024/locked_switchable_camera_worker.py": "c69c7c77f81968a5d2eb140c6fb6f86b9024ca4428d52ec0ae7ec67cd4c34c29"
+  }
+}

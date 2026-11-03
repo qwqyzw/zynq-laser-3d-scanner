@@ -1,0 +1,176 @@
+{
+  "status": "passed",
+  "scope": "local implemented hardware; board validation separate",
+  "variant": "motor_uart",
+  "part": "xc7z020clg400-1",
+  "fabric_clock_hz": 50000000,
+  "uart": {
+    "instance": "axi_uartlite_0",
+    "base": "0x42C00000",
+    "range": 65536,
+    "baudrate": 9600,
+    "data_bits": 8,
+    "parity": "none",
+    "stop_bits": 1,
+    "tx": {
+      "arduino": "D1",
+      "pin": "U12",
+      "direction": "OUT"
+    },
+    "rx": {
+      "arduino": "D0",
+      "pin": "T14",
+      "direction": "IN"
+    },
+    "iostandard": "LVCMOS33"
+  },
+  "artifact_sha256": {
+    "laser_motor_uart.bit": "a348abc89a2ffbbab508771869334e7b4e45bff1f0dd57ea2b6d9a1208a1736e",
+    "laser_motor_uart.hwh": "2c7bc9faada4333f037f56cbe384d788f82f00f3f2d1c0353f53c0a1e015fad3"
+  },
+  "artifact_sizes": {
+    "laser_motor_uart.bit": 4045765,
+    "laser_motor_uart.hwh": 344356
+  },
+  "source_sha256": {
+    "11_fpga_project/rtl/laser_stripe_core.sv": "161bf3b5e63a20a0b229a0c7cbf76b7e47d61734e12c8815d3369d360d0d778c",
+    "11_fpga_project/rtl/laser_stripe_axi.sv": "4395e28c589982d011c576bfaf3f541a0998424b4e280eeb86f6499a17ca91db",
+    "04_runtime/laser_stripe.py": "fcc8b9a45a4d1e4f60f4c43d9c6ad2e80e64f86b93358eaeebb6e3032be62859",
+    "11_fpga_project/scripts/build_motor_uart_overlay.tcl": "b58c345f4b75dd2b7abe732b553ff081d6b46766ee2be0792da4bdd795e0505e",
+    "11_fpga_project/scripts/audit_motor_uart_overlay.tcl": "a3682a300ab55d2e22bf07e0b635c3cce4b912052977f00a89198d84e92064df",
+    "11_fpga_project/scripts/verify_motor_uart_build.py": "3a079482143b7de52e30c317d941d78c98c32770f6f1a585edaab24d44e6830a",
+    "11_fpga_project/scripts/project.py": "fe964e90666cc696e00039093a4775557ecaa41d774e3925f122db90d9fa654a",
+    "11_fpga_project/scripts/run_motor_uart_build.ps1": "35e5c9c04bbc34eca02068fa7cd0a66969e378f50aa9c63a71e2a57d0bc74c56",
+    "11_fpga_project/constraints/motor_uart.xdc": "83c41b607e06dc46acb10e7a7141052f0eccfe1ffd5694f425084d1bca15f9f6",
+    "11_fpga_project/third_party/pynq_z2/ps7_settings.tcl": "f82950a8a31c88c19937f90c91af3ec9ff80e25266b8e495aeba130bae67588c",
+    "11_fpga_project/third_party/pynq_z2/base_official.xdc": "05d99c9032ceb21b2f6850955dd897a14a30d77ebda21d57867daa65caef2d3b"
+  },
+  "timing": {
+    "setup_slack_ns": 0.7,
+    "hold_slack_ns": 0.018
+  },
+  "resources": {
+    "Slice LUTs": 10190.0,
+    "Slice Registers": 6218.0,
+    "Block RAM Tile": 122.0,
+    "DSPs": 6.0,
+    "Bonded IOB": 2.0
+  },
+  "asynchronous_timing_boundary": {
+    "rx": "motor_uart_rx has no synchronous input delay; false path to UART IP synchronizer",
+    "tx": "motor_uart_tx has no synchronous output delay; false path at board boundary",
+    "unconstrained_internal_endpoints": 0
+  },
+  "checks": [
+    {
+      "check": "processing_system7_0: all HWH parameters equal released static overlay",
+      "passed": true
+    },
+    {
+      "check": "axi_dma_0: all HWH parameters equal released static overlay",
+      "passed": true
+    },
+    {
+      "check": "laser_stripe_0: all HWH parameters equal released static overlay",
+      "passed": true
+    },
+    {
+      "check": "UART VLNV",
+      "passed": true
+    },
+    {
+      "check": "C_BAUDRATE=9600",
+      "passed": true
+    },
+    {
+      "check": "C_DATA_BITS=8",
+      "passed": true
+    },
+    {
+      "check": "C_USE_PARITY=0",
+      "passed": true
+    },
+    {
+      "check": "C_S_AXI_ACLK_FREQ_HZ=50000000",
+      "passed": true
+    },
+    {
+      "check": "C_BASEADDR=0x42C00000",
+      "passed": true
+    },
+    {
+      "check": "C_HIGHADDR=0x42C0FFFF",
+      "passed": true
+    },
+    {
+      "check": "frozen core RTL unchanged",
+      "passed": true
+    },
+    {
+      "check": "frozen AXI RTL unchanged",
+      "passed": true
+    },
+    {
+      "check": "three laser drivers identical",
+      "passed": true
+    },
+    {
+      "check": "official pin source hash",
+      "passed": true
+    },
+    {
+      "check": "official Arduino D0 = T14",
+      "passed": true
+    },
+    {
+      "check": "official Arduino D1 = U12",
+      "passed": true
+    },
+    {
+      "check": "route audit: MOTOR_UART_PHYSICAL_AUDIT_PASS",
+      "passed": true
+    },
+    {
+      "check": "route audit: UART RX=Arduino D0=T14 IN LVCMOS33 pullup=1",
+      "passed": true
+    },
+    {
+      "check": "route audit: UART TX=Arduino D1=U12 OUT LVCMOS33",
+      "passed": true
+    },
+    {
+      "check": "route audit: DRC_errors=0; DRC_critical_warnings=0",
+      "passed": true
+    },
+    {
+      "check": "setup_slack_ns nonnegative",
+      "passed": true
+    },
+    {
+      "check": "hold_slack_ns nonnegative",
+      "passed": true
+    },
+    {
+      "check": "zero unconstrained internal endpoints",
+      "passed": true
+    },
+    {
+      "check": "implemented utilization report contains main resource counts",
+      "passed": true
+    },
+    {
+      "check": "implemented BRAM fits device",
+      "passed": true
+    },
+    {
+      "check": "new bitstream differs from static release",
+      "passed": true
+    }
+  ],
+  "drc_errors": 0,
+  "drc_critical_warnings": 0,
+  "known_build_messages": [
+    "PSU-1/PSU-2 critical warnings from unchanged official 16-bit DDR preset lane2/3 skew values",
+    "Generated AXI ID width warnings also present in previous static architecture"
+  ]
+}

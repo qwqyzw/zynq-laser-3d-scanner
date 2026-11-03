@@ -1,0 +1,27 @@
+{
+  "normal": [
+    -0.08770823551569878,
+    0.8405362179073665,
+    -0.5346083910758438
+  ],
+  "offset_mm": 108.33659289097466,
+  "fit_heights_mm": [
+    0,
+    12
+  ],
+  "independent_holdout_height_mm": 33.5,
+  "holdout_used_for_fit": false,
+  "initial_checkerboard_plane": {
+    "normal": [
+      0.008914235262633352,
+      -0.5976864315398586,
+      -0.8016804013837636
+    ],
+    "offset_mm": 161.8052435033807
+  },
+  "training_report_sha256": "739c7b10f884a70d4bae7be3043ec3325b5caf42950e792d254a596ea0e24255",
+  "axis_source_sha256": "03718983286e0ad1ba6c9b5b2f07fbe9fc0b68d1368d5e644b252f6019a01340",
+  "holdout_height_p95_absolute_error_mm": 1.9736636256141165,
+  "holdout_plane_p95_mm": 1.6412469273084338,
+  "metric_accuracy_accepted": false
+}

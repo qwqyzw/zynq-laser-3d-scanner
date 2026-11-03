@@ -1,0 +1,817 @@
+{
+  "status": "two_height_training_fit_passed_pending_holdout",
+  "execution_role": "zynq",
+  "machine": "armv7l",
+  "fit_heights_mm": [
+    0,
+    12
+  ],
+  "holdout_height_mm": 33.5,
+  "holdout_used_for_fit": false,
+  "geometry_deployed": false,
+  "metric_accuracy_accepted": false,
+  "axis_validation_pending": true,
+  "fixed_reference_checks": [
+    {
+      "image": "zero_capture_02/camera_session/bright_after_session/bright_00.png",
+      "sha256": "4b4e44c3cfe0822c8e5d22ca88e57b2dbbcdb3f1f9cf970b5c52b2fc07b4d89d",
+      "parts": [
+        {
+          "rect": [
+            134,
+            177,
+            170,
+            202
+          ],
+          "correlation": 0.9764505624771118,
+          "peak_margin": 0.5854685306549072,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            408,
+            176,
+            443,
+            201
+          ],
+          "correlation": 0.9777413010597229,
+          "peak_margin": 0.5180588662624359,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            65,
+            366,
+            111,
+            405
+          ],
+          "correlation": 0.9831258654594421,
+          "peak_margin": 0.3363402485847473,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            462,
+            368,
+            510,
+            408
+          ],
+          "correlation": 0.9868475794792175,
+          "peak_margin": 0.4546331763267517,
+          "shift_px": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "image": "zero_capture_02/camera_session/bright_after_session/bright_01.png",
+      "sha256": "4cdb0cfd9043a6eae49b044167cca33dac854b78cff2f4d8470828667a026e7a",
+      "parts": [
+        {
+          "rect": [
+            134,
+            177,
+            170,
+            202
+          ],
+          "correlation": 0.9843122363090515,
+          "peak_margin": 0.588920533657074,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            408,
+            176,
+            443,
+            201
+          ],
+          "correlation": 0.9790398478507996,
+          "peak_margin": 0.5205287039279938,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            65,
+            366,
+            111,
+            405
+          ],
+          "correlation": 0.9879065155982971,
+          "peak_margin": 0.33808523416519165,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            462,
+            368,
+            510,
+            408
+          ],
+          "correlation": 0.991643488407135,
+          "peak_margin": 0.46145498752593994,
+          "shift_px": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "image": "zero_capture_02/camera_session/bright_after_session/bright_02.png",
+      "sha256": "58d4cb8b56de29b4956d473ab2f3a144a4b30cadd42eb78c0a9c25cd86f0e35d",
+      "parts": [
+        {
+          "rect": [
+            134,
+            177,
+            170,
+            202
+          ],
+          "correlation": 0.9897962212562561,
+          "peak_margin": 0.6000024080276489,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            408,
+            176,
+            443,
+            201
+          ],
+          "correlation": 0.9827589988708496,
+          "peak_margin": 0.5128056704998016,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            65,
+            366,
+            111,
+            405
+          ],
+          "correlation": 0.9912969470024109,
+          "peak_margin": 0.34141385555267334,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            462,
+            368,
+            510,
+            408
+          ],
+          "correlation": 0.9949355721473694,
+          "peak_margin": 0.46324390172958374,
+          "shift_px": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "image": "zero_capture_02/camera_session/bright_before_session/bright_00.png",
+      "sha256": "246e14419402722781f3ee6dde9ef8c95a4c55ba9ac1a7f5179ec8c07c8c1da4",
+      "parts": [
+        {
+          "rect": [
+            134,
+            177,
+            170,
+            202
+          ],
+          "correlation": 0.9954999089241028,
+          "peak_margin": 0.6102326512336731,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            408,
+            176,
+            443,
+            201
+          ],
+          "correlation": 0.9941002726554871,
+          "peak_margin": 0.5308806002140045,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            65,
+            366,
+            111,
+            405
+          ],
+          "correlation": 0.9948654770851135,
+          "peak_margin": 0.34298479557037354,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            462,
+            368,
+            510,
+            408
+          ],
+          "correlation": 0.9973400235176086,
+          "peak_margin": 0.4682719111442566,
+          "shift_px": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "image": "zero_capture_02/camera_session/bright_before_session/bright_01.png",
+      "sha256": "0ea13b03bbbb2be20f3fc91694f453f26ca06d3dafe08102dae70eb0b1739905",
+      "parts": [
+        {
+          "rect": [
+            134,
+            177,
+            170,
+            202
+          ],
+          "correlation": 0.9999997615814209,
+          "peak_margin": 0.6073209047317505,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            408,
+            176,
+            443,
+            201
+          ],
+          "correlation": 1.0,
+          "peak_margin": 0.5385395586490631,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            65,
+            366,
+            111,
+            405
+          ],
+          "correlation": 1.0,
+          "peak_margin": 0.3454608917236328,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            462,
+            368,
+            510,
+            408
+          ],
+          "correlation": 1.0,
+          "peak_margin": 0.4704284071922302,
+          "shift_px": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "image": "zero_capture_02/camera_session/bright_before_session/bright_02.png",
+      "sha256": "3dabe34a1229e73c256353bdb471bc2d9aa96a930c52bcc2c3d63f857ae56e30",
+      "parts": [
+        {
+          "rect": [
+            134,
+            177,
+            170,
+            202
+          ],
+          "correlation": 0.9965499043464661,
+          "peak_margin": 0.6021557450294495,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            408,
+            176,
+            443,
+            201
+          ],
+          "correlation": 0.9943175911903381,
+          "peak_margin": 0.5353690385818481,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            65,
+            366,
+            111,
+            405
+          ],
+          "correlation": 0.9949626922607422,
+          "peak_margin": 0.34309738874435425,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            462,
+            368,
+            510,
+            408
+          ],
+          "correlation": 0.9971675276756287,
+          "peak_margin": 0.47019731998443604,
+          "shift_px": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "image": "height12_capture_02/camera_session/bright_after_session/bright_00.png",
+      "sha256": "8d614d615fbf4b92baa153d1bc1088fa822f94a6b5a6218a84a885ad7c81fe9d",
+      "parts": [
+        {
+          "rect": [
+            134,
+            177,
+            170,
+            202
+          ],
+          "correlation": 0.9567108750343323,
+          "peak_margin": 0.5721645057201385,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            408,
+            176,
+            443,
+            201
+          ],
+          "correlation": 0.9782925844192505,
+          "peak_margin": 0.513173907995224,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            65,
+            366,
+            111,
+            405
+          ],
+          "correlation": 0.9782993197441101,
+          "peak_margin": 0.3427731394767761,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            462,
+            368,
+            510,
+            408
+          ],
+          "correlation": 0.9900942444801331,
+          "peak_margin": 0.4604262113571167,
+          "shift_px": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "image": "height12_capture_02/camera_session/bright_after_session/bright_01.png",
+      "sha256": "aa849ac52e05191c2fa2e8368382e1b1656a496194164349aef5a29b8b8d8bf5",
+      "parts": [
+        {
+          "rect": [
+            134,
+            177,
+            170,
+            202
+          ],
+          "correlation": 0.9406513571739197,
+          "peak_margin": 0.5605989098548889,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            408,
+            176,
+            443,
+            201
+          ],
+          "correlation": 0.9713911414146423,
+          "peak_margin": 0.5077475607395172,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            65,
+            366,
+            111,
+            405
+          ],
+          "correlation": 0.9737167954444885,
+          "peak_margin": 0.3442879915237427,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            462,
+            368,
+            510,
+            408
+          ],
+          "correlation": 0.9876490235328674,
+          "peak_margin": 0.4715614914894104,
+          "shift_px": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "image": "height12_capture_02/camera_session/bright_after_session/bright_02.png",
+      "sha256": "ff8f69789fc2b6083169c24f7e13ddaaf036edbfbd6f3c9fdeba9f1917855fab",
+      "parts": [
+        {
+          "rect": [
+            134,
+            177,
+            170,
+            202
+          ],
+          "correlation": 0.9389479756355286,
+          "peak_margin": 0.5579844415187836,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            408,
+            176,
+            443,
+            201
+          ],
+          "correlation": 0.9672701358795166,
+          "peak_margin": 0.5100370645523071,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            65,
+            366,
+            111,
+            405
+          ],
+          "correlation": 0.9718487858772278,
+          "peak_margin": 0.34631603956222534,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            462,
+            368,
+            510,
+            408
+          ],
+          "correlation": 0.9883000254631042,
+          "peak_margin": 0.47006624937057495,
+          "shift_px": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "image": "height12_capture_02/camera_session/bright_before_session/bright_00.png",
+      "sha256": "6c9fdadb8433fd0f71222595edd5151e3900f989ab69c0b82d511fe41434528d",
+      "parts": [
+        {
+          "rect": [
+            134,
+            177,
+            170,
+            202
+          ],
+          "correlation": 0.9411608576774597,
+          "peak_margin": 0.557993084192276,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            408,
+            176,
+            443,
+            201
+          ],
+          "correlation": 0.9644136428833008,
+          "peak_margin": 0.5019129812717438,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            65,
+            366,
+            111,
+            405
+          ],
+          "correlation": 0.9722248911857605,
+          "peak_margin": 0.34303009510040283,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            462,
+            368,
+            510,
+            408
+          ],
+          "correlation": 0.987856924533844,
+          "peak_margin": 0.4684253931045532,
+          "shift_px": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "image": "height12_capture_02/camera_session/bright_before_session/bright_01.png",
+      "sha256": "f275968ab8ab342c1b069e79fde578a63e95d17b6f572800c93a24c5bd4d4586",
+      "parts": [
+        {
+          "rect": [
+            134,
+            177,
+            170,
+            202
+          ],
+          "correlation": 0.9397976994514465,
+          "peak_margin": 0.5558614134788513,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            408,
+            176,
+            443,
+            201
+          ],
+          "correlation": 0.9695966243743896,
+          "peak_margin": 0.5073491334915161,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            65,
+            366,
+            111,
+            405
+          ],
+          "correlation": 0.972789466381073,
+          "peak_margin": 0.347095787525177,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            462,
+            368,
+            510,
+            408
+          ],
+          "correlation": 0.9881662726402283,
+          "peak_margin": 0.4685673713684082,
+          "shift_px": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "image": "height12_capture_02/camera_session/bright_before_session/bright_02.png",
+      "sha256": "3607c5586cc42582f60a32b4dfc612e23e010397db4a3e0f700e4244995b23ef",
+      "parts": [
+        {
+          "rect": [
+            134,
+            177,
+            170,
+            202
+          ],
+          "correlation": 0.9406334757804871,
+          "peak_margin": 0.5604466795921326,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            408,
+            176,
+            443,
+            201
+          ],
+          "correlation": 0.9669622778892517,
+          "peak_margin": 0.5117547810077667,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            65,
+            366,
+            111,
+            405
+          ],
+          "correlation": 0.9720889329910278,
+          "peak_margin": 0.3462773561477661,
+          "shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "rect": [
+            462,
+            368,
+            510,
+            408
+          ],
+          "correlation": 0.9886602163314819,
+          "peak_margin": 0.4679148197174072,
+          "shift_px": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "fit": {
+    "normal": [
+      -0.08354209180506329,
+      0.7957888901992255,
+      -0.599783928704595
+    ],
+    "offset_mm": 108.60570927698,
+    "points": 119,
+    "spread_mm": [
+      12.346998060357874,
+      5.959044624519551,
+      0.1462767446347001
+    ],
+    "rms_mm": 0.14627674463469847,
+    "p95_abs_mm": 0.26214395668492024
+  },
+  "evidence": [
+    {
+      "label": "zero",
+      "height_mm": 0.0,
+      "selected_columns": 53,
+      "source_report_sha256": "4dba8e634e764689358efe719236d9257d0afc0bc174b37f034bd45460d116fe",
+      "source_pixels_sha256": "133d25640f1daf078929f47c0f6841ed4ec29c8783d07e54528d191b8b312e7f",
+      "mask_image_sha256": "0ea13b03bbbb2be20f3fc91694f453f26ca06d3dafe08102dae70eb0b1739905",
+      "polygon_px": [
+        [
+          362.5260314941406,
+          392.3075866699219
+        ],
+        [
+          245.31053161621094,
+          383.2730407714844
+        ],
+        [
+          199.50262451171875,
+          379.69073486328125
+        ],
+        [
+          204.3827667236328,
+          358.5938720703125
+        ],
+        [
+          228.77548217773438,
+          256.05987548828125
+        ],
+        [
+          232.20053100585938,
+          242.14393615722656
+        ],
+        [
+          322.8443908691406,
+          247.77841186523438
+        ],
+        [
+          341.58282470703125,
+          249.013671875
+        ],
+        [
+          359.5625915527344,
+          250.44105529785156
+        ],
+        [
+          360.023193359375,
+          264.2105407714844
+        ],
+        [
+          360.5006103515625,
+          279.5172424316406
+        ],
+        [
+          361.4680480957031,
+          330.3262023925781
+        ]
+      ],
+      "mask_selected_from_image_not_fitted_geometry": true
+    },
+    {
+      "label": "height12",
+      "height_mm": 12.0,
+      "selected_columns": 66,
+      "source_report_sha256": "a922f04ae22379522cc463bdfc32b9d10eb37be3b60d7eae5b4f40b453e5ec36",
+      "source_pixels_sha256": "19900887be31c551bf33e1552daf3acfe9af0130a026fe4dcc51e195855f3ce2",
+      "mask_image_sha256": "f275968ab8ab342c1b069e79fde578a63e95d17b6f572800c93a24c5bd4d4586",
+      "polygon_px": [
+        [
+          263.0,
+          250.0
+        ],
+        [
+          329.0,
+          253.0
+        ],
+        [
+          328.0,
+          332.0
+        ],
+        [
+          251.0,
+          329.0
+        ]
+      ],
+      "mask_selected_from_image_not_fitted_geometry": true
+    }
+  ],
+  "reference_plane": {
+    "normal": [
+      0.008485054362586841,
+      -0.645552606297591,
+      -0.7636686692243249
+    ],
+    "offset_mm": 161.8498001342536
+  },
+  "reference_geometry_check_sha256": "bc69e550d947b4d2a5d642e9497225bdbebe064a89dd24d9ac4df3df2ba9bf30",
+  "axis_candidate_sha256": "6a59167e6efcfd050efca61d1bf85ca05640cd2d50fbdb711fa34c46160b0b68",
+  "fixed_reference_image_sha256": "0ea13b03bbbb2be20f3fc91694f453f26ca06d3dafe08102dae70eb0b1739905",
+  "fixed_reference_rectangles": [
+    [
+      134,
+      177,
+      170,
+      202
+    ],
+    [
+      408,
+      176,
+      443,
+      201
+    ],
+    [
+      65,
+      366,
+      111,
+      405
+    ],
+    [
+      462,
+      368,
+      510,
+      408
+    ]
+  ]
+}

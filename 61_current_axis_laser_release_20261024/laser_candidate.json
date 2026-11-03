@@ -1,0 +1,32 @@
+{
+  "kind": "current_axis_known_height_laser_preview_candidate",
+  "client_date": "2026-10-24",
+  "execution_role": "zynq",
+  "normal": [
+    0.0019267230472309823,
+    0.820253767741363,
+    -0.5719965421612243
+  ],
+  "offset_mm": 110.15740548660678,
+  "fit_heights_mm": [
+    0,
+    12
+  ],
+  "independent_holdout_height_mm": 33.5,
+  "holdout_used_for_fit": false,
+  "initial_checkerboard_plane": {
+    "normal": [
+      0.013754915406195833,
+      -0.6183878483615727,
+      -0.7857526782015523
+    ],
+    "offset_mm": 163.0176478631621
+  },
+  "axis_source_sha256": "c5ef4e93a527770d6e69e7af9b7f2328612e187d3447da340245315ccf34f071",
+  "training_report_sha256": "f8c27f8dc5e09b49c41a5c1ffcb7c76443a459634a41467372355ceeb5d2681c",
+  "holdout_plane_p95_mm": 1.5382984401832693,
+  "holdout_height_p95_absolute_error_mm": 1.8342702412485365,
+  "metric_accuracy_accepted": false,
+  "shape_preview_only": true,
+  "camera_source_sha256": "73a623badebf2471c4fdbdfa926ad7981f26ccddfeabc833c087592af6062117"
+}

@@ -1,0 +1,15 @@
+{
+  "version": "20261024.surface_milestone1.evidence",
+  "files": [
+    {
+      "path": "pc_cancel_receiver.py",
+      "bytes": 2832,
+      "sha256": "deffc3c5cefba45cc9917e017cd787189589a82d11415152e07ce614c7865395"
+    },
+    {
+      "path": "test_pc_cancel_compatibility.py",
+      "bytes": 1674,
+      "sha256": "1afe764b0bdacae58d25580cf075a2c0fe7c064bb158242dfee15d477f0e073a"
+    }
+  ]
+}

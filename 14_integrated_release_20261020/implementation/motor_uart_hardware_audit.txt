@@ -1,0 +1,8 @@
+MOTOR_UART_PHYSICAL_AUDIT_PASS
+checkpoint=D:/FPGAProjects/teammate_complete_20261020/11_fpga_project/build/mu2/ls.runs/impl_1/bd_wrapper_routed.dcp
+UART RX=Arduino D0=T14 IN LVCMOS33 pullup=1
+UART TX=Arduino D1=U12 OUT LVCMOS33
+clock=clk_fpga_0 period_ns=20.000
+setup_slack_ns=0.700
+hold_slack_ns=0.018
+DRC_errors=0; DRC_critical_warnings=0

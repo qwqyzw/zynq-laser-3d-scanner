@@ -1,0 +1,85 @@
+{
+  "version": "20261024.surface_milestone1.evidence",
+  "files": [
+    {
+      "path": "before_deployment/status.json",
+      "bytes": 257,
+      "sha256": "14be8e0735ebe79b6718af2c7e8bea91f1fede67021336fe43acebfae6b2cc93"
+    },
+    {
+      "path": "before_deployment/zynq-button-scan.service",
+      "bytes": 864,
+      "sha256": "5c7c94a49f92fd02c6e02a4f89ab71a1925a6eb203fc7a7a8cb44c629bddb544"
+    },
+    {
+      "path": "board_validation.json",
+      "bytes": 1407,
+      "sha256": "824fec4af185a83940513c833683cad85be53cb0abedd4722e44f44b7a9870ef"
+    },
+    {
+      "path": "deployment.json",
+      "bytes": 1320,
+      "sha256": "9872fa95f6b8716f3da51f10b2b9b2540c5380071545ba88248c41e4373c7e05"
+    },
+    {
+      "path": "final_latest_result.json",
+      "bytes": 413,
+      "sha256": "258d4ba8b5b91133325cc9cd835b7c600b0e4765b55f3a7fb1db21457cd359d0"
+    },
+    {
+      "path": "final_status.json",
+      "bytes": 257,
+      "sha256": "5d7f1d974c83d4aa961634c8771986cba7e7ff69dcd2266141333eac01acbd57"
+    },
+    {
+      "path": "final_summary.json",
+      "bytes": 5159,
+      "sha256": "cbc24581c6fa74133b871a117a366702e690329fab5314f53525f5691af67f4f"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 846,
+      "sha256": "461982ef409650d3033d7618223f2b0caedf2725678fd15eaa975c7c9c068f77"
+    },
+    {
+      "path": "manifest_pin.txt",
+      "bytes": 66,
+      "sha256": "b51a0ccda32d61e710a5df60ebd3c5ca2e226ccda3540724cf65e38b72954def"
+    },
+    {
+      "path": "model_after_scan.py",
+      "bytes": 2486,
+      "sha256": "47f8b5abc94f8d8112f87218d01036db13c6c8830e15efa9acba2d669d3242b4"
+    },
+    {
+      "path": "pc_visual_receiver.py",
+      "bytes": 3911,
+      "sha256": "5a0c3530dc612272249d9d82eb3ee119060732d7e0aac604a12b00a1b6550416"
+    },
+    {
+      "path": "README_模型呈现与操作.md",
+      "bytes": 7633,
+      "sha256": "e0757e09d039643ef947fc8455ec5bf0584dc41b12fbc353b5dba950f27218c0"
+    },
+    {
+      "path": "test_pc_surface_receiver.py",
+      "bytes": 3000,
+      "sha256": "d79f22f79dc4c4eddad1663f1b73f9579647c7de6d1f5e6093e668ecb3528e71"
+    },
+    {
+      "path": "test_visual_pipeline.py",
+      "bytes": 3371,
+      "sha256": "d07233616557e41c499973000764b84f75de2559b007b39534badb9be0d725e1"
+    },
+    {
+      "path": "visual_button_service.py",
+      "bytes": 5037,
+      "sha256": "49431230d4e6c3b1d1dc9895753035c50dbcc74390e503264512787ff3582afa"
+    },
+    {
+      "path": "zynq-button-scan.service.deployed",
+      "bytes": 853,
+      "sha256": "723a179ae6a4eab0d7c58490c4cd5cd3b9e71474fed64dab8cd4a6edf3f209af"
+    }
+  ]
+}

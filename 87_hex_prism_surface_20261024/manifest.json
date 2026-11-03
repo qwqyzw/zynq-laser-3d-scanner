@@ -1,0 +1,23 @@
+{
+  "version": "20261024.hex_prism_completion.v1",
+  "capture_version_unchanged": "86_integer_reference_fix_20261024",
+  "files": {
+    "hex_model.py": "d3ddb0fe3da3c5f48cbf78325745b734eef77c7224289930c5c7e906bdbae6e4",
+    "hex_surface.py": "409516d390b34b16b2063e5133a00112e4a9a338bb8dd92db12ac47d94fadfb3",
+    "test_hex_model.py": "4e523245729bed6e8e493a09c566b632c7ced24780a7f5b347fdbf02b7d9a894",
+    "watch_hex.py": "28f82bf600b310797eee599327098a41dd0df25e7b147526302ddd33565e8523",
+    "viewer_template.html": "dc7242bdf60cbb80d979c71c0835d454f01efa6601fed5c3c5d6e75a74f1198b"
+  },
+  "dependencies": {
+    "86_integer_reference_fix_20261024/manifest.json": "06e6c6cc0167c16832edf85a0470499f7744062aeca473cf8e80f015a88d60b5",
+    "61_current_axis_laser_release_20261024/current_geometry.json": "a6581863f0e89d6bd89d3f70f7787a6f6c1b8c2f891e20e1a494d93a08267f14",
+    "69_surface_visualization_20261024/surface_model.py": "251579390e664f09ab66360fdd30e411ca8e633f777ad1e4bbf71ea34afaa0bb"
+  },
+  "hardware_accessed": false,
+  "assumptions": [
+    "user explicitly requests six-sided prism",
+    "vertical side faces estimated",
+    "base z=0 is an assumed reference bottom",
+    "no regular-hexagon dimensional template"
+  ]
+}

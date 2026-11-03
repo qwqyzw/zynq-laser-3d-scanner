@@ -1,0 +1,14 @@
+[
+  {
+    "file": "LICENSE",
+    "sha256": "6d822a20e645291ace79180f0ae94f604b9d5fb81165e302b2c7b8cd7bf83fc3"
+  },
+  {
+    "file": "ps7_settings.tcl",
+    "sha256": "f82950a8a31c88c19937f90c91af3ec9ff80e25266b8e495aeba130bae67588c"
+  },
+  {
+    "file": "pynqz2_official.tcl",
+    "sha256": "ebcf4641c5eecba0c0017fd7616215fa7a050de53e12b3bb59bec0115145ebaa"
+  }
+]

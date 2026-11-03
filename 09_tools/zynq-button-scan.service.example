@@ -1,0 +1,23 @@
+[Unit]
+Description=Zynq physical button scan and board-side point cloud
+After=network-online.target clear_pl_statefile.service
+Wants=network-online.target
+# PYNQ enables its one-shot cleanup at boot. Order after it, but do not pull it
+# in again on a manual service restart: that would erase a live PL identity.
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/xilinx/jupyter_notebooks/integrated_uart_20261020_193135/teammate_complete_20261020
+Environment=XILINX_XRT=/usr
+Environment=BOARD=Pynq-Z2
+ExecStart=/usr/local/share/pynq-venv/bin/python3 -B -u /home/xilinx/jupyter_notebooks/integrated_uart_20261020_193135/teammate_complete_20261020/09_tools/load_button_overlay.py --config /home/xilinx/jupyter_notebooks/button_scan/config.json --load-board --serve-board
+# Children may own DMA buffers. Never kill them as a side effect of stopping
+# the coordinator. SIGTERM requests bounded abort and waits for the child.
+KillMode=process
+TimeoutStopSec=infinity
+Restart=no
+UMask=0022
+
+[Install]
+WantedBy=multi-user.target

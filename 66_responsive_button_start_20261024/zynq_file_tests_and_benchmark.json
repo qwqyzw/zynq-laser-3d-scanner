@@ -1,0 +1,28 @@
+{
+  "hardware_accessed": false,
+  "test_only": true,
+  "tests": [
+    {
+      "source": "/home/xilinx/jupyter_notebooks/integrated_uart_20261020_193135/teammate_complete_20261020/66_responsive_button_start_20261024/test_responsive_start.py",
+      "return_code": 0,
+      "output": "test_ack_before_one_second_preserves_hold (__main__.Checks) ... ok\ntest_btn1_during_verification_prevents_child (__main__.Checks) ... ok\ntest_busy_stop_unchanged_and_no_queued_start (__main__.Checks) ... ok\ntest_failed_verification_launches_nothing_and_cache_not_retained (__main__.Checks) ... ok\ntest_no_permanent_verification_cache (__main__.Checks) ... ok\ntest_one_full_parent_inspection_exact_legacy_child_argv (__main__.Checks) ... ok\ntest_short_press_releases_without_start (__main__.Checks) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.123s\n\nOK\n"
+    },
+    {
+      "source": "/home/xilinx/jupyter_notebooks/integrated_uart_20261020_193135/teammate_complete_20261020/61_current_axis_laser_release_20261024/test_cancel_discard.py",
+      "return_code": 0,
+      "output": "{\"all_passed\": true, \"tests\": 10, \"failures\": 0, \"errors\": 0, \"new_PL_transactions\": 0, \"real_motor_commands\": 0}\ntest_acquisition_stop_is_bounded_then_data_discarded (__main__.Checks) ... ok\ntest_idle_btn1_once_and_fresh_release_before_start (__main__.Checks) ... ok\ntest_new_start_is_new_uuid_and_no_previous_points (__main__.Checks) ... ok\ntest_outside_path_refused (__main__.Checks) ... ok\ntest_pc_discard_closes_owned_preview_and_removes_only_cancelled_run (__main__.Checks) ... ok\ntest_pc_discard_refuses_outside_root (__main__.Checks) ... ok\ntest_reconstruction_stop_terminates_only_math_child (__main__.Checks) ... ok\ntest_retained_resources_prevent_deletion (__main__.Checks) ... ok\ntest_scope_never_deletes_other_runs_or_geometry (__main__.Checks) ... ok\ntest_threshold_and_acquisition_math_are_still_51 (__main__.Checks) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.206s\n\nOK\n"
+    }
+  ],
+  "paired_launch_benchmarks_s": [
+    {
+      "old": 4.746281758999885,
+      "new": 1.5842515979998097,
+      "saved_s": 3.162030161000075
+    },
+    {
+      "old": 4.766775438999957,
+      "new": 1.5828958070001136,
+      "saved_s": 3.1838796319998437
+    }
+  ]
+}

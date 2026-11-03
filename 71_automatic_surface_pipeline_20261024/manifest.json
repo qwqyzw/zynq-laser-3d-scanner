@@ -1,0 +1,11 @@
+{
+  "version": "20261024.automatic_surface.v1",
+  "base68_manifest_sha256": "75bddf292ee4807264815cc4898c264e2c8318e5b97a86082fc878cf218069a3",
+  "project_files": {
+    "71_automatic_surface_pipeline_20261024/visual_button_service.py": "49431230d4e6c3b1d1dc9895753035c50dbcc74390e503264512787ff3582afa",
+    "71_automatic_surface_pipeline_20261024/model_after_scan.py": "47f8b5abc94f8d8112f87218d01036db13c6c8830e15efa9acba2d669d3242b4",
+    "71_automatic_surface_pipeline_20261024/test_visual_pipeline.py": "d07233616557e41c499973000764b84f75de2559b007b39534badb9be0d725e1",
+    "69_surface_visualization_20261024/surface_model.py": "251579390e664f09ab66360fdd30e411ca8e633f777ad1e4bbf71ea34afaa0bb",
+    "69_surface_visualization_20261024/viewer_template.html": "aa753f334d971eaa97181f99e3f4ea37b736d020a64df386d17bb9bbed8690e0"
+  }
+}

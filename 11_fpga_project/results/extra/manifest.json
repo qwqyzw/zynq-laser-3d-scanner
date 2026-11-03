@@ -1,0 +1,242 @@
+[
+  {
+    "name": "full_roi_symmetric",
+    "mode": "core",
+    "roi": [
+      0,
+      0,
+      640,
+      480
+    ],
+    "threshold_q8": 3072,
+    "min_run": 0
+  },
+  {
+    "name": "full_roi_symmetric",
+    "mode": "full",
+    "roi": [
+      0,
+      0,
+      640,
+      480
+    ],
+    "threshold_q8": 3072,
+    "min_run": 8
+  },
+  {
+    "name": "top_image_edge",
+    "mode": "core",
+    "roi": [
+      0,
+      0,
+      640,
+      20
+    ],
+    "threshold_q8": 3072,
+    "min_run": 0
+  },
+  {
+    "name": "top_image_edge",
+    "mode": "full",
+    "roi": [
+      0,
+      0,
+      640,
+      20
+    ],
+    "threshold_q8": 3072,
+    "min_run": 8
+  },
+  {
+    "name": "bottom_last_columns",
+    "mode": "core",
+    "roi": [
+      637,
+      460,
+      640,
+      480
+    ],
+    "threshold_q8": 3072,
+    "min_run": 0
+  },
+  {
+    "name": "bottom_last_columns",
+    "mode": "full",
+    "roi": [
+      637,
+      460,
+      640,
+      480
+    ],
+    "threshold_q8": 3072,
+    "min_run": 8
+  },
+  {
+    "name": "equal_peaks_smallest_y",
+    "mode": "core",
+    "roi": [
+      0,
+      0,
+      12,
+      480
+    ],
+    "threshold_q8": 3072,
+    "min_run": 0
+  },
+  {
+    "name": "equal_peaks_smallest_y",
+    "mode": "full",
+    "roi": [
+      0,
+      0,
+      12,
+      480
+    ],
+    "threshold_q8": 3072,
+    "min_run": 8
+  },
+  {
+    "name": "runs_7_and_8",
+    "mode": "core",
+    "roi": [
+      90,
+      80,
+      140,
+      130
+    ],
+    "threshold_q8": 3072,
+    "min_run": 0
+  },
+  {
+    "name": "runs_7_and_8",
+    "mode": "full",
+    "roi": [
+      90,
+      80,
+      140,
+      130
+    ],
+    "threshold_q8": 3072,
+    "min_run": 8
+  },
+  {
+    "name": "roi_peak_on_first_row",
+    "mode": "core",
+    "roi": [
+      0,
+      102,
+      12,
+      120
+    ],
+    "threshold_q8": 3072,
+    "min_run": 0
+  },
+  {
+    "name": "roi_peak_on_first_row",
+    "mode": "full",
+    "roi": [
+      0,
+      102,
+      12,
+      120
+    ],
+    "threshold_q8": 3072,
+    "min_run": 8
+  },
+  {
+    "name": "roi_peak_on_last_row",
+    "mode": "core",
+    "roi": [
+      0,
+      80,
+      12,
+      103
+    ],
+    "threshold_q8": 3072,
+    "min_run": 0
+  },
+  {
+    "name": "roi_peak_on_last_row",
+    "mode": "full",
+    "roi": [
+      0,
+      80,
+      12,
+      103
+    ],
+    "threshold_q8": 3072,
+    "min_run": 8
+  },
+  {
+    "name": "negative_scores",
+    "mode": "core",
+    "roi": [
+      0,
+      0,
+      12,
+      480
+    ],
+    "threshold_q8": 0,
+    "min_run": 0
+  },
+  {
+    "name": "negative_scores",
+    "mode": "full",
+    "roi": [
+      0,
+      0,
+      12,
+      480
+    ],
+    "threshold_q8": 0,
+    "min_run": 8
+  },
+  {
+    "name": "one_column_roi",
+    "mode": "core",
+    "roi": [
+      639,
+      0,
+      640,
+      480
+    ],
+    "threshold_q8": 3072,
+    "min_run": 0
+  },
+  {
+    "name": "one_column_roi",
+    "mode": "full",
+    "roi": [
+      639,
+      0,
+      640,
+      480
+    ],
+    "threshold_q8": 3072,
+    "min_run": 8
+  },
+  {
+    "name": "one_row_roi",
+    "mode": "core",
+    "roi": [
+      0,
+      102,
+      640,
+      103
+    ],
+    "threshold_q8": 3072,
+    "min_run": 0
+  },
+  {
+    "name": "one_row_roi",
+    "mode": "full",
+    "roi": [
+      0,
+      102,
+      640,
+      103
+    ],
+    "threshold_q8": 3072,
+    "min_run": 8
+  }
+]

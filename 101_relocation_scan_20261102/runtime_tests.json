@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "checks": {
+    "bound_release_verified": true,
+    "bound_geometry_verified": true,
+    "all_actual_acquisition_source_unchanged": true,
+    "tampered_geometry_rejected": true,
+    "native_math_accepts_current_geometry": true,
+    "inverse_rotation_zero360_consistent": true,
+    "new_geometry_and_reference_explicit": true,
+    "service_config_dry_check_passed": true
+  },
+  "hardware_accessed": false,
+  "motor_commands_sent": false,
+  "actual_new_object_scan_tested": false,
+  "manifest_sha256": "ea4e1aea382a1b976719c18c3afa1001459a12674c5b2d3dc01acf174f77f571",
+  "geometry_sha256": "6a14cb739ccf39162d561721dc9f73143d3f09d5004b200f1b64b7251db527c5"
+}

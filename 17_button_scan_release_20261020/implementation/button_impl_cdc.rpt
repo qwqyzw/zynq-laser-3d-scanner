@@ -1,0 +1,30 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Tue Oct 20 22:40:45 2026
+| Host         : LAPTOP-ME2OHABI running 64-bit major release  (build 9200)
+| Command      : report_cdc -details -file D:/FPGAProjects/teammate_complete_20261020/17_button_scan_release_20261020/implementation/button_impl_cdc.rpt
+| Design       : bd_wrapper
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CDC Report
+
+ID     Severity  Count  Description
+-----  --------  -----  ------------------------------------------
+CDC-3  Info          5  1-bit synchronized with ASYNC_REG property
+
+Source Clock: input port clock
+Destination Clock: clk_fpga_0
+CDC Type: No Common Primary Clock
+
+Row  ID     Severity  Description                                 Depth  Exception   Source (From)    Destination (To)
+---  -----  --------  ------------------------------------------  -----  ----------  ---------------  ----------------------------------------------------------------------------------------------
+  1  CDC-3  Info      1-bit synchronized with ASYNC_REG property      4  False Path  motor_uart_rx    bd_i/axi_uartlite_0/U0/UARTLITE_CORE_I/UARTLITE_RX_I/INPUT_DOUBLE_REGS3/syncstages_ff_reg[0]/D
+  2  CDC-3  Info      1-bit synchronized with ASYNC_REG property      7  False Path  scan_buttons[0]  bd_i/button_sync_0/inst/sync_meta_reg[0]/D
+  3  CDC-3  Info      1-bit synchronized with ASYNC_REG property      7  False Path  scan_buttons[1]  bd_i/button_sync_0/inst/sync_meta_reg[1]/D
+  4  CDC-3  Info      1-bit synchronized with ASYNC_REG property      7  False Path  scan_buttons[2]  bd_i/button_sync_0/inst/sync_meta_reg[2]/D
+  5  CDC-3  Info      1-bit synchronized with ASYNC_REG property      7  False Path  scan_buttons[3]  bd_i/button_sync_0/inst/sync_meta_reg[3]/D
+

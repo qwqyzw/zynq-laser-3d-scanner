@@ -1,0 +1,10 @@
+{
+  "version": "20261024.review_before_surface.v1",
+  "base71_manifest_sha256": "461982ef409650d3033d7618223f2b0caedf2725678fd15eaa975c7c9c068f77",
+  "files": {
+    "pointcloud_review.py": "f5e64c91ae94191d39793f48b48afdfac754de91b1fcfde29041050461a2b520",
+    "review_first_service.py": "cf5497333fe0c24d41e76f6f541b6fa8e16636e17a5e61fe05ebc7b9f80f2479",
+    "test_pointcloud_review.py": "b1629697e883cb2cbdbd5228ee8ab15cc5c839986f4ad751b9acf67ca6936434",
+    "test_review_first_service.py": "bea54a1f1d74fba38011b374fcf83eb685fda4123f0088c25850960fe0c8cf96"
+  }
+}

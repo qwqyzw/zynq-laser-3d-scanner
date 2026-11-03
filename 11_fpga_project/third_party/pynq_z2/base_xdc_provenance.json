@@ -1,0 +1,11 @@
+{
+  "url": "https://raw.githubusercontent.com/Xilinx/PYNQ/e054c09c52db3244ef35c8ae08a2e62c1e4955fd/boards/Pynq-Z2/base/vivado/constraints/base.xdc",
+  "commit": "e054c09c52db3244ef35c8ae08a2e62c1e4955fd",
+  "sha256": "05d99c9032ceb21b2f6850955dd897a14a30d77ebda21d57867daa65caef2d3b",
+  "license": "BSD-3-Clause; see adjacent LICENSE",
+  "selected_pins": {
+    "arduino_D0": "T14",
+    "arduino_D1": "U12"
+  },
+  "date": "2026-10-20"
+}

@@ -1,0 +1,913 @@
+{
+  "client_date": "2026-10-24",
+  "status": "two_height_training_fit_passed_pending_holdout",
+  "execution_role": "zynq",
+  "hardware_accessed": false,
+  "fit_heights_mm": [
+    0,
+    12
+  ],
+  "independent_holdout_height_mm": 33.5,
+  "holdout_used_for_fit": false,
+  "metric_accuracy_accepted": false,
+  "axis_candidate_sha256": "c5ef4e93a527770d6e69e7af9b7f2328612e187d3447da340245315ccf34f071",
+  "reference_plane": {
+    "normal": [
+      0.013754915406195833,
+      -0.6183878483615727,
+      -0.7857526782015523
+    ],
+    "offset_mm": 163.0176478631621
+  },
+  "zero_evidence": {
+    "capture_report_sha256": "b6293318fa2348d6f720a9cb5fc294ee47360e094b915d5a981c5356aded6803",
+    "pixel_csv_sha256": "c3143d6ed2c2f2e2c6bd0dda2c3ef65d0d7caed53fb8aff1a5afe4a18041cbeb",
+    "source_bright_sha256": "0656ef8300003c2874dd07243df293f15dc2d5127b60e77938e1629328624e04",
+    "polygon_px": [
+      [
+        396.1900329589844,
+        298.223388671875
+      ],
+      [
+        296.50469970703125,
+        400.2777099609375
+      ],
+      [
+        205.5339813232422,
+        312.73675537109375
+      ],
+      [
+        192.66075134277344,
+        300.21258544921875
+      ],
+      [
+        180.25721740722656,
+        287.8311767578125
+      ],
+      [
+        280.82952880859375,
+        215.13243103027344
+      ],
+      [
+        334.0538024902344,
+        253.32965087890625
+      ]
+    ],
+    "erode_px": 3,
+    "selected_columns": 79,
+    "mask_selected_from_image_not_fitted_geometry": true,
+    "original_quality": {
+      "roi": [
+        175,
+        210,
+        440,
+        340
+      ],
+      "threshold": 12,
+      "min_run": 8,
+      "max_three_frame_range_px": 1.5,
+      "minimum_common_columns": 10,
+      "quality_columns_per_frame": [
+        125,
+        126,
+        126
+      ],
+      "rejection_counts": [
+        {
+          "saturation": 0,
+          "white_core": 0,
+          "multiple_peaks": 0
+        },
+        {
+          "saturation": 0,
+          "white_core": 0,
+          "multiple_peaks": 0
+        },
+        {
+          "saturation": 0,
+          "white_core": 0,
+          "multiple_peaks": 0
+        }
+      ],
+      "common_quality_columns": 124,
+      "valid_fraction_of_selected_roi": 0.4679245283018868,
+      "image_quality_gate_passed": true,
+      "geometric_or_height_filter_applied": false
+    }
+  },
+  "height12_evidence": {
+    "capture_report_sha256": "b937bae19cbcb289c2aae6bb34bdc7b82375c318a9ba51cc9719f071d74652a6",
+    "pixel_csv_sha256": "2268da2d6403c509f98f0dd8f5807079493cfb06d5bb43437447235be9798900",
+    "source_bright_sha256": "d1d326c183185b04556db637eaf7bbca3f6ddbdfa2f34bca7616c5d00c1b1535",
+    "polygon_px": [
+      [
+        260.0,
+        240.0
+      ],
+      [
+        322.0,
+        240.0
+      ],
+      [
+        326.0,
+        328.0
+      ],
+      [
+        254.0,
+        328.0
+      ]
+    ],
+    "erode_px": 3,
+    "selected_columns": 60,
+    "mask_selected_from_image_not_fitted_geometry": true,
+    "original_quality": {
+      "roi": [
+        175,
+        210,
+        440,
+        340
+      ],
+      "threshold": 12,
+      "min_run": 8,
+      "max_three_frame_range_px": 1.5,
+      "minimum_common_columns": 10,
+      "quality_columns_per_frame": [
+        165,
+        174,
+        172
+      ],
+      "rejection_counts": [
+        {
+          "saturation": 0,
+          "white_core": 0,
+          "multiple_peaks": 0
+        },
+        {
+          "saturation": 0,
+          "white_core": 0,
+          "multiple_peaks": 0
+        },
+        {
+          "saturation": 0,
+          "white_core": 0,
+          "multiple_peaks": 0
+        }
+      ],
+      "common_quality_columns": 164,
+      "valid_fraction_of_selected_roi": 0.6188679245283019,
+      "image_quality_gate_passed": true,
+      "geometric_or_height_filter_applied": false
+    }
+  },
+  "zero_camera_witness": {
+    "reference_image_sha256": "9b6996820e31588fe794103238ed2b6f07d733d937e6488b74648669ceb36e35",
+    "method": "all4 predefined fixed marker patches; NCC.90/margin.02/2px; no dropped patches",
+    "checks": [
+      {
+        "image": "laser_zero_capture/camera_session/bright_after_session/bright_00.png",
+        "sha256": "03b0b55f33f187e7081cf418d27e9bfa9eb17185de6b6c600b245a4ef16e346a",
+        "all4_preserved": true,
+        "patches": [
+          {
+            "rect": [
+              130,
+              155,
+              174,
+              194
+            ],
+            "correlation": 0.9816173315048218,
+            "margin": 0.5894864201545715,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              405,
+              155,
+              445,
+              192
+            ],
+            "correlation": 0.986140251159668,
+            "margin": 0.5064418911933899,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              70,
+              376,
+              112,
+              396
+            ],
+            "correlation": 0.9944976568222046,
+            "margin": 0.25306516885757446,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              466,
+              376,
+              510,
+              397
+            ],
+            "correlation": 0.9853297472000122,
+            "margin": 0.23933517932891846,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          }
+        ],
+        "passed": true
+      },
+      {
+        "image": "laser_zero_capture/camera_session/bright_after_session/bright_01.png",
+        "sha256": "2926b0859816039d06c0ec9350700cb5b87eff2dc18701c83cf28d9d9f6205ea",
+        "all4_preserved": true,
+        "patches": [
+          {
+            "rect": [
+              130,
+              155,
+              174,
+              194
+            ],
+            "correlation": 0.9818550944328308,
+            "margin": 0.5841743648052216,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              405,
+              155,
+              445,
+              192
+            ],
+            "correlation": 0.9863083958625793,
+            "margin": 0.5054430961608887,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              70,
+              376,
+              112,
+              396
+            ],
+            "correlation": 0.9941685199737549,
+            "margin": 0.2557883858680725,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              466,
+              376,
+              510,
+              397
+            ],
+            "correlation": 0.9888553023338318,
+            "margin": 0.2405979037284851,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          }
+        ],
+        "passed": true
+      },
+      {
+        "image": "laser_zero_capture/camera_session/bright_after_session/bright_02.png",
+        "sha256": "1bc0434e14360e8a5f314f082eb3d57fc7ac88a2e3aeaf4e4981431daa5f2c5c",
+        "all4_preserved": true,
+        "patches": [
+          {
+            "rect": [
+              130,
+              155,
+              174,
+              194
+            ],
+            "correlation": 0.9833800792694092,
+            "margin": 0.5799443125724792,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              405,
+              155,
+              445,
+              192
+            ],
+            "correlation": 0.9851700067520142,
+            "margin": 0.5012050569057465,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              70,
+              376,
+              112,
+              396
+            ],
+            "correlation": 0.9931250810623169,
+            "margin": 0.2598729133605957,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              466,
+              376,
+              510,
+              397
+            ],
+            "correlation": 0.9881477952003479,
+            "margin": 0.23917806148529053,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          }
+        ],
+        "passed": true
+      },
+      {
+        "image": "laser_zero_capture/camera_session/bright_before_session/bright_00.png",
+        "sha256": "0656ef8300003c2874dd07243df293f15dc2d5127b60e77938e1629328624e04",
+        "all4_preserved": true,
+        "patches": [
+          {
+            "rect": [
+              130,
+              155,
+              174,
+              194
+            ],
+            "correlation": 0.9772588014602661,
+            "margin": 0.5779371857643127,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              405,
+              155,
+              445,
+              192
+            ],
+            "correlation": 0.9865970015525818,
+            "margin": 0.5071808993816376,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              70,
+              376,
+              112,
+              396
+            ],
+            "correlation": 0.9946920275688171,
+            "margin": 0.2540966868400574,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              466,
+              376,
+              510,
+              397
+            ],
+            "correlation": 0.9897699952125549,
+            "margin": 0.237420916557312,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          }
+        ],
+        "passed": true
+      },
+      {
+        "image": "laser_zero_capture/camera_session/bright_before_session/bright_01.png",
+        "sha256": "abe60d5da17fdd6aaa258a5385c2ca40dd992b0c2f4ab9fa3e91e3bd684c34eb",
+        "all4_preserved": true,
+        "patches": [
+          {
+            "rect": [
+              130,
+              155,
+              174,
+              194
+            ],
+            "correlation": 0.9855979681015015,
+            "margin": 0.5801140069961548,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              405,
+              155,
+              445,
+              192
+            ],
+            "correlation": 0.9845344424247742,
+            "margin": 0.5071001052856445,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              70,
+              376,
+              112,
+              396
+            ],
+            "correlation": 0.9948137402534485,
+            "margin": 0.25063037872314453,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              466,
+              376,
+              510,
+              397
+            ],
+            "correlation": 0.9918987154960632,
+            "margin": 0.23977285623550415,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          }
+        ],
+        "passed": true
+      },
+      {
+        "image": "laser_zero_capture/camera_session/bright_before_session/bright_02.png",
+        "sha256": "5151bae2c7e6a555855e59f3c76d27ea639cd34df8bc4f84fa9e1731207f12a3",
+        "all4_preserved": true,
+        "patches": [
+          {
+            "rect": [
+              130,
+              155,
+              174,
+              194
+            ],
+            "correlation": 0.9775345325469971,
+            "margin": 0.5792417824268341,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              405,
+              155,
+              445,
+              192
+            ],
+            "correlation": 0.9860662221908569,
+            "margin": 0.5025007128715515,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              70,
+              376,
+              112,
+              396
+            ],
+            "correlation": 0.9937406182289124,
+            "margin": 0.25485163927078247,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              466,
+              376,
+              510,
+              397
+            ],
+            "correlation": 0.9892734289169312,
+            "margin": 0.2358061671257019,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          }
+        ],
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "height12_camera_witness": {
+    "reference_image_sha256": "9b6996820e31588fe794103238ed2b6f07d733d937e6488b74648669ceb36e35",
+    "method": "all4 predefined fixed marker patches; NCC.90/margin.02/2px; no dropped patches",
+    "checks": [
+      {
+        "image": "laser_height12_capture/camera_session/bright_after_session/bright_00.png",
+        "sha256": "acee30f6b1b2885e332e3eb488d251ad1c1dae7576a721a2b1c4e82eaf8d4944",
+        "all4_preserved": true,
+        "patches": [
+          {
+            "rect": [
+              130,
+              155,
+              174,
+              194
+            ],
+            "correlation": 0.9772665500640869,
+            "margin": 0.591424971818924,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              405,
+              155,
+              445,
+              192
+            ],
+            "correlation": 0.9862003326416016,
+            "margin": 0.5066249668598175,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              70,
+              376,
+              112,
+              396
+            ],
+            "correlation": 0.992228090763092,
+            "margin": 0.2537316083908081,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              466,
+              376,
+              510,
+              397
+            ],
+            "correlation": 0.9859047532081604,
+            "margin": 0.23877882957458496,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          }
+        ],
+        "passed": true
+      },
+      {
+        "image": "laser_height12_capture/camera_session/bright_after_session/bright_01.png",
+        "sha256": "8cf314da73301c6f73108453d2776ddccc600e19f3c68b282944be52c734988b",
+        "all4_preserved": true,
+        "patches": [
+          {
+            "rect": [
+              130,
+              155,
+              174,
+              194
+            ],
+            "correlation": 0.9775460958480835,
+            "margin": 0.5777684450149536,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              405,
+              155,
+              445,
+              192
+            ],
+            "correlation": 0.9634146690368652,
+            "margin": 0.49239999055862427,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              70,
+              376,
+              112,
+              396
+            ],
+            "correlation": 0.9915215969085693,
+            "margin": 0.2557358145713806,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              466,
+              376,
+              510,
+              397
+            ],
+            "correlation": 0.972277045249939,
+            "margin": 0.23769211769104004,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          }
+        ],
+        "passed": true
+      },
+      {
+        "image": "laser_height12_capture/camera_session/bright_after_session/bright_02.png",
+        "sha256": "57ebc90644fba80aaa668fc1510916bd5a1a99c6f7fc204005398070d5106bdc",
+        "all4_preserved": true,
+        "patches": [
+          {
+            "rect": [
+              130,
+              155,
+              174,
+              194
+            ],
+            "correlation": 0.9779217839241028,
+            "margin": 0.5857877135276794,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              405,
+              155,
+              445,
+              192
+            ],
+            "correlation": 0.9806665778160095,
+            "margin": 0.5097616910934448,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              70,
+              376,
+              112,
+              396
+            ],
+            "correlation": 0.989922285079956,
+            "margin": 0.25351113080978394,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              466,
+              376,
+              510,
+              397
+            ],
+            "correlation": 0.9848849177360535,
+            "margin": 0.2394748330116272,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          }
+        ],
+        "passed": true
+      },
+      {
+        "image": "laser_height12_capture/camera_session/bright_before_session/bright_00.png",
+        "sha256": "d1d326c183185b04556db637eaf7bbca3f6ddbdfa2f34bca7616c5d00c1b1535",
+        "all4_preserved": true,
+        "patches": [
+          {
+            "rect": [
+              130,
+              155,
+              174,
+              194
+            ],
+            "correlation": 0.9786723256111145,
+            "margin": 0.5868504643440247,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              405,
+              155,
+              445,
+              192
+            ],
+            "correlation": 0.987411379814148,
+            "margin": 0.513534814119339,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              70,
+              376,
+              112,
+              396
+            ],
+            "correlation": 0.9912201166152954,
+            "margin": 0.25899070501327515,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              466,
+              376,
+              510,
+              397
+            ],
+            "correlation": 0.9908852577209473,
+            "margin": 0.24166494607925415,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          }
+        ],
+        "passed": true
+      },
+      {
+        "image": "laser_height12_capture/camera_session/bright_before_session/bright_01.png",
+        "sha256": "5616518addb3aec738a78c7902475ca97464a703d1613d46934d89440e994ade",
+        "all4_preserved": true,
+        "patches": [
+          {
+            "rect": [
+              130,
+              155,
+              174,
+              194
+            ],
+            "correlation": 0.9736560583114624,
+            "margin": 0.563749760389328,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              405,
+              155,
+              445,
+              192
+            ],
+            "correlation": 0.9870127439498901,
+            "margin": 0.5052780210971832,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              70,
+              376,
+              112,
+              396
+            ],
+            "correlation": 0.9832999110221863,
+            "margin": 0.2649274468421936,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              466,
+              376,
+              510,
+              397
+            ],
+            "correlation": 0.9884711503982544,
+            "margin": 0.2413737177848816,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          }
+        ],
+        "passed": true
+      },
+      {
+        "image": "laser_height12_capture/camera_session/bright_before_session/bright_02.png",
+        "sha256": "81640a195045429e6989162cf0af0e81e11a8e2afe4f6266e2728037ffc4ed84",
+        "all4_preserved": true,
+        "patches": [
+          {
+            "rect": [
+              130,
+              155,
+              174,
+              194
+            ],
+            "correlation": 0.9791324138641357,
+            "margin": 0.5873754024505615,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              405,
+              155,
+              445,
+              192
+            ],
+            "correlation": 0.9834687113761902,
+            "margin": 0.5061607360839844,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              70,
+              376,
+              112,
+              396
+            ],
+            "correlation": 0.9918785691261292,
+            "margin": 0.2506583333015442,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          },
+          {
+            "rect": [
+              466,
+              376,
+              510,
+              397
+            ],
+            "correlation": 0.9922915101051331,
+            "margin": 0.23956555128097534,
+            "dx_px": 0,
+            "dy_px": 0,
+            "passed": true
+          }
+        ],
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "fit": {
+    "normal": [
+      0.0019267230472309823,
+      0.820253767741363,
+      -0.5719965421612243
+    ],
+    "offset_mm": 110.15740548660678,
+    "points": 139,
+    "spread_mm": [
+      20.409349184637016,
+      5.891897766207157,
+      0.2717335813741372
+    ],
+    "rms_mm": 0.27173358137413756,
+    "p95_abs_mm": 0.5924885304668251
+  },
+  "source_sha256": "062178ab06ab863980723a4eddc2cea786b7443de326466b6326b76c5ecc46e4"
+}

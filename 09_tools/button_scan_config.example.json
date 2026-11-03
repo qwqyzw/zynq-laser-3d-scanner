@@ -1,0 +1,17 @@
+{
+  "project": "/home/xilinx/jupyter_notebooks/integrated_uart_20261020_193135/teammate_complete_20261020",
+  "overlay_release": "/home/xilinx/jupyter_notebooks/integrated_uart_20261020_193135/teammate_complete_20261020/17_button_scan_release_20261020",
+  "geometry": "/home/xilinx/jupyter_notebooks/object_scan_20261020_202119/diagnostic_on_zynq/diagnostic_geometry.json",
+  "geometry_sha256": "d47d835ad5b10a63f19227f3e5c07ad4d733ef93c1c6f1f61122f458b392fe43",
+  "output_root": "/home/xilinx/jupyter_notebooks/button_scan",
+  "client_date": "2026-10-20",
+  "mode": "diagnostic_preview",
+  "roi": [
+    235,
+    280,
+    455,
+    405
+  ],
+  "exposure": 5,
+  "max_angle": 60
+}

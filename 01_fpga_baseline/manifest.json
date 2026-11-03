@@ -1,0 +1,641 @@
+{
+  "handoff_version": "horizontal_v4_20261019",
+  "interface_confirmation": "proposed_for_this_assignment_pending_teammate_ack",
+  "orientation": "horizontal",
+  "input_dimensions": [
+    640,
+    480
+  ],
+  "input_words": 307200,
+  "input_bytes": 1228800,
+  "output_records": 640,
+  "output_bytes": 2560,
+  "coordinate": "original_image_y_Q8",
+  "samples": [
+    {
+      "name": "flat_zero.png",
+      "roi": [
+        155,
+        235,
+        355,
+        300
+      ],
+      "threshold": 12.0,
+      "role": "real_flat_positive",
+      "source": "horizontal_v3_20261016/zero.png",
+      "sha256": "cf385da52117f469964eba439cc591190944849551c344c29cdb65f50125ce2e",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 200,
+        "full": 200
+      }
+    },
+    {
+      "name": "flat_reference_11_5.png",
+      "roi": [
+        235,
+        205,
+        305,
+        275
+      ],
+      "threshold": 12.0,
+      "role": "real_flat_positive",
+      "source": "horizontal_v3_20261016/reference_11_5.png",
+      "sha256": "9f3bb39a1f492ae84492ac07980558f6d0e88e6efbd505ebe9b617c526a66231",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 70,
+        "full": 70
+      }
+    },
+    {
+      "name": "flat_reference_30.png",
+      "roi": [
+        175,
+        145,
+        330,
+        235
+      ],
+      "threshold": 12.0,
+      "role": "real_flat_positive",
+      "source": "horizontal_v3_20261016/reference_30.png",
+      "sha256": "19c345ab9dc0510c17f041263c5068a6c1c8cdc90201bf714cb6744b645b0682",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 155,
+        "full": 155
+      }
+    },
+    {
+      "name": "flat_holdout_4.png",
+      "roi": [
+        230,
+        235,
+        310,
+        290
+      ],
+      "threshold": 12.0,
+      "role": "real_flat_positive",
+      "source": "horizontal_v3_20261016/holdout_4.png",
+      "sha256": "90a901b778068b11c0cc51ac77c4a34454ca2ccaf834a8d260dc64b7c7401038",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 80,
+        "full": 80
+      }
+    },
+    {
+      "name": "flat_laser_off.png",
+      "roi": [
+        230,
+        235,
+        310,
+        290
+      ],
+      "threshold": 12.0,
+      "role": "real_laser_off",
+      "source": "horizontal_v3_20261016/laser_off.png",
+      "sha256": "b9f41b97d2510bb814cb9d9247d38542dfe34a2f5ecaf6b8d0a32d354128b3f8",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 0,
+        "full": 0
+      }
+    },
+    {
+      "name": "flat_zero_final.png",
+      "roi": [
+        155,
+        235,
+        355,
+        300
+      ],
+      "threshold": 12.0,
+      "role": "real_flat_positive",
+      "source": "horizontal_v3_20261016/zero_final.png",
+      "sha256": "c872d84f44c9319ac4fd4af863674e5391d59aebaf4a887fcca94fd64c6aea9a",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 200,
+        "full": 200
+      }
+    },
+    {
+      "name": "curve90_curve_point_00.png",
+      "roi": [
+        225,
+        184,
+        380,
+        236
+      ],
+      "threshold": 12,
+      "role": "real_curved_positive",
+      "source": "curve90_20261018/scan/point_00_raw_01.png",
+      "sha256": "d0d3a479009f06f08f4bdec9a18edeaf64c64ee150496cdd273bee3945005ab6",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 135,
+        "full": 135
+      }
+    },
+    {
+      "name": "curve90_curve_point_02.png",
+      "roi": [
+        225,
+        184,
+        380,
+        236
+      ],
+      "threshold": 12,
+      "role": "real_curved_positive",
+      "source": "curve90_20261018/scan/point_02_raw_01.png",
+      "sha256": "f440535d3552d515e664ffb7e3e99b66b371540adefc4f508720412f1e5ea430",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 135,
+        "full": 135
+      }
+    },
+    {
+      "name": "curve90_curve_point_04.png",
+      "roi": [
+        225,
+        184,
+        380,
+        236
+      ],
+      "threshold": 12,
+      "role": "real_curved_positive",
+      "source": "curve90_20261018/scan/point_04_raw_01.png",
+      "sha256": "9f469299eb977632403ae3f0e42c756327c403a4f26787f8b83785ff8c36075e",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 112,
+        "full": 105
+      }
+    },
+    {
+      "name": "curve90_curve_point_07.png",
+      "roi": [
+        225,
+        184,
+        380,
+        236
+      ],
+      "threshold": 12,
+      "role": "real_curved_positive",
+      "source": "curve90_20261018/scan/point_07_raw_01.png",
+      "sha256": "5bdcc2b406a421f7da76aa06906c3546f2b67dc950d9595afe86bcaab0c4fa2c",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 104,
+        "full": 104
+      }
+    },
+    {
+      "name": "curve90_curve_point_11.png",
+      "roi": [
+        225,
+        184,
+        380,
+        236
+      ],
+      "threshold": 12,
+      "role": "real_curved_positive",
+      "source": "curve90_20261018/scan/point_11_raw_01.png",
+      "sha256": "dde62a59d3985534b0061d99c61460253ac12c589ab7bcc94089022c40602742",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 134,
+        "full": 134
+      }
+    },
+    {
+      "name": "shape180_point_00.png",
+      "roi": [
+        200,
+        184,
+        380,
+        236
+      ],
+      "threshold": 12,
+      "role": "real_curved_positive",
+      "source": "earphone_shape_20261018/scan/point_00_raw_01.png",
+      "sha256": "6bccbc2c28dad0347748e0497d2b0d0cc5e87dfcae64eb2b0c4116db0eca7542",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 131,
+        "full": 131
+      }
+    },
+    {
+      "name": "shape180_point_19.png",
+      "roi": [
+        200,
+        184,
+        380,
+        236
+      ],
+      "threshold": 12,
+      "role": "real_curved_positive",
+      "source": "earphone_shape_20261018/scan/point_19_raw_01.png",
+      "sha256": "66186bc040400b3f5cbbd48e284068a8ac480db98084ef566fc0b94173f0d5de",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 100,
+        "full": 91
+      }
+    },
+    {
+      "name": "shape180_point_28.png",
+      "roi": [
+        200,
+        184,
+        380,
+        236
+      ],
+      "threshold": 12,
+      "role": "real_curved_positive",
+      "source": "earphone_shape_20261018/scan/point_28_raw_01.png",
+      "sha256": "fac3529fc6ddeb6164f96a5ae24b690561133f20e5c8770c00272efa12b67ae4",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 115,
+        "full": 115
+      }
+    },
+    {
+      "name": "shape180_point_30.png",
+      "roi": [
+        200,
+        184,
+        380,
+        236
+      ],
+      "threshold": 12,
+      "role": "real_curved_positive",
+      "source": "earphone_shape_20261018/scan/point_30_raw_01.png",
+      "sha256": "63490afc57dfefc94ad265a032d0f4e2fd3f8c997eeb7d8505c9c73295e3373e",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 122,
+        "full": 116
+      }
+    },
+    {
+      "name": "shape180_point_39.png",
+      "roi": [
+        200,
+        184,
+        380,
+        236
+      ],
+      "threshold": 12,
+      "role": "real_curved_positive",
+      "source": "earphone_shape_20261018/scan/point_39_raw_01.png",
+      "sha256": "99500f45afb0c2f13efb241d2a794abf5dee5f40370f1e94cf6b3e6e336a15b7",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 116,
+        "full": 115
+      }
+    },
+    {
+      "name": "shape180_point_40.png",
+      "roi": [
+        200,
+        184,
+        380,
+        236
+      ],
+      "threshold": 12,
+      "role": "real_curved_positive",
+      "source": "earphone_shape_20261018/scan/point_40_raw_01.png",
+      "sha256": "0867f86ae81819b223df6e2cf71b884da87a95305e6e2492f1da9652672f26fb",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 132,
+        "full": 132
+      }
+    },
+    {
+      "name": "shape180_point_29.png",
+      "roi": [
+        200,
+        184,
+        380,
+        236
+      ],
+      "threshold": 12,
+      "role": "real_power_loss_laser_off",
+      "source": "earphone_shape_20261018/scan/point_29_raw_01.png",
+      "sha256": "f17eed304f6552ff2c08bd14dff3c3ad7e1d0e50c82ca822fe56f123b32e8bcd",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 0,
+        "full": 0
+      }
+    },
+    {
+      "name": "synthetic_no_laser.png",
+      "roi": [
+        165,
+        180,
+        420,
+        365
+      ],
+      "threshold": 15.0,
+      "role": "synthetic_not_physical_evidence",
+      "source": "horizontal_v2_synthetic/synthetic_no_laser.png",
+      "sha256": "bc9e01d6e8c34885b8aa3cc7b1df45178753cbf6c31b51b9560685be4ad9b8a1",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 0,
+        "full": 0
+      }
+    },
+    {
+      "name": "synthetic_straight.png",
+      "roi": [
+        165,
+        180,
+        420,
+        365
+      ],
+      "threshold": 15.0,
+      "role": "synthetic_not_physical_evidence",
+      "source": "horizontal_v2_synthetic/synthetic_straight.png",
+      "sha256": "7448987d01f004df8ae27f1a6b8bef1a938a4ca6740fc81cf3d2b102f62f5565",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 200,
+        "full": 200
+      }
+    },
+    {
+      "name": "synthetic_shadow_short.png",
+      "roi": [
+        165,
+        180,
+        420,
+        365
+      ],
+      "threshold": 15.0,
+      "role": "synthetic_not_physical_evidence",
+      "source": "horizontal_v2_synthetic/synthetic_shadow_short.png",
+      "sha256": "d4ee9d7371171483a05136924835c8697fbd6b73f46dbea0e2ee32c9ecd38598",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 135,
+        "full": 125
+      }
+    },
+    {
+      "name": "synthetic_saturated.png",
+      "roi": [
+        165,
+        180,
+        420,
+        365
+      ],
+      "threshold": 15.0,
+      "role": "synthetic_not_physical_evidence",
+      "source": "horizontal_v2_synthetic/synthetic_saturated.png",
+      "sha256": "41be4136dc08427efa8bf4feee86c494cb44611351aadd8c384f4b9388c3f449",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 200,
+        "full": 200
+      }
+    },
+    {
+      "name": "synthetic_roi_edge.png",
+      "roi": [
+        165,
+        180,
+        420,
+        365
+      ],
+      "threshold": 15.0,
+      "role": "synthetic_not_physical_evidence",
+      "source": "horizontal_v2_synthetic/synthetic_roi_edge.png",
+      "sha256": "e41945489ffa7860b4a0f28c9de8b38b612eef041cf0f0f4b55281fa9307f344",
+      "geometric_height_truth": false,
+      "valid_columns": {
+        "core": 0,
+        "full": 0
+      }
+    }
+  ],
+  "three_frame_groups": [
+    {
+      "sample_name": "curve90_curve_point_00.png",
+      "three_originals": [
+        "groups/curve90_curve_point_00_raw_00.png",
+        "groups/curve90_curve_point_00_raw_01.png",
+        "groups/curve90_curve_point_00_raw_02.png"
+      ],
+      "roi": [
+        225,
+        184,
+        380,
+        236
+      ],
+      "expected_ps_common_columns": 134,
+      "source": "curve90_real_capture"
+    },
+    {
+      "sample_name": "curve90_curve_point_02.png",
+      "three_originals": [
+        "groups/curve90_curve_point_02_raw_00.png",
+        "groups/curve90_curve_point_02_raw_01.png",
+        "groups/curve90_curve_point_02_raw_02.png"
+      ],
+      "roi": [
+        225,
+        184,
+        380,
+        236
+      ],
+      "expected_ps_common_columns": 125,
+      "source": "curve90_real_capture"
+    },
+    {
+      "sample_name": "curve90_curve_point_04.png",
+      "three_originals": [
+        "groups/curve90_curve_point_04_raw_00.png",
+        "groups/curve90_curve_point_04_raw_01.png",
+        "groups/curve90_curve_point_04_raw_02.png"
+      ],
+      "roi": [
+        225,
+        184,
+        380,
+        236
+      ],
+      "expected_ps_common_columns": 104,
+      "source": "curve90_real_capture"
+    },
+    {
+      "sample_name": "curve90_curve_point_07.png",
+      "three_originals": [
+        "groups/curve90_curve_point_07_raw_00.png",
+        "groups/curve90_curve_point_07_raw_01.png",
+        "groups/curve90_curve_point_07_raw_02.png"
+      ],
+      "roi": [
+        225,
+        184,
+        380,
+        236
+      ],
+      "expected_ps_common_columns": 84,
+      "source": "curve90_real_capture"
+    },
+    {
+      "sample_name": "curve90_curve_point_11.png",
+      "three_originals": [
+        "groups/curve90_curve_point_11_raw_00.png",
+        "groups/curve90_curve_point_11_raw_01.png",
+        "groups/curve90_curve_point_11_raw_02.png"
+      ],
+      "roi": [
+        225,
+        184,
+        380,
+        236
+      ],
+      "expected_ps_common_columns": 133,
+      "source": "curve90_real_capture"
+    },
+    {
+      "sample_name": "shape180_point_00.png",
+      "three_originals": [
+        "groups/shape180_point_00_raw_00.png",
+        "groups/shape180_point_00_raw_01.png",
+        "groups/shape180_point_00_raw_02.png"
+      ],
+      "roi": [
+        200,
+        184,
+        380,
+        236
+      ],
+      "expected_ps_common_columns": 126,
+      "source": "shape180_real_capture",
+      "failed_acquisition_retained": false
+    },
+    {
+      "sample_name": "shape180_point_19.png",
+      "three_originals": [
+        "groups/shape180_point_19_raw_00.png",
+        "groups/shape180_point_19_raw_01.png",
+        "groups/shape180_point_19_raw_02.png"
+      ],
+      "roi": [
+        200,
+        184,
+        380,
+        236
+      ],
+      "expected_ps_common_columns": 88,
+      "source": "shape180_real_capture",
+      "failed_acquisition_retained": false
+    },
+    {
+      "sample_name": "shape180_point_28.png",
+      "three_originals": [
+        "groups/shape180_point_28_raw_00.png",
+        "groups/shape180_point_28_raw_01.png",
+        "groups/shape180_point_28_raw_02.png"
+      ],
+      "roi": [
+        200,
+        184,
+        380,
+        236
+      ],
+      "expected_ps_common_columns": 108,
+      "source": "shape180_real_capture",
+      "failed_acquisition_retained": false
+    },
+    {
+      "sample_name": "shape180_point_30.png",
+      "three_originals": [
+        "groups/shape180_point_30_raw_00.png",
+        "groups/shape180_point_30_raw_01.png",
+        "groups/shape180_point_30_raw_02.png"
+      ],
+      "roi": [
+        200,
+        184,
+        380,
+        236
+      ],
+      "expected_ps_common_columns": 106,
+      "source": "shape180_real_capture",
+      "failed_acquisition_retained": false
+    },
+    {
+      "sample_name": "shape180_point_39.png",
+      "three_originals": [
+        "groups/shape180_point_39_raw_00.png",
+        "groups/shape180_point_39_raw_01.png",
+        "groups/shape180_point_39_raw_02.png"
+      ],
+      "roi": [
+        200,
+        184,
+        380,
+        236
+      ],
+      "expected_ps_common_columns": 99,
+      "source": "shape180_real_capture",
+      "failed_acquisition_retained": false
+    },
+    {
+      "sample_name": "shape180_point_40.png",
+      "three_originals": [
+        "groups/shape180_point_40_raw_00.png",
+        "groups/shape180_point_40_raw_01.png",
+        "groups/shape180_point_40_raw_02.png"
+      ],
+      "roi": [
+        200,
+        184,
+        380,
+        236
+      ],
+      "expected_ps_common_columns": 130,
+      "source": "shape180_real_capture",
+      "failed_acquisition_retained": false
+    },
+    {
+      "sample_name": "shape180_point_29.png",
+      "three_originals": [
+        "groups/shape180_point_29_raw_00.png",
+        "groups/shape180_point_29_raw_01.png",
+        "groups/shape180_point_29_raw_02.png"
+      ],
+      "roi": [
+        200,
+        184,
+        380,
+        236
+      ],
+      "expected_ps_common_columns": 0,
+      "source": "shape180_real_capture",
+      "failed_acquisition_retained": true
+    }
+  ],
+  "algorithm_sources_sha256": {
+    "laser_horizontal_check.py": "b300aa4011e7c4ed9d93d512f8cc2ef3794d38183bec0351d664f5901dc32ca5",
+    "laser_vertical_fast.py": "c95c1a52a2439b3127f7620afef3d89a2d991d955ea4b1cddb230d15e62bab42",
+    "scan_stripe_quality.py": "7a92c3a548051114b40b30c8202c25790de15b4e6d87b9ce08fda3cf1e048fbb"
+  },
+  "rtl_included": false,
+  "rtl_simulated": false,
+  "hardware_validated": false,
+  "absolute_accuracy_verified": false,
+  "reference_data_is_not_independent_generalization_test": true
+}

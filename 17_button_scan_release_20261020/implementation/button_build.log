@@ -1,0 +1,975 @@
+INFO: [Common 17-3922] A valid Vivado Design Suite ENTERPRISE license has been detected. Your current license is active and will expire on 03-dec-2026.
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Tue Oct 20 22:18:17 2026
+# Process ID         : 31556
+# Current directory  : D:/FPGAProjects/teammate_complete_20261020
+# Command line       : vivado.exe -mode batch -source D:/FPGAProjects/teammate_complete_20261020/09_tools/build_button_overlay.tcl -log D:/FPGAProjects/teammate_complete_20261020/17_button_scan_release_20261020/implementation/button_build.log -journal D:/FPGAProjects/teammate_complete_20261020/17_button_scan_release_20261020/implementation/button_build.jou -tclargs bit
+# Log file           : D:/FPGAProjects/teammate_complete_20261020/17_button_scan_release_20261020/implementation/button_build.log
+# Journal file       : D:/FPGAProjects/teammate_complete_20261020/17_button_scan_release_20261020/implementation/button_build.jou
+# Running On         : LAPTOP-ME2OHABI
+# Platform           : Windows 11
+# Operating System   : 22631
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i7-13650HX
+# CPU Frequency      : 2803 MHz
+# CPU Physical cores : 14
+# CPU Logical cores  : 20
+# Host memory        : 16780 MB
+# Swap memory        : 20068 MB
+# Total Virtual      : 36849 MB
+# Available Virtual  : 3706 MB
+#-----------------------------------------------------------
+source D:/FPGAProjects/teammate_complete_20261020/09_tools/build_button_overlay.tcl
+# set active_root [file normalize [file join [file dirname [info script]] ..]]
+# set project_root [file join $active_root 11_fpga_project]
+# set release_root [file join $active_root 17_button_scan_release_20261020]
+# set button_source [file join $release_root source]
+# set stage create
+# if {[llength $argv] > 0} {set stage [lindex $argv 0]}
+# if {$stage ni {create synth impl bit}} {error "Stage must be create, synth, impl or bit"}
+# set build_dir [file join $project_root build button]
+# if {[llength $argv] > 1} {set build_dir [file normalize [lindex $argv 1]]}
+# if {[llength $argv] > 3} {error "Too many arguments"}
+# set project_name ls
+# set design_name bd
+# set reports [file join $release_root implementation]
+# set output_dir $release_root
+# if {[llength $argv] > 2} {set output_dir [file normalize [lindex $argv 2]]}
+# set xpr [file join $build_dir ${project_name}.xpr]
+# set marker [file join $build_dir button_overlay_owned.txt]
+# set rtl_files [list [file join $project_root rtl laser_stripe_core.sv] [file join $project_root rtl laser_stripe_axi.sv] [file join $button_source button_sync.sv]]
+# foreach path $rtl_files {if {![file isfile $path]} {error "Required RTL missing: $path"}}
+# set preset [file join $project_root third_party pynq_z2 ps7_settings.tcl]
+# if {![file isfile $preset]} {error "Missing pinned official PYNQ-Z2 preset: $preset"}
+# file mkdir $reports
+# set task_temp [file join $project_root build temp]
+# file mkdir $task_temp
+# set env(TEMP) $task_temp
+# set env(TMP) $task_temp
+# set_param general.maxThreads 1
+# proc require_one {objects description} {
+#     if {[llength $objects] != 1} {error "Expected one $description, found: $objects"}
+#     return [lindex $objects 0]
+# }
+# proc run_complete {name} {
+#     set status [get_property STATUS [get_runs $name]]
+#     if {![string match "*Complete*" $status]} {error "$name failed or incomplete: $status"}
+# }
+# proc checkpoint_run {name} {
+#     set status [get_property STATUS [get_runs $name]]
+#     if {[get_property NEEDS_REFRESH [get_runs $name]]} {
+#         error "$name is stale after a source change. Use a fresh build_dir to preserve previous results."
+#     }
+#     if {![string match "*Complete*" $status]} {
+#         launch_runs $name -jobs 1
+#         wait_on_run $name
+#     }
+#     run_complete $name
+# }
+# if {[file exists $xpr]} {
+#     if {![file isfile $marker]} {error "Refusing unrelated existing project without ownership marker: $xpr"}
+#     open_project $xpr
+#     open_bd_design [require_one [get_files -quiet */${design_name}.bd] {owned block design}]
+#     update_compile_order -fileset sources_1
+#     set ref_ip [require_one [get_ips -filter {IPDEF =~ xilinx.com:module_ref:laser_stripe_axi:*}] {laser module reference IP}]
+#     if {[get_property PROGRESS [get_runs synth_1]] eq "0%"} {update_module_reference $ref_ip}
+# } else {
+#     if {[file exists $build_dir] && [llength [glob -nocomplain -directory $build_dir *]] > 0} {
+#         error "Refusing nonempty build_dir without expected project: $build_dir"
+#     }
+#     file mkdir $build_dir
+#     create_project $project_name $build_dir -part xc7z020clg400-1
+#     set_property target_language Verilog [current_project]
+#     set_property simulator_language Mixed [current_project]
+#     set_property default_lib xil_defaultlib [current_project]
+#     add_files -norecurse $rtl_files
+#     add_files -fileset constrs_1 -norecurse [file join $project_root constraints motor_uart.xdc]
+#     add_files -fileset constrs_1 -norecurse [file join $button_source button_gpio.xdc]
+#     update_compile_order -fileset sources_1
+#     create_bd_design $design_name
+# 
+#     set ps [create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0]
+#     source $preset
+#     # Values below are the motor_uart overlay's fabric settings; DDR/MIO remain from PYNQ-Z2.
+#     set_property -dict $pynq_z2_ps7_settings $ps
+#     set_property -dict [list CONFIG.PCW_USE_M_AXI_GP0 {1} CONFIG.PCW_USE_S_AXI_HP0 {1} \
+#         CONFIG.PCW_S_AXI_HP0_DATA_WIDTH {64} CONFIG.PCW_EN_CLK0_PORT {1} \
+#         CONFIG.PCW_EN_CLK1_PORT {0} CONFIG.PCW_EN_CLK2_PORT {0} CONFIG.PCW_EN_CLK3_PORT {0} \
+#         CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {50.000000} CONFIG.PCW_USE_FABRIC_INTERRUPT {0}] $ps
+# 
+#     set ddr [create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddrx_rtl:1.0 DDR]
+#     set fixed [create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO]
+#     connect_bd_intf_net $ddr [get_bd_intf_pins $ps/DDR]
+#     connect_bd_intf_net $fixed [get_bd_intf_pins $ps/FIXED_IO]
+# 
+#     set core [create_bd_cell -type module -reference laser_stripe_axi laser_stripe_0]
+#     set dma [create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma:7.1 axi_dma_0]
+#     set_property -dict [list CONFIG.c_include_sg {0} CONFIG.c_include_mm2s {1} \
+#         CONFIG.c_include_s2mm {1} CONFIG.c_sg_length_width {23} \
+#         CONFIG.c_m_axi_mm2s_data_width {32} CONFIG.c_m_axi_s2mm_data_width {32} \
+#         CONFIG.c_m_axis_mm2s_tdata_width {32} CONFIG.c_s_axis_s2mm_tdata_width {32} \
+#         CONFIG.c_include_mm2s_dre {0} CONFIG.c_include_s2mm_dre {0} \
+#         CONFIG.c_mm2s_burst_size {16} CONFIG.c_s2mm_burst_size {16}] $dma
+#     set uart [create_bd_cell -type ip -vlnv xilinx.com:ip:axi_uartlite:2.0 axi_uartlite_0]
+#     set_property -dict [list CONFIG.C_BAUDRATE {9600} CONFIG.C_DATA_BITS {8} \
+#         CONFIG.C_USE_PARITY {0} CONFIG.C_ODD_PARITY {0}] $uart
+#     set uart_rx [create_bd_port -dir I motor_uart_rx]
+#     set uart_tx [create_bd_port -dir O motor_uart_tx]
+#     connect_bd_net $uart_rx [get_bd_pins $uart/rx]
+#     connect_bd_net [get_bd_pins $uart/tx] $uart_tx
+#     set scan_gpio [create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_scan]
+#     set_property -dict [list CONFIG.C_IS_DUAL {1} CONFIG.C_GPIO_WIDTH {4} CONFIG.C_ALL_INPUTS {1} \
+#         CONFIG.C_GPIO2_WIDTH {4} CONFIG.C_ALL_OUTPUTS_2 {1} CONFIG.C_INTERRUPT_PRESENT {0} \
+#         CONFIG.C_DOUT_DEFAULT_2 {0x00000000}] $scan_gpio
+#     set scan_sync [create_bd_cell -type module -reference button_sync button_sync_0]
+#     set btn_port [create_bd_port -dir I -from 3 -to 0 scan_buttons]
+#     set led_port [create_bd_port -dir O -from 3 -to 0 scan_leds]
+#     connect_bd_net $btn_port [get_bd_pins $scan_sync/buttons_async]
+#     connect_bd_net [get_bd_pins $scan_sync/buttons_sync] [get_bd_pins $scan_gpio/gpio_io_i]
+#     connect_bd_net [get_bd_pins $scan_gpio/gpio2_io_o] $led_port
+#     set ctrl [create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_control]
+#     set_property -dict [list CONFIG.NUM_SI {1} CONFIG.NUM_MI {4}] $ctrl
+#     set mem [create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_memory]
+#     set_property -dict [list CONFIG.NUM_SI {2} CONFIG.NUM_MI {1}] $mem
+#     set rst [create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_fclk0]
+#     # Reset polarity is propagated from FCLK_RESET0_N; C_EXT_RESET_HIGH is read-only.
+#     set const1 [create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 clock_locked]
+#     set_property -dict [list CONFIG.CONST_WIDTH {1} CONFIG.CONST_VAL {1}] $const1
+#     set const0 [create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 reset_inactive]
+#     set_property -dict [list CONFIG.CONST_WIDTH {1} CONFIG.CONST_VAL {0}] $const0
+# 
+#     connect_bd_intf_net [get_bd_intf_pins $ps/M_AXI_GP0] [get_bd_intf_pins $ctrl/S00_AXI]
+#     connect_bd_intf_net [get_bd_intf_pins $ctrl/M00_AXI] [get_bd_intf_pins $dma/S_AXI_LITE]
+#     connect_bd_intf_net [get_bd_intf_pins $ctrl/M01_AXI] [get_bd_intf_pins $core/S_AXI]
+#     connect_bd_intf_net [get_bd_intf_pins $ctrl/M02_AXI] [get_bd_intf_pins $uart/S_AXI]
+#     connect_bd_intf_net [get_bd_intf_pins $ctrl/M03_AXI] [get_bd_intf_pins $scan_gpio/S_AXI]
+#     connect_bd_intf_net [get_bd_intf_pins $dma/M_AXI_MM2S] [get_bd_intf_pins $mem/S00_AXI]
+#     connect_bd_intf_net [get_bd_intf_pins $dma/M_AXI_S2MM] [get_bd_intf_pins $mem/S01_AXI]
+#     connect_bd_intf_net [get_bd_intf_pins $mem/M00_AXI] [get_bd_intf_pins $ps/S_AXI_HP0]
+#     connect_bd_intf_net [get_bd_intf_pins $dma/M_AXIS_MM2S] [get_bd_intf_pins $core/S_AXIS]
+#     connect_bd_intf_net [get_bd_intf_pins $core/M_AXIS] [get_bd_intf_pins $dma/S_AXIS_S2MM]
+# 
+#     set clocks [list $ps/M_AXI_GP0_ACLK $ps/S_AXI_HP0_ACLK $rst/slowest_sync_clk \
+#         $core/aclk $dma/s_axi_lite_aclk $dma/m_axi_mm2s_aclk $dma/m_axi_s2mm_aclk \
+#         $ctrl/ACLK $ctrl/S00_ACLK $ctrl/M00_ACLK $ctrl/M01_ACLK $ctrl/M02_ACLK $ctrl/M03_ACLK $uart/s_axi_aclk $scan_gpio/s_axi_aclk $scan_sync/aclk \
+#         $mem/ACLK $mem/S00_ACLK $mem/S01_ACLK $mem/M00_ACLK]
+#     foreach pin $clocks {connect_bd_net [get_bd_pins $ps/FCLK_CLK0] [get_bd_pins $pin]}
+#     connect_bd_net [get_bd_pins $ps/FCLK_RESET0_N] [get_bd_pins $rst/ext_reset_in]
+#     connect_bd_net [get_bd_pins $const1/dout] [get_bd_pins $rst/dcm_locked] [get_bd_pins $rst/aux_reset_in]
+#     connect_bd_net [get_bd_pins $const0/dout] [get_bd_pins $rst/mb_debug_sys_rst]
+#     foreach pin [list $core/aresetn $dma/axi_resetn $uart/s_axi_aresetn $scan_gpio/s_axi_aresetn $scan_sync/aresetn] {
+#         connect_bd_net [get_bd_pins $rst/peripheral_aresetn] [get_bd_pins $pin]
+#     }
+#     foreach pin [list $ctrl/ARESETN $ctrl/S00_ARESETN $ctrl/M00_ARESETN $ctrl/M01_ARESETN $ctrl/M02_ARESETN $ctrl/M03_ARESETN \
+#         $mem/ARESETN $mem/S00_ARESETN $mem/S01_ARESETN $mem/M00_ARESETN] {
+#         connect_bd_net [get_bd_pins $rst/interconnect_aresetn] [get_bd_pins $pin]
+#     }
+#     # DMA is polled by software. Its interrupt outputs are intentionally unused.
+#     assign_bd_address -offset 0x40400000 -range 64K -target_address_space \
+#         [get_bd_addr_spaces $ps/Data] [get_bd_addr_segs $dma/S_AXI_LITE/Reg]
+#     set core_seg [require_one [get_bd_addr_segs -of_objects [get_bd_intf_pins $core/S_AXI]] {core slave address segment}]
+#     assign_bd_address -offset 0x43C00000 -range 64K -target_address_space [get_bd_addr_spaces $ps/Data] $core_seg
+#     assign_bd_address -offset 0x42C00000 -range 64K -target_address_space [get_bd_addr_spaces $ps/Data] [get_bd_addr_segs $uart/S_AXI/Reg]
+#     assign_bd_address -offset 0x41200000 -range 64K -target_address_space [get_bd_addr_spaces $ps/Data] [get_bd_addr_segs $scan_gpio/S_AXI/Reg]
+#     assign_bd_address
+#     save_bd_design
+#     set mark [open $marker w]
+#     puts $mark "Owned by 09_tools/build_button_overlay.tcl; PYNQ-Z2; UART+GPIO new candidate, not board validated"
+#     close $mark
+# }
+create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:22 . Memory (MB): peak = 588.051 ; gain = 267.211
+Wrote  : <D:\FPGAProjects\teammate_complete_20261020\11_fpga_project\build\button\ls.srcs\sources_1\bd\bd\bd.bd> 
+## set pynq_z2_ps7_settings [list \
+##     CONFIG.PCW_ACT_APU_PERIPHERAL_FREQMHZ {650.000000} \
+##     CONFIG.PCW_ACT_CAN0_PERIPHERAL_FREQMHZ {23.8095} \
+##     CONFIG.PCW_ACT_CAN1_PERIPHERAL_FREQMHZ {23.8095} \
+##     CONFIG.PCW_ACT_CAN_PERIPHERAL_FREQMHZ {10.000000} \
+##     CONFIG.PCW_ACT_DCI_PERIPHERAL_FREQMHZ {10.096154} \
+##     CONFIG.PCW_ACT_ENET0_PERIPHERAL_FREQMHZ {125.000000} \
+##     CONFIG.PCW_ACT_ENET1_PERIPHERAL_FREQMHZ {10.000000} \
+##     CONFIG.PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ {100.000000} \
+##     CONFIG.PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ {142.857132} \
+##     CONFIG.PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ {200.000000} \
+##     CONFIG.PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ {166.666672} \
+##     CONFIG.PCW_ACT_I2C_PERIPHERAL_FREQMHZ {50} \
+##     CONFIG.PCW_ACT_PCAP_PERIPHERAL_FREQMHZ {200.000000} \
+##     CONFIG.PCW_ACT_QSPI_PERIPHERAL_FREQMHZ {200.000000} \
+##     CONFIG.PCW_ACT_SDIO_PERIPHERAL_FREQMHZ {50.000000} \
+##     CONFIG.PCW_ACT_SMC_PERIPHERAL_FREQMHZ {10.000000} \
+##     CONFIG.PCW_ACT_SPI_PERIPHERAL_FREQMHZ {10.000000} \
+##     CONFIG.PCW_ACT_TPIU_PERIPHERAL_FREQMHZ {200.000000} \
+##     CONFIG.PCW_ACT_TTC0_CLK0_PERIPHERAL_FREQMHZ {108.333336} \
+##     CONFIG.PCW_ACT_TTC0_CLK1_PERIPHERAL_FREQMHZ {108.333336} \
+##     CONFIG.PCW_ACT_TTC0_CLK2_PERIPHERAL_FREQMHZ {108.333336} \
+##     CONFIG.PCW_ACT_TTC1_CLK0_PERIPHERAL_FREQMHZ {108.333336} \
+##     CONFIG.PCW_ACT_TTC1_CLK1_PERIPHERAL_FREQMHZ {108.333336} \
+##     CONFIG.PCW_ACT_TTC1_CLK2_PERIPHERAL_FREQMHZ {108.333336} \
+##     CONFIG.PCW_ACT_TTC_PERIPHERAL_FREQMHZ {50} \
+##     CONFIG.PCW_ACT_UART_PERIPHERAL_FREQMHZ {100.000000} \
+##     CONFIG.PCW_ACT_USB0_PERIPHERAL_FREQMHZ {60} \
+##     CONFIG.PCW_ACT_USB1_PERIPHERAL_FREQMHZ {60} \
+##     CONFIG.PCW_ACT_WDT_PERIPHERAL_FREQMHZ {108.333336} \
+##     CONFIG.PCW_APU_CLK_RATIO_ENABLE {6:2:1} \
+##     CONFIG.PCW_APU_PERIPHERAL_FREQMHZ {650} \
+##     CONFIG.PCW_CAN0_PERIPHERAL_CLKSRC {External} \
+##     CONFIG.PCW_CAN0_PERIPHERAL_ENABLE {0} \
+##     CONFIG.PCW_CAN1_PERIPHERAL_CLKSRC {External} \
+##     CONFIG.PCW_CAN1_PERIPHERAL_ENABLE {0} \
+##     CONFIG.PCW_CAN_PERIPHERAL_CLKSRC {IO PLL} \
+##     CONFIG.PCW_CAN_PERIPHERAL_VALID {0} \
+##     CONFIG.PCW_CLK0_FREQ {100000000} \
+##     CONFIG.PCW_CLK1_FREQ {142857132} \
+##     CONFIG.PCW_CLK2_FREQ {200000000} \
+##     CONFIG.PCW_CLK3_FREQ {166666672} \
+##     CONFIG.PCW_CORE0_FIQ_INTR {0} \
+##     CONFIG.PCW_CORE0_IRQ_INTR {0} \
+##     CONFIG.PCW_CORE1_FIQ_INTR {0} \
+##     CONFIG.PCW_CORE1_IRQ_INTR {0} \
+##     CONFIG.PCW_CPU_CPU_6X4X_MAX_RANGE {667} \
+##     CONFIG.PCW_CPU_PERIPHERAL_CLKSRC {ARM PLL} \
+##     CONFIG.PCW_CRYSTAL_PERIPHERAL_FREQMHZ {50} \
+##     CONFIG.PCW_DCI_PERIPHERAL_CLKSRC {DDR PLL} \
+##     CONFIG.PCW_DCI_PERIPHERAL_FREQMHZ {10.159} \
+##     CONFIG.PCW_DDR_PERIPHERAL_CLKSRC {DDR PLL} \
+##     CONFIG.PCW_DDR_RAM_BASEADDR {0x00100000} \
+##     CONFIG.PCW_DDR_RAM_HIGHADDR {0x1FFFFFFF} \
+##     CONFIG.PCW_DM_WIDTH {4} \
+##     CONFIG.PCW_DQS_WIDTH {4} \
+##     CONFIG.PCW_DQ_WIDTH {32} \
+##     CONFIG.PCW_ENET0_BASEADDR {0xE000B000} \
+##     CONFIG.PCW_ENET0_ENET0_IO {MIO 16 .. 27} \
+##     CONFIG.PCW_ENET0_GRP_MDIO_ENABLE {1} \
+##     CONFIG.PCW_ENET0_GRP_MDIO_IO {MIO 52 .. 53} \
+##     CONFIG.PCW_ENET0_HIGHADDR {0xE000BFFF} \
+##     CONFIG.PCW_ENET0_PERIPHERAL_CLKSRC {IO PLL} \
+##     CONFIG.PCW_ENET0_PERIPHERAL_ENABLE {1} \
+##     CONFIG.PCW_ENET0_PERIPHERAL_FREQMHZ {1000 Mbps} \
+##     CONFIG.PCW_ENET0_RESET_ENABLE {1} \
+##     CONFIG.PCW_ENET0_RESET_IO {MIO 9} \
+##     CONFIG.PCW_ENET1_PERIPHERAL_CLKSRC {IO PLL} \
+##     CONFIG.PCW_ENET1_PERIPHERAL_ENABLE {0} \
+##     CONFIG.PCW_ENET_RESET_ENABLE {1} \
+##     CONFIG.PCW_ENET_RESET_POLARITY {Active Low} \
+##     CONFIG.PCW_ENET_RESET_SELECT {Share reset pin} \
+##     CONFIG.PCW_EN_4K_TIMER {0} \
+##     CONFIG.PCW_EN_CAN0 {0} \
+##     CONFIG.PCW_EN_CAN1 {0} \
+##     CONFIG.PCW_EN_CLK0_PORT {1} \
+##     CONFIG.PCW_EN_CLK1_PORT {1} \
+##     CONFIG.PCW_EN_CLK2_PORT {1} \
+##     CONFIG.PCW_EN_CLK3_PORT {1} \
+##     CONFIG.PCW_EN_CLKTRIG0_PORT {0} \
+##     CONFIG.PCW_EN_CLKTRIG1_PORT {0} \
+##     CONFIG.PCW_EN_CLKTRIG2_PORT {0} \
+##     CONFIG.PCW_EN_CLKTRIG3_PORT {0} \
+##     CONFIG.PCW_EN_DDR {1} \
+##     CONFIG.PCW_EN_EMIO_CAN0 {0} \
+##     CONFIG.PCW_EN_EMIO_CAN1 {0} \
+##     CONFIG.PCW_EN_EMIO_CD_SDIO0 {0} \
+##     CONFIG.PCW_EN_EMIO_CD_SDIO1 {0} \
+##     CONFIG.PCW_EN_EMIO_ENET0 {0} \
+##     CONFIG.PCW_EN_EMIO_ENET1 {0} \
+##     CONFIG.PCW_EN_EMIO_GPIO {0} \
+##     CONFIG.PCW_EN_EMIO_I2C0 {0} \
+##     CONFIG.PCW_EN_EMIO_I2C1 {0} \
+##     CONFIG.PCW_EN_EMIO_MODEM_UART0 {0} \
+##     CONFIG.PCW_EN_EMIO_MODEM_UART1 {0} \
+##     CONFIG.PCW_EN_EMIO_PJTAG {0} \
+##     CONFIG.PCW_EN_EMIO_SDIO0 {0} \
+##     CONFIG.PCW_EN_EMIO_SDIO1 {0} \
+##     CONFIG.PCW_EN_EMIO_SPI0 {0} \
+##     CONFIG.PCW_EN_EMIO_SPI1 {0} \
+##     CONFIG.PCW_EN_EMIO_SRAM_INT {0} \
+##     CONFIG.PCW_EN_EMIO_TRACE {0} \
+##     CONFIG.PCW_EN_EMIO_TTC0 {0} \
+##     CONFIG.PCW_EN_EMIO_TTC1 {0} \
+##     CONFIG.PCW_EN_EMIO_UART0 {0} \
+##     CONFIG.PCW_EN_EMIO_UART1 {0} \
+##     CONFIG.PCW_EN_EMIO_WDT {0} \
+##     CONFIG.PCW_EN_EMIO_WP_SDIO0 {0} \
+##     CONFIG.PCW_EN_EMIO_WP_SDIO1 {0} \
+##     CONFIG.PCW_EN_ENET0 {1} \
+##     CONFIG.PCW_EN_ENET1 {0} \
+##     CONFIG.PCW_EN_GPIO {1} \
+##     CONFIG.PCW_EN_I2C0 {0} \
+##     CONFIG.PCW_EN_I2C1 {0} \
+##     CONFIG.PCW_EN_MODEM_UART0 {0} \
+##     CONFIG.PCW_EN_MODEM_UART1 {0} \
+##     CONFIG.PCW_EN_PJTAG {0} \
+##     CONFIG.PCW_EN_PTP_ENET0 {0} \
+##     CONFIG.PCW_EN_PTP_ENET1 {0} \
+##     CONFIG.PCW_EN_QSPI {1} \
+##     CONFIG.PCW_EN_RST0_PORT {1} \
+##     CONFIG.PCW_EN_RST1_PORT {0} \
+##     CONFIG.PCW_EN_RST2_PORT {0} \
+##     CONFIG.PCW_EN_RST3_PORT {0} \
+##     CONFIG.PCW_EN_SDIO0 {1} \
+##     CONFIG.PCW_EN_SDIO1 {0} \
+##     CONFIG.PCW_EN_SMC {0} \
+##     CONFIG.PCW_EN_SPI0 {0} \
+##     CONFIG.PCW_EN_SPI1 {0} \
+##     CONFIG.PCW_EN_TRACE {0} \
+##     CONFIG.PCW_EN_TTC0 {0} \
+##     CONFIG.PCW_EN_TTC1 {0} \
+##     CONFIG.PCW_EN_UART0 {1} \
+##     CONFIG.PCW_EN_UART1 {0} \
+##     CONFIG.PCW_EN_USB0 {1} \
+##     CONFIG.PCW_EN_USB1 {0} \
+##     CONFIG.PCW_EN_WDT {0} \
+##     CONFIG.PCW_FCLK0_PERIPHERAL_CLKSRC {IO PLL} \
+##     CONFIG.PCW_FCLK1_PERIPHERAL_CLKSRC {IO PLL} \
+##     CONFIG.PCW_FCLK2_PERIPHERAL_CLKSRC {IO PLL} \
+##     CONFIG.PCW_FCLK3_PERIPHERAL_CLKSRC {IO PLL} \
+##     CONFIG.PCW_FCLK_CLK0_BUF {TRUE} \
+##     CONFIG.PCW_FCLK_CLK1_BUF {FALSE} \
+##     CONFIG.PCW_FCLK_CLK2_BUF {FALSE} \
+##     CONFIG.PCW_FCLK_CLK3_BUF {FALSE} \
+##     CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {100} \
+##     CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {142.86} \
+##     CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ {200} \
+##     CONFIG.PCW_FPGA3_PERIPHERAL_FREQMHZ {166.67} \
+##     CONFIG.PCW_FPGA_FCLK0_ENABLE {1} \
+##     CONFIG.PCW_FPGA_FCLK1_ENABLE {1} \
+##     CONFIG.PCW_FPGA_FCLK2_ENABLE {1} \
+##     CONFIG.PCW_FPGA_FCLK3_ENABLE {1} \
+##     CONFIG.PCW_GPIO_BASEADDR {0xE000A000} \
+##     CONFIG.PCW_GPIO_EMIO_GPIO_ENABLE {0} \
+##     CONFIG.PCW_GPIO_HIGHADDR {0xE000AFFF} \
+##     CONFIG.PCW_GPIO_MIO_GPIO_ENABLE {1} \
+##     CONFIG.PCW_GPIO_MIO_GPIO_IO {MIO} \
+##     CONFIG.PCW_GPIO_PERIPHERAL_ENABLE {0} \
+##     CONFIG.PCW_I2C0_PERIPHERAL_ENABLE {0} \
+##     CONFIG.PCW_I2C1_PERIPHERAL_ENABLE {0} \
+##     CONFIG.PCW_I2C_RESET_ENABLE {1} \
+##     CONFIG.PCW_I2C_RESET_POLARITY {Active Low} \
+##     CONFIG.PCW_IMPORT_BOARD_PRESET {None} \
+##     CONFIG.PCW_INCLUDE_ACP_TRANS_CHECK {0} \
+##     CONFIG.PCW_IRQ_F2P_INTR {1} \
+##     CONFIG.PCW_IRQ_F2P_MODE {DIRECT} \
+##     CONFIG.PCW_MIO_0_IOTYPE {LVCMOS 3.3V} \
+##     CONFIG.PCW_MIO_0_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_0_SLEW {slow} \
+##     CONFIG.PCW_MIO_10_IOTYPE {LVCMOS 3.3V} \
+##     CONFIG.PCW_MIO_10_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_10_SLEW {slow} \
+##     CONFIG.PCW_MIO_11_IOTYPE {LVCMOS 3.3V} \
+##     CONFIG.PCW_MIO_11_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_11_SLEW {slow} \
+##     CONFIG.PCW_MIO_12_IOTYPE {LVCMOS 3.3V} \
+##     CONFIG.PCW_MIO_12_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_12_SLEW {slow} \
+##     CONFIG.PCW_MIO_13_IOTYPE {LVCMOS 3.3V} \
+##     CONFIG.PCW_MIO_13_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_13_SLEW {slow} \
+##     CONFIG.PCW_MIO_14_IOTYPE {LVCMOS 3.3V} \
+##     CONFIG.PCW_MIO_14_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_14_SLEW {slow} \
+##     CONFIG.PCW_MIO_15_IOTYPE {LVCMOS 3.3V} \
+##     CONFIG.PCW_MIO_15_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_15_SLEW {slow} \
+##     CONFIG.PCW_MIO_16_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_16_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_16_SLEW {slow} \
+##     CONFIG.PCW_MIO_17_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_17_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_17_SLEW {slow} \
+##     CONFIG.PCW_MIO_18_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_18_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_18_SLEW {slow} \
+##     CONFIG.PCW_MIO_19_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_19_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_19_SLEW {slow} \
+##     CONFIG.PCW_MIO_1_IOTYPE {LVCMOS 3.3V} \
+##     CONFIG.PCW_MIO_1_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_1_SLEW {slow} \
+##     CONFIG.PCW_MIO_20_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_20_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_20_SLEW {slow} \
+##     CONFIG.PCW_MIO_21_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_21_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_21_SLEW {slow} \
+##     CONFIG.PCW_MIO_22_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_22_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_22_SLEW {slow} \
+##     CONFIG.PCW_MIO_23_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_23_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_23_SLEW {slow} \
+##     CONFIG.PCW_MIO_24_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_24_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_24_SLEW {slow} \
+##     CONFIG.PCW_MIO_25_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_25_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_25_SLEW {slow} \
+##     CONFIG.PCW_MIO_26_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_26_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_26_SLEW {slow} \
+##     CONFIG.PCW_MIO_27_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_27_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_27_SLEW {slow} \
+##     CONFIG.PCW_MIO_28_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_28_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_28_SLEW {slow} \
+##     CONFIG.PCW_MIO_29_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_29_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_29_SLEW {slow} \
+##     CONFIG.PCW_MIO_2_IOTYPE {LVCMOS 3.3V} \
+##     CONFIG.PCW_MIO_2_SLEW {slow} \
+##     CONFIG.PCW_MIO_30_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_30_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_30_SLEW {slow} \
+##     CONFIG.PCW_MIO_31_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_31_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_31_SLEW {slow} \
+##     CONFIG.PCW_MIO_32_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_32_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_32_SLEW {slow} \
+##     CONFIG.PCW_MIO_33_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_33_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_33_SLEW {slow} \
+##     CONFIG.PCW_MIO_34_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_34_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_34_SLEW {slow} \
+##     CONFIG.PCW_MIO_35_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_35_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_35_SLEW {slow} \
+##     CONFIG.PCW_MIO_36_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_36_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_36_SLEW {slow} \
+##     CONFIG.PCW_MIO_37_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_37_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_37_SLEW {slow} \
+##     CONFIG.PCW_MIO_38_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_38_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_38_SLEW {slow} \
+##     CONFIG.PCW_MIO_39_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_39_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_39_SLEW {slow} \
+##     CONFIG.PCW_MIO_3_IOTYPE {LVCMOS 3.3V} \
+##     CONFIG.PCW_MIO_3_SLEW {slow} \
+##     CONFIG.PCW_MIO_40_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_40_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_40_SLEW {slow} \
+##     CONFIG.PCW_MIO_41_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_41_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_41_SLEW {slow} \
+##     CONFIG.PCW_MIO_42_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_42_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_42_SLEW {slow} \
+##     CONFIG.PCW_MIO_43_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_43_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_43_SLEW {slow} \
+##     CONFIG.PCW_MIO_44_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_44_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_44_SLEW {slow} \
+##     CONFIG.PCW_MIO_45_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_45_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_45_SLEW {slow} \
+##     CONFIG.PCW_MIO_46_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_46_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_46_SLEW {slow} \
+##     CONFIG.PCW_MIO_47_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_47_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_47_SLEW {slow} \
+##     CONFIG.PCW_MIO_48_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_48_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_48_SLEW {slow} \
+##     CONFIG.PCW_MIO_49_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_49_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_49_SLEW {slow} \
+##     CONFIG.PCW_MIO_4_IOTYPE {LVCMOS 3.3V} \
+##     CONFIG.PCW_MIO_4_SLEW {slow} \
+##     CONFIG.PCW_MIO_50_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_50_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_50_SLEW {slow} \
+##     CONFIG.PCW_MIO_51_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_51_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_51_SLEW {slow} \
+##     CONFIG.PCW_MIO_52_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_52_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_52_SLEW {slow} \
+##     CONFIG.PCW_MIO_53_IOTYPE {LVCMOS 1.8V} \
+##     CONFIG.PCW_MIO_53_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_53_SLEW {slow} \
+##     CONFIG.PCW_MIO_5_IOTYPE {LVCMOS 3.3V} \
+##     CONFIG.PCW_MIO_5_SLEW {slow} \
+##     CONFIG.PCW_MIO_6_IOTYPE {LVCMOS 3.3V} \
+##     CONFIG.PCW_MIO_6_SLEW {slow} \
+##     CONFIG.PCW_MIO_7_IOTYPE {LVCMOS 3.3V} \
+##     CONFIG.PCW_MIO_7_SLEW {slow} \
+##     CONFIG.PCW_MIO_8_IOTYPE {LVCMOS 3.3V} \
+##     CONFIG.PCW_MIO_8_SLEW {slow} \
+##     CONFIG.PCW_MIO_9_IOTYPE {LVCMOS 3.3V} \
+##     CONFIG.PCW_MIO_9_PULLUP {enabled} \
+##     CONFIG.PCW_MIO_9_SLEW {slow} \
+##     CONFIG.PCW_MIO_PRIMITIVE {54} \
+##     CONFIG.PCW_MIO_TREE_PERIPHERALS {GPIO#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#GPIO#Quad SPI Flash#ENET Reset#GPIO#GPIO#GPIO#GPIO#UART 0#UART 0#Enet\
+## 0#Enet 0#Enet 0#Enet 0#Enet 0#Enet 0#Enet 0#Enet 0#Enet 0#Enet 0#Enet 0#Enet 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#SD 0#SD 0#SD 0#SD 0#SD 0#SD 0#USB Reset#SD 0#GPIO#GPIO#GPIO#GPIO#Enet\
+## 0#Enet 0} \
+##     CONFIG.PCW_MIO_TREE_SIGNALS {gpio[0]#qspi0_ss_b#qspi0_io[0]#qspi0_io[1]#qspi0_io[2]#qspi0_io[3]/HOLD_B#qspi0_sclk#gpio[7]#qspi_fbclk#reset#gpio[10]#gpio[11]#gpio[12]#gpio[13]#rx#tx#tx_clk#txd[0]#txd[1]#txd[2]#txd[3]#tx_ctl#rx_clk#rxd[0]#rxd[1]#rxd[2]#rxd[3]#rx_ctl#data[4]#dir#stp#nxt#data[0]#data[1]#data[2]#data[3]#clk#data[5]#data[6]#data[7]#clk#cmd#data[0]#data[1]#data[2]#data[3]#reset#cd#gpio[48]#gpio[49]#gpio[50]#gpio[51]#mdc#mdio}\
+## \
+##     CONFIG.PCW_NAND_CYCLES_T_AR {1} \
+##     CONFIG.PCW_NAND_CYCLES_T_CLR {1} \
+##     CONFIG.PCW_NAND_CYCLES_T_RC {11} \
+##     CONFIG.PCW_NAND_CYCLES_T_REA {1} \
+##     CONFIG.PCW_NAND_CYCLES_T_RR {1} \
+##     CONFIG.PCW_NAND_CYCLES_T_WC {11} \
+##     CONFIG.PCW_NAND_CYCLES_T_WP {1} \
+##     CONFIG.PCW_NOR_CS0_T_CEOE {1} \
+##     CONFIG.PCW_NOR_CS0_T_PC {1} \
+##     CONFIG.PCW_NOR_CS0_T_RC {11} \
+##     CONFIG.PCW_NOR_CS0_T_TR {1} \
+##     CONFIG.PCW_NOR_CS0_T_WC {11} \
+##     CONFIG.PCW_NOR_CS0_T_WP {1} \
+##     CONFIG.PCW_NOR_CS0_WE_TIME {0} \
+##     CONFIG.PCW_NOR_CS1_T_CEOE {1} \
+##     CONFIG.PCW_NOR_CS1_T_PC {1} \
+##     CONFIG.PCW_NOR_CS1_T_RC {11} \
+##     CONFIG.PCW_NOR_CS1_T_TR {1} \
+##     CONFIG.PCW_NOR_CS1_T_WC {11} \
+##     CONFIG.PCW_NOR_CS1_T_WP {1} \
+##     CONFIG.PCW_NOR_CS1_WE_TIME {0} \
+##     CONFIG.PCW_NOR_SRAM_CS0_T_CEOE {1} \
+##     CONFIG.PCW_NOR_SRAM_CS0_T_PC {1} \
+##     CONFIG.PCW_NOR_SRAM_CS0_T_RC {11} \
+##     CONFIG.PCW_NOR_SRAM_CS0_T_TR {1} \
+##     CONFIG.PCW_NOR_SRAM_CS0_T_WC {11} \
+##     CONFIG.PCW_NOR_SRAM_CS0_T_WP {1} \
+##     CONFIG.PCW_NOR_SRAM_CS0_WE_TIME {0} \
+##     CONFIG.PCW_NOR_SRAM_CS1_T_CEOE {1} \
+##     CONFIG.PCW_NOR_SRAM_CS1_T_PC {1} \
+##     CONFIG.PCW_NOR_SRAM_CS1_T_RC {11} \
+##     CONFIG.PCW_NOR_SRAM_CS1_T_TR {1} \
+##     CONFIG.PCW_NOR_SRAM_CS1_T_WC {11} \
+##     CONFIG.PCW_NOR_SRAM_CS1_T_WP {1} \
+##     CONFIG.PCW_NOR_SRAM_CS1_WE_TIME {0} \
+##     CONFIG.PCW_OVERRIDE_BASIC_CLOCK {0} \
+##     CONFIG.PCW_P2F_ENET0_INTR {0} \
+##     CONFIG.PCW_P2F_GPIO_INTR {0} \
+##     CONFIG.PCW_P2F_QSPI_INTR {0} \
+##     CONFIG.PCW_P2F_SDIO0_INTR {0} \
+##     CONFIG.PCW_P2F_UART0_INTR {0} \
+##     CONFIG.PCW_P2F_USB0_INTR {0} \
+##     CONFIG.PCW_PACKAGE_DDR_BOARD_DELAY0 {0.223} \
+##     CONFIG.PCW_PACKAGE_DDR_BOARD_DELAY1 {0.212} \
+##     CONFIG.PCW_PACKAGE_DDR_BOARD_DELAY2 {0.085} \
+##     CONFIG.PCW_PACKAGE_DDR_BOARD_DELAY3 {0.092} \
+##     CONFIG.PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_0 {0.040} \
+##     CONFIG.PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_1 {0.058} \
+##     CONFIG.PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_2 {-0.009} \
+##     CONFIG.PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_3 {-0.033} \
+##     CONFIG.PCW_PACKAGE_NAME {clg400} \
+##     CONFIG.PCW_PCAP_PERIPHERAL_CLKSRC {IO PLL} \
+##     CONFIG.PCW_PCAP_PERIPHERAL_FREQMHZ {200} \
+##     CONFIG.PCW_PERIPHERAL_BOARD_PRESET {None} \
+##     CONFIG.PCW_PJTAG_PERIPHERAL_ENABLE {0} \
+##     CONFIG.PCW_PLL_BYPASSMODE_ENABLE {0} \
+##     CONFIG.PCW_PRESET_BANK0_VOLTAGE {LVCMOS 3.3V} \
+##     CONFIG.PCW_PRESET_BANK1_VOLTAGE {LVCMOS 1.8V} \
+##     CONFIG.PCW_PS7_SI_REV {PRODUCTION} \
+##     CONFIG.PCW_QSPI_GRP_FBCLK_ENABLE {1} \
+##     CONFIG.PCW_QSPI_GRP_FBCLK_IO {MIO 8} \
+##     CONFIG.PCW_QSPI_GRP_IO1_ENABLE {0} \
+##     CONFIG.PCW_QSPI_GRP_SINGLE_SS_ENABLE {1} \
+##     CONFIG.PCW_QSPI_GRP_SINGLE_SS_IO {MIO 1 .. 6} \
+##     CONFIG.PCW_QSPI_GRP_SS1_ENABLE {0} \
+##     CONFIG.PCW_QSPI_INTERNAL_HIGHADDRESS {0xFCFFFFFF} \
+##     CONFIG.PCW_QSPI_PERIPHERAL_CLKSRC {IO PLL} \
+##     CONFIG.PCW_QSPI_PERIPHERAL_ENABLE {1} \
+##     CONFIG.PCW_QSPI_PERIPHERAL_FREQMHZ {200} \
+##     CONFIG.PCW_QSPI_QSPI_IO {MIO 1 .. 6} \
+##     CONFIG.PCW_SD0_GRP_CD_ENABLE {1} \
+##     CONFIG.PCW_SD0_GRP_CD_IO {MIO 47} \
+##     CONFIG.PCW_SD0_GRP_POW_ENABLE {0} \
+##     CONFIG.PCW_SD0_GRP_WP_ENABLE {0} \
+##     CONFIG.PCW_SD0_PERIPHERAL_ENABLE {1} \
+##     CONFIG.PCW_SD0_SD0_IO {MIO 40 .. 45} \
+##     CONFIG.PCW_SD1_PERIPHERAL_ENABLE {0} \
+##     CONFIG.PCW_SDIO0_BASEADDR {0xE0100000} \
+##     CONFIG.PCW_SDIO0_HIGHADDR {0xE0100FFF} \
+##     CONFIG.PCW_SDIO_PERIPHERAL_CLKSRC {IO PLL} \
+##     CONFIG.PCW_SDIO_PERIPHERAL_FREQMHZ {50} \
+##     CONFIG.PCW_SDIO_PERIPHERAL_VALID {1} \
+##     CONFIG.PCW_SINGLE_QSPI_DATA_MODE {x4} \
+##     CONFIG.PCW_SMC_CYCLE_T0 {NA} \
+##     CONFIG.PCW_SMC_CYCLE_T1 {NA} \
+##     CONFIG.PCW_SMC_CYCLE_T2 {NA} \
+##     CONFIG.PCW_SMC_CYCLE_T3 {NA} \
+##     CONFIG.PCW_SMC_CYCLE_T4 {NA} \
+##     CONFIG.PCW_SMC_CYCLE_T5 {NA} \
+##     CONFIG.PCW_SMC_CYCLE_T6 {NA} \
+##     CONFIG.PCW_SMC_PERIPHERAL_CLKSRC {IO PLL} \
+##     CONFIG.PCW_SMC_PERIPHERAL_VALID {0} \
+##     CONFIG.PCW_SPI0_PERIPHERAL_ENABLE {0} \
+##     CONFIG.PCW_SPI1_PERIPHERAL_ENABLE {0} \
+##     CONFIG.PCW_SPI_PERIPHERAL_CLKSRC {IO PLL} \
+##     CONFIG.PCW_SPI_PERIPHERAL_VALID {0} \
+##     CONFIG.PCW_TPIU_PERIPHERAL_CLKSRC {External} \
+##     CONFIG.PCW_TRACE_INTERNAL_WIDTH {2} \
+##     CONFIG.PCW_TRACE_PERIPHERAL_ENABLE {0} \
+##     CONFIG.PCW_TTC0_CLK0_PERIPHERAL_CLKSRC {CPU_1X} \
+##     CONFIG.PCW_TTC0_CLK0_PERIPHERAL_DIVISOR0 {1} \
+##     CONFIG.PCW_TTC0_CLK1_PERIPHERAL_CLKSRC {CPU_1X} \
+##     CONFIG.PCW_TTC0_CLK1_PERIPHERAL_DIVISOR0 {1} \
+##     CONFIG.PCW_TTC0_CLK2_PERIPHERAL_CLKSRC {CPU_1X} \
+##     CONFIG.PCW_TTC0_CLK2_PERIPHERAL_DIVISOR0 {1} \
+##     CONFIG.PCW_TTC0_PERIPHERAL_ENABLE {0} \
+##     CONFIG.PCW_TTC1_CLK0_PERIPHERAL_CLKSRC {CPU_1X} \
+##     CONFIG.PCW_TTC1_CLK0_PERIPHERAL_DIVISOR0 {1} \
+##     CONFIG.PCW_TTC1_CLK1_PERIPHERAL_CLKSRC {CPU_1X} \
+##     CONFIG.PCW_TTC1_CLK1_PERIPHERAL_DIVISOR0 {1} \
+##     CONFIG.PCW_TTC1_CLK2_PERIPHERAL_CLKSRC {CPU_1X} \
+##     CONFIG.PCW_TTC1_CLK2_PERIPHERAL_DIVISOR0 {1} \
+##     CONFIG.PCW_TTC1_PERIPHERAL_ENABLE {0} \
+##     CONFIG.PCW_UART0_BASEADDR {0xE0000000} \
+##     CONFIG.PCW_UART0_BAUD_RATE {115200} \
+##     CONFIG.PCW_UART0_GRP_FULL_ENABLE {0} \
+##     CONFIG.PCW_UART0_HIGHADDR {0xE0000FFF} \
+##     CONFIG.PCW_UART0_PERIPHERAL_ENABLE {1} \
+##     CONFIG.PCW_UART0_UART0_IO {MIO 14 .. 15} \
+##     CONFIG.PCW_UART1_PERIPHERAL_ENABLE {0} \
+##     CONFIG.PCW_UART_PERIPHERAL_CLKSRC {IO PLL} \
+##     CONFIG.PCW_UART_PERIPHERAL_FREQMHZ {100} \
+##     CONFIG.PCW_UART_PERIPHERAL_VALID {1} \
+##     CONFIG.PCW_UIPARAM_ACT_DDR_FREQ_MHZ {525.000000} \
+##     CONFIG.PCW_UIPARAM_DDR_ADV_ENABLE {0} \
+##     CONFIG.PCW_UIPARAM_DDR_AL {0} \
+##     CONFIG.PCW_UIPARAM_DDR_BL {8} \
+##     CONFIG.PCW_UIPARAM_DDR_BOARD_DELAY0 {0.223} \
+##     CONFIG.PCW_UIPARAM_DDR_BOARD_DELAY1 {0.212} \
+##     CONFIG.PCW_UIPARAM_DDR_BOARD_DELAY2 {0.085} \
+##     CONFIG.PCW_UIPARAM_DDR_BOARD_DELAY3 {0.092} \
+##     CONFIG.PCW_UIPARAM_DDR_BUS_WIDTH {16 Bit} \
+##     CONFIG.PCW_UIPARAM_DDR_CLOCK_0_LENGTH_MM {25.8} \
+##     CONFIG.PCW_UIPARAM_DDR_CLOCK_0_PACKAGE_LENGTH {80.4535} \
+##     CONFIG.PCW_UIPARAM_DDR_CLOCK_0_PROPOGATION_DELAY {160} \
+##     CONFIG.PCW_UIPARAM_DDR_CLOCK_1_LENGTH_MM {25.8} \
+##     CONFIG.PCW_UIPARAM_DDR_CLOCK_1_PACKAGE_LENGTH {80.4535} \
+##     CONFIG.PCW_UIPARAM_DDR_CLOCK_1_PROPOGATION_DELAY {160} \
+##     CONFIG.PCW_UIPARAM_DDR_CLOCK_2_LENGTH_MM {0} \
+##     CONFIG.PCW_UIPARAM_DDR_CLOCK_2_PACKAGE_LENGTH {80.4535} \
+##     CONFIG.PCW_UIPARAM_DDR_CLOCK_2_PROPOGATION_DELAY {160} \
+##     CONFIG.PCW_UIPARAM_DDR_CLOCK_3_LENGTH_MM {0} \
+##     CONFIG.PCW_UIPARAM_DDR_CLOCK_3_PACKAGE_LENGTH {80.4535} \
+##     CONFIG.PCW_UIPARAM_DDR_CLOCK_3_PROPOGATION_DELAY {160} \
+##     CONFIG.PCW_UIPARAM_DDR_CLOCK_STOP_EN {0} \
+##     CONFIG.PCW_UIPARAM_DDR_DQS_0_LENGTH_MM {15.6} \
+##     CONFIG.PCW_UIPARAM_DDR_DQS_0_PACKAGE_LENGTH {105.056} \
+##     CONFIG.PCW_UIPARAM_DDR_DQS_0_PROPOGATION_DELAY {160} \
+##     CONFIG.PCW_UIPARAM_DDR_DQS_1_LENGTH_MM {18.8} \
+##     CONFIG.PCW_UIPARAM_DDR_DQS_1_PACKAGE_LENGTH {66.904} \
+##     CONFIG.PCW_UIPARAM_DDR_DQS_1_PROPOGATION_DELAY {160} \
+##     CONFIG.PCW_UIPARAM_DDR_DQS_2_LENGTH_MM {0} \
+##     CONFIG.PCW_UIPARAM_DDR_DQS_2_PACKAGE_LENGTH {89.1715} \
+##     CONFIG.PCW_UIPARAM_DDR_DQS_2_PROPOGATION_DELAY {160} \
+##     CONFIG.PCW_UIPARAM_DDR_DQS_3_LENGTH_MM {0} \
+##     CONFIG.PCW_UIPARAM_DDR_DQS_3_PACKAGE_LENGTH {113.63} \
+##     CONFIG.PCW_UIPARAM_DDR_DQS_3_PROPOGATION_DELAY {160} \
+##     CONFIG.PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 {0.040} \
+##     CONFIG.PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 {0.058} \
+##     CONFIG.PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 {-0.009} \
+##     CONFIG.PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 {-0.033} \
+##     CONFIG.PCW_UIPARAM_DDR_DQ_0_LENGTH_MM {16.5} \
+##     CONFIG.PCW_UIPARAM_DDR_DQ_0_PACKAGE_LENGTH {98.503} \
+##     CONFIG.PCW_UIPARAM_DDR_DQ_0_PROPOGATION_DELAY {160} \
+##     CONFIG.PCW_UIPARAM_DDR_DQ_1_LENGTH_MM {18} \
+##     CONFIG.PCW_UIPARAM_DDR_DQ_1_PACKAGE_LENGTH {68.5855} \
+##     CONFIG.PCW_UIPARAM_DDR_DQ_1_PROPOGATION_DELAY {160} \
+##     CONFIG.PCW_UIPARAM_DDR_DQ_2_LENGTH_MM {0} \
+##     CONFIG.PCW_UIPARAM_DDR_DQ_2_PACKAGE_LENGTH {90.295} \
+##     CONFIG.PCW_UIPARAM_DDR_DQ_2_PROPOGATION_DELAY {160} \
+##     CONFIG.PCW_UIPARAM_DDR_DQ_3_LENGTH_MM {0} \
+##     CONFIG.PCW_UIPARAM_DDR_DQ_3_PACKAGE_LENGTH {103.977} \
+##     CONFIG.PCW_UIPARAM_DDR_DQ_3_PROPOGATION_DELAY {160} \
+##     CONFIG.PCW_UIPARAM_DDR_ECC {Disabled} \
+##     CONFIG.PCW_UIPARAM_DDR_ENABLE {1} \
+##     CONFIG.PCW_UIPARAM_DDR_FREQ_MHZ {525} \
+##     CONFIG.PCW_UIPARAM_DDR_HIGH_TEMP {Normal (0-85)} \
+##     CONFIG.PCW_UIPARAM_DDR_MEMORY_TYPE {DDR 3} \
+##     CONFIG.PCW_UIPARAM_DDR_PARTNO {MT41J256M16 RE-125} \
+##     CONFIG.PCW_UIPARAM_DDR_TRAIN_DATA_EYE {1} \
+##     CONFIG.PCW_UIPARAM_DDR_TRAIN_READ_GATE {1} \
+##     CONFIG.PCW_UIPARAM_DDR_TRAIN_WRITE_LEVEL {1} \
+##     CONFIG.PCW_UIPARAM_DDR_USE_INTERNAL_VREF {0} \
+##     CONFIG.PCW_UIPARAM_GENERATE_SUMMARY {NA} \
+##     CONFIG.PCW_USB0_BASEADDR {0xE0102000} \
+##     CONFIG.PCW_USB0_HIGHADDR {0xE0102fff} \
+##     CONFIG.PCW_USB0_PERIPHERAL_ENABLE {1} \
+##     CONFIG.PCW_USB0_RESET_ENABLE {1} \
+##     CONFIG.PCW_USB0_RESET_IO {MIO 46} \
+##     CONFIG.PCW_USB0_USB0_IO {MIO 28 .. 39} \
+##     CONFIG.PCW_USB1_PERIPHERAL_ENABLE {0} \
+##     CONFIG.PCW_USB_RESET_ENABLE {1} \
+##     CONFIG.PCW_USB_RESET_POLARITY {Active Low} \
+##     CONFIG.PCW_USB_RESET_SELECT {Share reset pin} \
+##     CONFIG.PCW_USE_AXI_FABRIC_IDLE {0} \
+##     CONFIG.PCW_USE_AXI_NONSECURE {0} \
+##     CONFIG.PCW_USE_CORESIGHT {0} \
+##     CONFIG.PCW_USE_CROSS_TRIGGER {0} \
+##     CONFIG.PCW_USE_CR_FABRIC {1} \
+##     CONFIG.PCW_USE_DDR_BYPASS {0} \
+##     CONFIG.PCW_USE_DEBUG {0} \
+##     CONFIG.PCW_USE_DMA0 {0} \
+##     CONFIG.PCW_USE_DMA1 {0} \
+##     CONFIG.PCW_USE_DMA2 {0} \
+##     CONFIG.PCW_USE_DMA3 {0} \
+##     CONFIG.PCW_USE_EXPANDED_IOP {0} \
+##     CONFIG.PCW_USE_FABRIC_INTERRUPT {1} \
+##     CONFIG.PCW_USE_HIGH_OCM {0} \
+##     CONFIG.PCW_USE_M_AXI_GP0 {0} \
+##     CONFIG.PCW_USE_M_AXI_GP1 {0} \
+##     CONFIG.PCW_USE_PROC_EVENT_BUS {0} \
+##     CONFIG.PCW_USE_PS_SLCR_REGISTERS {0} \
+##     CONFIG.PCW_USE_S_AXI_ACP {0} \
+##     CONFIG.PCW_USE_S_AXI_GP0 {0} \
+##     CONFIG.PCW_USE_S_AXI_GP1 {0} \
+##     CONFIG.PCW_USE_S_AXI_HP0 {0} \
+##     CONFIG.PCW_USE_S_AXI_HP1 {0} \
+##     CONFIG.PCW_USE_S_AXI_HP2 {0} \
+##     CONFIG.PCW_USE_S_AXI_HP3 {0} \
+##     CONFIG.PCW_USE_TRACE {0} \
+##     CONFIG.PCW_VALUE_SILVERSION {3} \
+##     CONFIG.PCW_WDT_PERIPHERAL_CLKSRC {CPU_1X} \
+##     CONFIG.PCW_WDT_PERIPHERAL_DIVISOR0 {1} \
+##     CONFIG.PCW_WDT_PERIPHERAL_ENABLE {0} \
+##   ]
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+WARNING: [IP_Flow 19-5101] Packaging a component with a SystemVerilog top file is not fully supported. Please refer to UG1118 'Creating and Packaging Custom IP'.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'aclk' of definition 'xilinx.com:signal:clock:1.0' (from X_INTERFACE_INFO parameter from HDL file).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'aclk' of definition 'xilinx.com:signal:clock:1.0' (from 'X_INTERFACE_INFO' attribute).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'aresetn' of definition 'xilinx.com:signal:reset:1.0' (from X_INTERFACE_INFO parameter from HDL file).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'aresetn' of definition 'xilinx.com:signal:reset:1.0' (from 'X_INTERFACE_INFO' attribute).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_AXI' of definition 'xilinx.com:interface:aximm:1.0' (from X_INTERFACE_INFO parameter from HDL file).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_AXI' of definition 'xilinx.com:interface:aximm:1.0' (from 'X_INTERFACE_INFO' attribute).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_AXIS' of definition 'xilinx.com:interface:axis:1.0' (from X_INTERFACE_INFO parameter from HDL file).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_AXIS' of definition 'xilinx.com:interface:axis:1.0' (from 'X_INTERFACE_INFO' attribute).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'M_AXIS' of definition 'xilinx.com:interface:axis:1.0' (from X_INTERFACE_INFO parameter from HDL file).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'M_AXIS' of definition 'xilinx.com:interface:axis:1.0' (from 'X_INTERFACE_INFO' attribute).
+INFO: [IP_Flow 19-4728] Bus Interface 'aclk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'S_AXI'.
+INFO: [IP_Flow 19-4728] Bus Interface 'aclk': Added interface parameter 'ASSOCIATED_RESET' with value 'aresetn'.
+INFO: [IP_Flow 19-4728] Bus Interface 'aclk': Added interface parameter 'FREQ_HZ' with value '50000000'.
+INFO: [IP_Flow 19-4728] Bus Interface 'aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXI': Added interface parameter 'PROTOCOL' with value 'AXI4LITE'.
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXI': Added interface parameter 'DATA_WIDTH' with value '32'.
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXI': Added interface parameter 'ADDR_WIDTH' with value '16'.
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXI': Added interface parameter 'FREQ_HZ' with value '50000000'.
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXIS': Added interface parameter 'TDATA_NUM_BYTES' with value '4'.
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXIS': Added interface parameter 'HAS_TKEEP' with value '1'.
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXIS': Added interface parameter 'HAS_TLAST' with value '1'.
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXIS': Added interface parameter 'FREQ_HZ' with value '50000000'.
+INFO: [IP_Flow 19-4728] Bus Interface 'M_AXIS': Added interface parameter 'TDATA_NUM_BYTES' with value '4'.
+INFO: [IP_Flow 19-4728] Bus Interface 'M_AXIS': Added interface parameter 'HAS_TKEEP' with value '1'.
+INFO: [IP_Flow 19-4728] Bus Interface 'M_AXIS': Added interface parameter 'HAS_TLAST' with value '1'.
+INFO: [IP_Flow 19-4728] Bus Interface 'M_AXIS': Added interface parameter 'FREQ_HZ' with value '50000000'.
+INFO: [IP_Flow 19-7067] Note that bus interface 'aclk' has a fixed FREQ_HZ of '50000000'. This value will be respected whenever this IP is instantiated in IP Integrator.
+INFO: [IP_Flow 19-7067] Note that bus interface 'S_AXI' has a fixed FREQ_HZ of '50000000'. This value will be respected whenever this IP is instantiated in IP Integrator.
+INFO: [IP_Flow 19-7067] Note that bus interface 'S_AXIS' has a fixed FREQ_HZ of '50000000'. This value will be respected whenever this IP is instantiated in IP Integrator.
+INFO: [IP_Flow 19-7067] Note that bus interface 'M_AXIS' has a fixed FREQ_HZ of '50000000'. This value will be respected whenever this IP is instantiated in IP Integrator.
+WARNING: [BD 41-1306] The connection to interface pin </axi_uartlite_0/rx> is being overridden by the user with net <motor_uart_rx_1>. This pin will not be connected as a part of interface connection <UART>, and might not recreate the connectivity as expected using the writ_bd_tcl command.
+WARNING: [BD 41-1306] The connection to interface pin </axi_uartlite_0/tx> is being overridden by the user with net <axi_uartlite_0_tx>. This pin will not be connected as a part of interface connection <UART>, and might not recreate the connectivity as expected using the writ_bd_tcl command.
+WARNING: [IP_Flow 19-5101] Packaging a component with a SystemVerilog top file is not fully supported. Please refer to UG1118 'Creating and Packaging Custom IP'.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'aclk': Added interface parameter 'ASSOCIATED_RESET' with value 'aresetn'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'aclk' does not have any bus interfaces associated with it.
+WARNING: [IP_Flow 19-11770] Clock interface 'aclk' has no FREQ_HZ parameter.
+WARNING: [BD 41-1306] The connection to interface pin </axi_gpio_scan/gpio_io_i> is being overridden by the user with net <button_sync_0_buttons_sync>. This pin will not be connected as a part of interface connection <GPIO>, and might not recreate the connectivity as expected using the writ_bd_tcl command.
+WARNING: [BD 41-1306] The connection to interface pin </axi_gpio_scan/gpio2_io_o> is being overridden by the user with net <axi_gpio_scan_gpio2_io_o>. This pin will not be connected as a part of interface connection <GPIO2>, and might not recreate the connectivity as expected using the writ_bd_tcl command.
+INFO: [BD 5-1043] It is recommended to use inline hdl version xilinx.com:inline_hdl:ilconstant:1.0 for the IP type xilinx.com:ip:xlconstant:1.1 for improved performance and reduced disk space. IPs with VLNV xilinx.com:ip:xlconstant:1.1 will not be supported from release 2025.2. More information on inline hdl IP is available in UG994 
+INFO: [BD 5-1043] It is recommended to use inline hdl version xilinx.com:inline_hdl:ilconstant:1.0 for the IP type xilinx.com:ip:xlconstant:1.1 for improved performance and reduced disk space. IPs with VLNV xilinx.com:ip:xlconstant:1.1 will not be supported from release 2025.2. More information on inline hdl IP is available in UG994 
+Slave segment '/axi_dma_0/S_AXI_LITE/Reg' is being assigned into address space '/processing_system7_0/Data' at <0x4040_0000 [ 64K ]>.
+Slave segment '/laser_stripe_0/S_AXI/reg0' is being assigned into address space '/processing_system7_0/Data' at <0x43C0_0000 [ 64K ]>.
+Slave segment '/axi_uartlite_0/S_AXI/Reg' is being assigned into address space '/processing_system7_0/Data' at <0x42C0_0000 [ 64K ]>.
+Slave segment '/axi_gpio_scan/S_AXI/Reg' is being assigned into address space '/processing_system7_0/Data' at <0x4120_0000 [ 64K ]>.
+INFO: [BD 41-3093] Triggering Legacy Auto Assign Algorithm
+Slave segment '/processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM' is being assigned into address space '/axi_dma_0/Data_MM2S' at <0x0000_0000 [ 512M ]>.
+Slave segment '/processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM' is being assigned into address space '/axi_dma_0/Data_S2MM' at <0x0000_0000 [ 512M ]>.
+Wrote  : <D:\FPGAProjects\teammate_complete_20261020\11_fpga_project\build\button\ls.srcs\sources_1\bd\bd\bd.bd> 
+# set aux_pin [get_bd_pins rst_fclk0/aux_reset_in]
+# set aux_net [get_bd_nets -of_objects $aux_pin]
+# set locked_net [get_bd_nets -of_objects [get_bd_pins clock_locked/dout]]
+# if {$aux_net ne $locked_net} {
+#     disconnect_bd_net $aux_net $aux_pin
+#     connect_bd_net [get_bd_pins clock_locked/dout] $aux_pin
+# }
+# validate_bd_design
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+# if {[get_property CONFIG.C_EXT_RESET_HIGH [get_bd_cells rst_fclk0]] != 0 || \
+#     [get_property CONFIG.C_AUX_RESET_HIGH [get_bd_cells rst_fclk0]] != 0} {
+#     error "Expected active-low external and auxiliary reset on proc_sys_reset"
+# }
+# save_bd_design
+Wrote  : <D:\FPGAProjects\teammate_complete_20261020\11_fpga_project\build\button\ls.srcs\sources_1\bd\bd\bd.bd> 
+# set bd [require_one [get_files -quiet */${design_name}.bd] {block design file}]
+# set_property synth_checkpoint_mode None $bd
+# generate_target all $bd
+INFO: [BD 41-1662] The design 'bd.bd' is already validated. Therefore parameter propagation will not be re-run.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/axi_memory/xbar/m_axi_bid'(1) to pin: '/axi_memory/m00_couplers/S_AXI_bid'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/axi_memory/xbar/m_axi_rid'(1) to pin: '/axi_memory/m00_couplers/S_AXI_rid'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_WID'(6) to pin: '/axi_memory/M00_AXI_wid'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_ARID'(6) to pin: '/axi_memory/M00_AXI_arid'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_AWID'(6) to pin: '/axi_memory/M00_AXI_awid'(1) - Only lower order bits will be connected.
+Verilog Output written to : D:/FPGAProjects/teammate_complete_20261020/11_fpga_project/build/button/ls.gen/sources_1/bd/bd/synth/bd.v
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/axi_memory/xbar/m_axi_bid'(1) to pin: '/axi_memory/m00_couplers/S_AXI_bid'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/axi_memory/xbar/m_axi_rid'(1) to pin: '/axi_memory/m00_couplers/S_AXI_rid'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_WID'(6) to pin: '/axi_memory/M00_AXI_wid'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_ARID'(6) to pin: '/axi_memory/M00_AXI_arid'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_AWID'(6) to pin: '/axi_memory/M00_AXI_awid'(1) - Only lower order bits will be connected.
+Verilog Output written to : D:/FPGAProjects/teammate_complete_20261020/11_fpga_project/build/button/ls.gen/sources_1/bd/bd/sim/bd.v
+Verilog Output written to : D:/FPGAProjects/teammate_complete_20261020/11_fpga_project/build/button/ls.gen/sources_1/bd/bd/hdl/bd_wrapper.v
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI_GP0'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI_HP0'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block laser_stripe_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_uartlite_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_scan .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block button_sync_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_control/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_memory/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_fclk0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clock_locked .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block reset_inactive .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_control/s00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_memory/s00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_memory/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_memory/s01_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_memory/s01_couplers/auto_us .
+Exporting to file D:/FPGAProjects/teammate_complete_20261020/11_fpga_project/build/button/ls.gen/sources_1/bd/bd/hw_handoff/bd.hwh
+Generated Hardware Definition File D:/FPGAProjects/teammate_complete_20261020/11_fpga_project/build/button/ls.gen/sources_1/bd/bd/synth/bd.hwdef
+INFO: [BD 41-3262] Generated VHDL Instantiation Template file d:/FPGAProjects/teammate_complete_20261020/11_fpga_project/build/button/ls.gen/sources_1/bd/bd/bd.vho
+INFO: [BD 41-3262] Generated Verilog Instantiation Template file d:/FPGAProjects/teammate_complete_20261020/11_fpga_project/build/button/ls.gen/sources_1/bd/bd/bd.veo
+INFO: [BD 41-3262] Generated System Verilog Instantiation Template file d:/FPGAProjects/teammate_complete_20261020/11_fpga_project/build/button/ls.gen/sources_1/bd/bd/bd_sv.sveo
+generate_target: Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 824.422 ; gain = 56.559
+# set wrapper [make_wrapper -files $bd -top]
+# foreach path $wrapper {if {[llength [get_files -quiet $path]]==0} {add_files -norecurse $path}}
+# set_property top ${design_name}_wrapper [get_filesets sources_1]
+# update_compile_order -fileset sources_1
+# set synth_settings [file join $reports button_synth_settings.tcl]
+# set settings_text "set_param general.maxThreads 1\n"
+# set previous_settings ""
+# if {[file isfile $synth_settings]} {
+#     set settings_file [open $synth_settings r]
+#     set previous_settings [read $settings_file]
+#     close $settings_file
+# }
+# if {$previous_settings ne $settings_text} {
+#     set settings_file [open $synth_settings w]
+#     puts -nonewline $settings_file $settings_text
+#     close $settings_file
+# }
+# if {[llength [get_files -quiet $synth_settings]]==0} {add_files -fileset utils_1 -norecurse $synth_settings}
+# set_property STEPS.SYNTH_DESIGN.TCL.PRE $synth_settings [get_runs synth_1]
+# write_bd_tcl -force [file join $reports button_block_design.tcl]
+WARNING: [BD 41-2925] The design that will be created by this Tcl script contains the following module references: laser_stripe_axi, button_sync.
+Please add the sources of those modules before sourcing this Tcl script or use write_project_tcl.
+INFO: [BD 5-148] Tcl file written out <D:/FPGAProjects/teammate_complete_20261020/17_button_scan_release_20261020/implementation/button_block_design.tcl>.
+
+# set summary [open [file join $reports button_design_summary.txt] w]
+# puts $summary "Vivado [version -short]; stage=$stage; project=$xpr"
+# puts $summary "PYNQ-Z2 xc7z020clg400-1; FCLK0=50MHz; single clock domain"
+# puts $summary "PS preset pinned Xilinx/PYNQ e054c09c52db3244ef35c8ae08a2e62c1e4955fd"
+# puts $summary "AXI DMA simple, 32-bit streams, 23-bit BTT, no DRE; align buffers to4 bytes"
+# puts $summary "DMA base=0x40400000 range=64KiB; laser base=0x43C00000 range=64KiB"
+# puts $summary "axi_gpio_scan base=0x41200000 range=64KiB; CH1=buttons4 input (pressed=1); CH2=LED4 output"
+# puts $summary "Buttons BTN0 D19, BTN1 D20, BTN2 L20, BTN3 L19; two FF synchronizers, 50MHz; software debounce required"
+# puts $summary "UARTLite base=0x42C00000 range=64KiB; 9600 8N1; Arduino D1 TX U12; D0 RX T14; LVCMOS33"
+# foreach seg [get_bd_addr_segs] {
+#     puts $summary "$seg OFFSET=[get_property OFFSET $seg] RANGE=[get_property RANGE $seg]"
+# }
+# close $summary
+# if {$stage eq "create"} {
+#     puts "BUTTON_OVERLAY_CREATE_PASS project=$xpr"
+#     close_project
+#     exit
+# }
+# checkpoint_run synth_1
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Tue Oct 20 22:19:42 2026] Launched synth_1...
+Run output will be captured here: D:/FPGAProjects/teammate_complete_20261020/11_fpga_project/build/button/ls.runs/synth_1/runme.log
+[Tue Oct 20 22:19:42 2026] Waiting for synth_1 to finish...
+
+*** Running vivado
+    with args -log bd_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source bd_wrapper.tcl
+
+
+INFO: [Common 17-3922] A valid Vivado Design Suite ENTERPRISE license has been detected. Your current license is active and will expire on 03-dec-2026.
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Tue Oct 20 22:19:44 2026
+# Process ID         : 6540
+# Current directory  : D:/FPGAProjects/teammate_complete_20261020/11_fpga_project/build/button/ls.runs/synth_1
+# Command line       : vivado.exe -log bd_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source bd_wrapper.tcl
+# Log file           : D:/FPGAProjects/teammate_complete_20261020/11_fpga_project/build/button/ls.runs/synth_1/bd_wrapper.vds
+# Journal file       : D:/FPGAProjects/teammate_complete_20261020/11_fpga_project/build/button/ls.runs/synth_1\vivado.jou
+# Running On         : LAPTOP-ME2OHABI
+# Platform           : Windows 11
+# Operating System   : 22631
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i7-13650HX
+# CPU Frequency      : 2803 MHz
+# CPU Physical cores : 14
+# CPU Logical cores  : 20
+# Host memory        : 16780 MB
+# Swap memory        : 20068 MB
+# Total Virtual      : 36849 MB
+# Available Virtual  : 1101 MB
+#-----------------------------------------------------------
+
+****** Vivado v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Tue Oct 20 22:19:44 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source bd_wrapper.tcl -notrace
+create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:13 . Memory (MB): peak = 585.855 ; gain = 267.922
+source D:/FPGAProjects/teammate_complete_20261020/17_button_scan_release_20261020/implementation/button_synth_settings.tcl
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/AMDDesignTools/2026.1/Vivado/data/ip'.
+INFO: [Project 1-5698] Found the below utility IPs instantiated in block design D:/FPGAProjects/teammate_complete_20261020/11_fpga_project/build/button/ls.srcs/sources_1/bd/bd/bd.bd which have equivalent inline hdl with improved performance and reduced diskspace.
+It is recommended to migrate these utility IPs to inline hdl  using the command upgrade_project -migrate_to_inline_hdl.  The utility IPs may be deprecated in future releases.
+More information on inline hdl is available in UG994.
+Utility IP Component Instances:
+ bd_clock_locked_0
+bd_reset_inactive_0
+Command: synth_design -top bd_wrapper -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Designutils 20-5008] Incremental synthesis strategy default
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 1 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 53764
+[Tue Oct 20 22:20:17 2026] synth_1 finished
+ERROR: [Vivado 12-13638] Failed runs(s) : 'synth_1'
+wait_on_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:00:35 . Memory (MB): peak = 824.422 ; gain = 0.000
+ERROR: [Common 17-39] 'wait_on_runs' failed due to earlier errors.
+
+    while executing
+"wait_on_run $name"
+    invoked from within
+"if {![string match "*Complete*" $status]} {
+        launch_runs $name -jobs 1
+        wait_on_run $name
+    }"
+    (procedure "checkpoint_run" line 6)
+    invoked from within
+"checkpoint_run synth_1"
+    (file "D:/FPGAProjects/teammate_complete_20261020/09_tools/build_button_overlay.tcl" line 224)
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 20 22:20:17 2026...

@@ -1,0 +1,16 @@
+{
+  "schema": "zynq_pyramid_display_v1",
+  "client_date": "2026-11-03",
+  "capture_release_unchanged": "101_relocation_scan_20261102",
+  "capture_manifest_sha256": "ea4e1aea382a1b976719c18c3afa1001459a12674c5b2d3dc01acf174f77f571",
+  "files": {
+    "triangular_pyramid.py": "ac06549f341d44504698b59ba0b31781b2d8f2116f9350ee7dbd91eb5a1c8653",
+    "shape_models.py": "57c31c00832e57365605d4f3786ef15d098de26f361f54b1bdf86316000882c4",
+    "model_worker.py": "e359e44b9cd14116e3d47ac0ede0921e7c6c9c62ea0caa8595eecf9b80db3f3f",
+    "model_entry.py": "987206b8dfa9c3c56ca2566d8e0db4baaa5fb53d4db2818873cb02c02dca21b0",
+    "pc_dashboard.py": "b2f0af6723159dc63358966cd710a23e2867bb1ec8b7a73f77400baa0e8faf4e",
+    "dashboard.html": "da3084de344f670281a0ac16be6513e3de8e9295578ca9659c2eee1ca5823606",
+    "dashboard.js": "1ae7515ca594e5dd35f5750052f149c34e92fe361ce154673027a30fdd5021b3",
+    "viewer_template.html": "753104d5e70af5d125d34286860718731933ca8de2bbb64e54c6023a31b06f1c"
+  }
+}

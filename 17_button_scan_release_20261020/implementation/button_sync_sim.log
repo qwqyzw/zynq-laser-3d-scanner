@@ -1,0 +1,31 @@
+#-----------------------------------------------------------
+# xsim v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Tue Oct 20 22:19:36 2026
+# Process ID         : 43412
+# Current directory  : D:/FPGAProjects/teammate_complete_20261020/17_button_scan_release_20261020/source
+# Command line       : xsim.exe -log D:/FPGAProjects/teammate_complete_20261020/17_button_scan_release_20261020/implementation/button_sync_sim.log -mode tcl -source {xsim.dir/button_sync_test/xsim_script.tcl}
+# Log file           : D:/FPGAProjects/teammate_complete_20261020/17_button_scan_release_20261020/implementation/button_sync_sim.log
+# Journal file       : D:/FPGAProjects/teammate_complete_20261020/17_button_scan_release_20261020/source\xsim.jou
+# Running On         : LAPTOP-ME2OHABI
+# Platform           : Windows 11
+# Operating System   : 22631
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i7-13650HX
+# CPU Frequency      : 2803 MHz
+# CPU Physical cores : 14
+# CPU Logical cores  : 20
+# Host memory        : 16780 MB
+# Swap memory        : 20068 MB
+# Total Virtual      : 36849 MB
+# Available Virtual  : 1102 MB
+#-----------------------------------------------------------
+source xsim.dir/button_sync_test/xsim_script.tcl
+# xsim {button_sync_test} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+BUTTON_SYNC_TWO_STAGE_AND_RESET_PASS
+$finish called at time : 151 ns : File "D:/FPGAProjects/teammate_complete_20261020/17_button_scan_release_20261020/source/button_sync_tb.sv" Line 30
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Oct 20 22:19:39 2026...

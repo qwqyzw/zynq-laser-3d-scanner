@@ -1,0 +1,28 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Tue Oct 20 22:40:44 2026
+| Host         : LAPTOP-ME2OHABI running 64-bit major release  (build 9200)
+| Command      : report_exceptions -file D:/FPGAProjects/teammate_complete_20261020/17_button_scan_release_20261020/implementation/button_impl_exceptions.rpt
+| Design       : bd_wrapper
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+| Design State : Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Exceptions Report
+
+Position  From                           Through                                                         To                                                                                Setup           Hold            Status           
+--------  -----------------------------  --------------------------------------------------------------  --------------------------------------------------------------------------------  --------------  --------------  -----------------
+3         [get_ports motor_uart_rx]      *                                                               *                                                                                 false           false           
+4         *                              *                                                               [get_ports motor_uart_tx]                                                         false           false           
+5         [get_ports {scan_buttons[*]}]  *                                                               [get_pins -of_objects [get_cells -hier -filter {NAME =~ *button_sync_0*sync_meta  false           false           
+                                                                                                         _reg*}] -filter {REF_PIN_NAME == D}]                                                                              
+6         *                              *                                                               [get_ports {scan_leds[*]}]                                                        false           false           
+8         *                              *                                                               [get_cells {syncstages_ff_reg[0][*]}]                                             false           false           
+9         *                              [get_ports -scoped_to_current_instance -no_traverse src_arst]   *                                                                                 false           false           
+10        *                              [get_ports -scoped_to_current_instance -no_traverse src_arst]   *                                                                                 false           false           
+11        *                              [get_ports -scoped_to_current_instance -no_traverse src_arst]   *                                                                                 false           false           
+15        *                              *                                                               [get_cells {syncstages_ff_reg[0]}]                                                false           false           
+16        *                              *                                                               [get_cells {syncstages_ff_reg[0]}]                                                false           false           
+

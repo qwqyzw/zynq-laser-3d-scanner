@@ -1,0 +1,5 @@
+Built together from D:/FPGAProjects/teammate_complete_20261020/11_fpga_project/build/button2/ls.xpr using Vivado 2026.1; FCLK0 50MHz
+Board PYNQ-Z2; source preset Xilinx/PYNQ e054c09c52db3244ef35c8ae08a2e62c1e4955fd
+Laser core and dedicated axi_uartlite_0 coexist; UART @0x42C00000 9600 8N1; D1=U12 TX D0=T14 RX
+GPIO @0x41200000, dual channels: buttons4 input, LED4 output; input synchronization: two FF stages
+IMPLEMENTATION CANDIDATE ONLY. No board/button/motion acceptance has been performed.

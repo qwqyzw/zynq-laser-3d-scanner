@@ -1,0 +1,33 @@
+{
+  "status": {
+    "schema_version": 1,
+    "session_id": "7b0def11e0ad4b529fb609aa1fbe7842",
+    "run_id": null,
+    "state": "ready",
+    "mode": "diagnostic_preview",
+    "client_date": "2026-10-24",
+    "process_id": 10656,
+    "child_pid": null,
+    "diagnostic_preview_only": true
+  },
+  "latest_result": {
+    "schema_version": 1,
+    "session_id": "d35fcf0013674f81a3826269ac5193c2",
+    "run_id": "39d3c9ef936a4de7a587aa87517b0286",
+    "state": "failed",
+    "discarded": true,
+    "discard_event_id": "fb64a5953e2541488a320ab027ce198f",
+    "error": "User cancelled; scan discarded",
+    "result_kind": "diagnostic_preview",
+    "diagnostic_preview_only": true,
+    "alignment_validated": false,
+    "metric_accuracy_accepted": false
+  },
+  "original_run_exists": false,
+  "discard_events_tail": [
+    "{\"run_id\": \"871072a535884d3cbe853fecd0f3b110\", \"event_id\": \"78c117b0ccbb47c489c31d6902f9a6b4\", \"removed_files\": 1085, \"hardware_cleanup_verified\": true}",
+    "{\"run_id\": \"80057a0a97fc4fb29c2c5184b0e1d479\", \"event_id\": \"24ae620f7c4c4320ba27cf2c4bb858fe\", \"removed_files\": 1085, \"hardware_cleanup_verified\": true}",
+    "{\"run_id\": \"39d3c9ef936a4de7a587aa87517b0286\", \"event_id\": \"fb64a5953e2541488a320ab027ce198f\", \"removed_files\": 842, \"hardware_cleanup_verified\": true}"
+  ],
+  "derived_preview_exists": true
+}

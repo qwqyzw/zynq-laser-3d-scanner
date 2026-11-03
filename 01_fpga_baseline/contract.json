@@ -1,0 +1,117 @@
+{
+  "version": "horizontal_v4_20261019",
+  "status": "development_target_pending_teammate_ack",
+  "board": "PYNQ-Z2",
+  "part_to_confirm": "xc7z020clg400-1",
+  "input": {
+    "width": 640,
+    "height": 480,
+    "words": 307200,
+    "bytes": 1228800,
+    "word_bits": 32,
+    "logical_word": "0x00RRGGBB",
+    "binary_endianness": "little",
+    "binary_bytes": [
+      "B",
+      "G",
+      "R",
+      "0"
+    ],
+    "order": "row_major_y_then_x",
+    "tlast_accepted_word_index_zero_based": 307199,
+    "tkeep": 15
+  },
+  "output": {
+    "records": 640,
+    "bytes": 2560,
+    "word_bits": 32,
+    "record_order": "x=0..639",
+    "bit31": "valid",
+    "bits30_18": "zero",
+    "bits17_0": "round_half_up(global_y*256)",
+    "invalid_word": 0,
+    "valid_y_range": [
+      0,
+      480
+    ],
+    "upper_y_exclusive": true,
+    "tlast_accepted_word_index_zero_based": 639,
+    "tkeep": 15
+  },
+  "parameters": {
+    "roi": "x0,y0,x1,y1; x1,y1 exclusive; per-sample manifest",
+    "threshold_q8": {
+      "default": 3072,
+      "corresponding_score": 12
+    },
+    "min_run_supported": [
+      0,
+      8
+    ],
+    "formal_mode_min_run": 8,
+    "latch_on_frame_start": true
+  },
+  "algorithm": {
+    "background_y_taps": 31,
+    "smoothing_y_weights": [
+      1,
+      2,
+      1
+    ],
+    "smoothing_divisor": 4,
+    "original_image_halo_y": 16,
+    "argmax_tie": "smallest_y",
+    "cutoff_floor": 1.5,
+    "cutoff_peak_ratio": 0.45,
+    "max_walk_per_side": 8,
+    "accepted_width": [
+      2,
+      14
+    ],
+    "valid_neighborhood_x": 5,
+    "minimum_raw_valid_in_neighborhood": 3,
+    "min_full_run": 8,
+    "interpolation": false,
+    "PS_quality_rejection_included_in_single_frame_expected": false
+  },
+  "dma": {
+    "mode": "simple",
+    "channels": [
+      "MM2S",
+      "S2MM"
+    ],
+    "min_length_bits": 21,
+    "recommended_length_bits": 23,
+    "stream_width_bits": 32
+  },
+  "register_map": {
+    "actual_offsets": "must_be_provided_by_implementation_not_assigned_in_this_package",
+    "required_semantics": [
+      "start",
+      "busy",
+      "done",
+      "error",
+      "x0",
+      "y0",
+      "x1",
+      "y1",
+      "threshold_q8",
+      "min_run"
+    ],
+    "clear_behaviors": "must_be_documented"
+  },
+  "integration": {
+    "image_capture": "PS_USB_UVC",
+    "geometry": "PS",
+    "motor_current_dependency": "iop_arduino MicroblazeRPC UART D1_TX D0_RX",
+    "camera_must_not_be_wired_directly_to_PL": true,
+    "static_overlay_can_precede_motor_compatible_overlay": true
+  },
+  "acceptance": {
+    "coordinate_tolerance_px": 0.25,
+    "valid_mismatches_allowed": 0,
+    "format_errors_allowed": 0,
+    "complete_output_count_required": true,
+    "millimeter_accuracy_not_implied": true
+  }
+}

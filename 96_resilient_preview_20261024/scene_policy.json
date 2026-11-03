@@ -1,0 +1,10 @@
+{
+  "maximum_shift_px": 4.0,
+  "minimum_correlation": 0.75,
+  "minimum_peak_margin": 0.02,
+  "all_four_references_required": true,
+  "old_maximum_shift_px": 2.0,
+  "old_minimum_correlation": 0.9,
+  "demonstration_only": true,
+  "metric_accuracy_accepted": false
+}

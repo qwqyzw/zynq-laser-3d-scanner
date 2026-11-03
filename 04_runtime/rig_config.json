@@ -1,0 +1,107 @@
+{
+  "bundle_date": "2026-10-20",
+  "board": "PYNQ-Z2",
+  "historically_measured_versions": {
+    "pynq": "3.1.1",
+    "python": "3.10.4",
+    "numpy": "1.21.5",
+    "opencv": "4.5.4"
+  },
+  "camera": {
+    "device": "/dev/video0",
+    "width": 640,
+    "height": 480,
+    "fourcc": "MJPG",
+    "fps_readback": 10,
+    "laser_exposure": 5,
+    "awb_was_automatic": true,
+    "capture_timeout_s": 40,
+    "frames_per_pose": 3,
+    "bright_before_frames": 3,
+    "bright_after_frames": 3,
+    "restore_original_exposure": true,
+    "previous_exposure": 20,
+    "exposure_source": "15_integrated_test_20261020: 12 live PL frames, preflight and 0/5/0 passed at exposure 5"
+  },
+  "motor": {
+    "firmware": "Emm",
+    "baud": 9600,
+    "address": 1,
+    "checksum_byte_hex": "6B",
+    "mode": "UART_FUN",
+    "pynq_TX_pin": "Arduino D1",
+    "pynq_RX_pin": "Arduino D0",
+    "common_GND": true,
+    "motor_supply": "independent12V",
+    "logic_level_verified_in_new_setup": false,
+    "mechanical_ratio": 1.0,
+    "step_angle_microsteps": "read and validate actual Emm configuration; do not guess"
+  },
+  "roi_profiles": {
+    "recent_pixel_test": [
+      160,
+      215,
+      410,
+      270
+    ],
+    "historical_shape180": [
+      200,
+      184,
+      380,
+      236
+    ],
+    "current_20261020": [
+      175,
+      340,
+      400,
+      400
+    ]
+  },
+  "stripe": {
+    "threshold": 12,
+    "threshold_q8": 3072,
+    "min_run": 8,
+    "weak_mode_default_enabled": false,
+    "three_frame_span_max_px": 1.5,
+    "minimum_common_columns": 20
+  },
+  "small_scan": {
+    "angles_deg": [
+      0,
+      5,
+      0
+    ],
+    "rpm": 1,
+    "max_angle_deg": 10,
+    "max_points": 3,
+    "old_general_single_step_limit_deg": 30,
+    "settle_stable_samples": 3,
+    "settle_delta_deg": 0.1,
+    "target_tolerance_deg": 0.3,
+    "minimum_settle_s": 2,
+    "capture_drift_limit_deg": 0.1
+  },
+  "hardware_states_are_not_current": true,
+  "current_rig_geometry_verified": false,
+  "geometry_primary_set": "05_geometry/shape180_20261018",
+  "geometry_use_scope": "historical reproduction; new use requires rig and zero checks, not metric accepted",
+  "static_overlay_has_UART": false,
+  "complete_PL_scan_hardware_validated": true,
+  "integrated_overlay_release": "14_integrated_release_20261020/laser_motor.bit",
+  "integrated_overlay_UART": {
+    "ip": "axi_uartlite_0",
+    "base_hex": "0x42C00000",
+    "baud": 9600,
+    "format": "8N1",
+    "tx": "Arduino D1/U12",
+    "rx": "Arduino D0/T14"
+  },
+  "complete_PL_scan_validation_scope": "2026-10-20 same-overlay bounded 0/5/0 pixel acquisition; not geometry",
+  "integrated_overlay_has_UART": true,
+  "latest_validation_report": "15_integrated_test_20261020/修复与联动验证结果.md",
+  "modeling_compute_target": "zynq_ps",
+  "host_role": "presentation_only",
+  "latest_object_scan_report": "16_zynq_object_scan_20261020/扫描与板端建模结果.md",
+  "current_object_model_accepted": false,
+  "current_object_diagnostic_preview_available": true
+}

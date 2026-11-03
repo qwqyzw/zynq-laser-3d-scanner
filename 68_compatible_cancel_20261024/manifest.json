@@ -1,0 +1,9 @@
+{
+  "version": "20261024.compat_cancel.v1",
+  "base66_manifest_sha256": "4d65ccbe8eda24be5b843910b9a605974af29ad2dc2b852426aff7500ae3f89e",
+  "files": {
+    "compatible_cancel.py": "325d874866fbf392f13f0300d665028505527357a1e93a303835fdf24da1b3dc",
+    "compatible_button_service.py": "f2d9b91305c6a50e8bf784078ad74fe5e09de9bc3f95ad288049a20723ca5f40",
+    "test_compatible_cancel.py": "27b952e7b1fca194897caf61eab6394633444e4e99292a1c1afae4fbc11818e3"
+  }
+}

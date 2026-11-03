@@ -1,0 +1,259 @@
+{
+  "client_date": "2026-10-24",
+  "status": "benchmark_passed",
+  "motor_commands_sent": false,
+  "scope": "actual PL5/20/5 static in one camera session, no formal model",
+  "tests": [
+    {
+      "phase": 0,
+      "exposure": 5,
+      "switch_elapsed_s": 3.388300001461175e-05,
+      "switch_receipt": {
+        "exposure": 5,
+        "unchanged": true
+      },
+      "capture_elapsed_s": 2.878765435999867,
+      "quality": {
+        "roi": [
+          175,
+          210,
+          440,
+          340
+        ],
+        "threshold": 12,
+        "min_run": 8,
+        "max_three_frame_range_px": 1.5,
+        "minimum_common_columns": 10,
+        "quality_columns_per_frame": [
+          132,
+          129,
+          126
+        ],
+        "rejection_counts": [
+          {
+            "saturation": 0,
+            "white_core": 0,
+            "multiple_peaks": 0
+          },
+          {
+            "saturation": 0,
+            "white_core": 0,
+            "multiple_peaks": 0
+          },
+          {
+            "saturation": 0,
+            "white_core": 0,
+            "multiple_peaks": 0
+          }
+        ],
+        "common_quality_columns": 116,
+        "valid_fraction_of_selected_roi": 0.4377358490566038,
+        "image_quality_gate_passed": true,
+        "geometric_or_height_filter_applied": false
+      },
+      "object_columns": 13,
+      "height_range_mm": [
+        11.546087610080349,
+        17.599496338372774
+      ],
+      "red_energy_roi": 42494.0
+    },
+    {
+      "phase": 1,
+      "exposure": 20,
+      "switch_elapsed_s": 1.076823629000046,
+      "switch_receipt": {
+        "exposure_set": true,
+        "sequence": 2,
+        "exposure": 20,
+        "session_id": "a9350af6b26144c481e1d4333e0950eb",
+        "settle": {
+          "elapsed_s": 1.0691506569999092,
+          "discarded_frames": 16,
+          "minimum_frames": 10
+        },
+        "manual_controls_verified": true,
+        "monotonic_s": 1793.781678983
+      },
+      "capture_elapsed_s": 2.916837391999934,
+      "quality": {
+        "roi": [
+          175,
+          210,
+          440,
+          340
+        ],
+        "threshold": 12,
+        "min_run": 8,
+        "max_three_frame_range_px": 1.5,
+        "minimum_common_columns": 10,
+        "quality_columns_per_frame": [
+          80,
+          96,
+          81
+        ],
+        "rejection_counts": [
+          {
+            "saturation": 92,
+            "white_core": 1,
+            "multiple_peaks": 0
+          },
+          {
+            "saturation": 92,
+            "white_core": 1,
+            "multiple_peaks": 0
+          },
+          {
+            "saturation": 91,
+            "white_core": 1,
+            "multiple_peaks": 2
+          }
+        ],
+        "common_quality_columns": 65,
+        "valid_fraction_of_selected_roi": 0.24528301886792453,
+        "image_quality_gate_passed": true,
+        "geometric_or_height_filter_applied": false
+      },
+      "object_columns": 30,
+      "height_range_mm": [
+        3.3493316832832534,
+        17.370958134693836
+      ],
+      "red_energy_roi": 108940.0
+    },
+    {
+      "phase": 2,
+      "exposure": 5,
+      "switch_elapsed_s": 1.0427686570001242,
+      "switch_receipt": {
+        "exposure_set": true,
+        "sequence": 4,
+        "exposure": 5,
+        "session_id": "a9350af6b26144c481e1d4333e0950eb",
+        "settle": {
+          "elapsed_s": 1.0324614390001443,
+          "discarded_frames": 16,
+          "minimum_frames": 10
+        },
+        "manual_controls_verified": true,
+        "monotonic_s": 1797.862201094
+      },
+      "capture_elapsed_s": 2.8587201929999537,
+      "quality": {
+        "roi": [
+          175,
+          210,
+          440,
+          340
+        ],
+        "threshold": 12,
+        "min_run": 8,
+        "max_three_frame_range_px": 1.5,
+        "minimum_common_columns": 10,
+        "quality_columns_per_frame": [
+          129,
+          127,
+          127
+        ],
+        "rejection_counts": [
+          {
+            "saturation": 0,
+            "white_core": 0,
+            "multiple_peaks": 0
+          },
+          {
+            "saturation": 0,
+            "white_core": 0,
+            "multiple_peaks": 0
+          },
+          {
+            "saturation": 0,
+            "white_core": 0,
+            "multiple_peaks": 0
+          }
+        ],
+        "common_quality_columns": 111,
+        "valid_fraction_of_selected_roi": 0.4188679245283019,
+        "image_quality_gate_passed": true,
+        "geometric_or_height_filter_applied": false
+      },
+      "object_columns": 8,
+      "height_range_mm": [
+        10.50197458354333,
+        15.210384649799295
+      ],
+      "red_energy_roi": 43538.0
+    }
+  ],
+  "before_status": {
+    "schema_version": 1,
+    "session_id": "6c61da24849c49eba4e9e4b70cc944eb",
+    "run_id": null,
+    "state": "ready",
+    "mode": "diagnostic_preview",
+    "client_date": "2026-10-24",
+    "process_id": 3946,
+    "child_pid": null,
+    "diagnostic_preview_only": true
+  },
+  "baseline_diagnostics": {
+    "status": 2,
+    "completed_frames": 48,
+    "dma": {
+      "mm2s_cr": 65539,
+      "mm2s_sr": 4098,
+      "s2mm_cr": 65539,
+      "s2mm_sr": 4098,
+      "received_bytes": 2560
+    }
+  },
+  "camera_ready": {
+    "event": "persistent_camera_prepared",
+    "session_id": "a9350af6b26144c481e1d4333e0950eb",
+    "worker_sha256": "f4097b7d48fb4322d1a664fddbaed0878cd3616fb82b74c16d84d4ef3b5b3ffe",
+    "exposure": 5,
+    "camera_open_count": 1,
+    "session_start_sha256": "41296ff0a16a1ecedfb4a9bbcdc632e6b6f9a814f88410f841842cd2428856c1"
+  },
+  "camera_cleanup": {
+    "camera_release_confirmed": true,
+    "exposure_restoration_verified": true,
+    "capture_count": 3,
+    "no_active_capture_process": true,
+    "capture_blocked_after_failure": false,
+    "session_close_sha256": "4766a8a30dd28979487d83828dd5c0dc836652bf044324ec66d460da890c7d5c",
+    "persistent_camera_session_closed": true
+  },
+  "short_return_red_energy_ratio": 1.0245681743304937,
+  "checks": {
+    "short_photometric_return_ratio_0p8_to1p25": true,
+    "short_before_after_common_columns_ge10": true,
+    "short_before_after_pixel_p95_le1p5": true,
+    "long_exposure_red_response_ratio_ge1p5": true,
+    "all_control_readbacks_verified": true,
+    "camera_cleanup_verified": true,
+    "driver_healthy": true
+  },
+  "comparison": {
+    "short_common_columns": 108,
+    "short_dy_p95_px": 0.1050781249999998,
+    "long_to_short_red_energy_ratio": 2.563656045559373,
+    "median_capture_elapsed_s": 2.878765435999867
+  },
+  "final_diagnostics": {
+    "status": 2,
+    "completed_frames": 57,
+    "dma": {
+      "mm2s_cr": 65539,
+      "mm2s_sr": 4098,
+      "s2mm_cr": 65539,
+      "s2mm_sr": 4098,
+      "received_bytes": 2560
+    },
+    "quarantined_buffers": 0
+  },
+  "driver_healthy": true,
+  "quarantined_buffers": 0,
+  "elapsed_s": 51.24010725899984,
+  "listener_start_code": 0
+}

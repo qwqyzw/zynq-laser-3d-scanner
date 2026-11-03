@@ -1,0 +1,19 @@
+[Unit]
+Description=Zynq button scan with full-turn acquisition
+After=network-online.target clear_pl_statefile.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/xilinx/jupyter_notebooks/integrated_uart_20261020_193135/teammate_complete_20261020
+Environment=XILINX_XRT=/usr
+Environment=BOARD=Pynq-Z2
+ExecStart=/usr/local/share/pynq-venv/bin/python3 -B -u /home/xilinx/jupyter_notebooks/integrated_uart_20261020_193135/teammate_complete_20261020/51_quality10_release_20261022/fast_button_loader.py --config /home/xilinx/jupyter_notebooks/button_scan/config_integer_quality_20261022.json --load-board --serve-board
+KillMode=process
+TimeoutStopSec=infinity
+Restart=no
+UMask=0022
+
+[Install]
+WantedBy=multi-user.target

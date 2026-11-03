@@ -1,0 +1,75 @@
+{
+  "scope": "engineering evidence, including cancelled-run diagnostics; not a current scan publication",
+  "files": [
+    {
+      "path": "before_deployment/status.json",
+      "bytes": 257,
+      "sha256": "4f178837015e81e5f7227e5e1fd8f5ca632caf686b3b622ba7d9a246159a97e5"
+    },
+    {
+      "path": "before_deployment/zynq-button-scan.service",
+      "bytes": 853,
+      "sha256": "723a179ae6a4eab0d7c58490c4cd5cd3b9e71474fed64dab8cd4a6edf3f209af"
+    },
+    {
+      "path": "board_validation.json",
+      "bytes": 955,
+      "sha256": "7a5b2aaccb05588a9dab17fd4a5b747f86025f52149a0ce03a8576fcbe447dc4"
+    },
+    {
+      "path": "deployment.json",
+      "bytes": 1317,
+      "sha256": "15e4446ccd8346c921eaa2f965707ef6825521880d9be418facad094baff951e"
+    },
+    {
+      "path": "final_idle_state.json",
+      "bytes": 1239,
+      "sha256": "5754d8faa3cf5bcdc2112608aacf68806668942d9916b366deb685b258dc7bab"
+    },
+    {
+      "path": "final_summary.json",
+      "bytes": 4088,
+      "sha256": "52bd1e045c7bd61e2cf1059ee5a56c72acf1901d398a34af5b25d073a3542450"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 574,
+      "sha256": "26ff568739272e68da2c6cd8aef5473234f0ddd0a7406a0919fa930003ef146f"
+    },
+    {
+      "path": "manifest_pin.txt",
+      "bytes": 66,
+      "sha256": "944a1b80448a210bcd46a12b0ff3ae5569a4e0aa1450d34c473a18da9e156ef6"
+    },
+    {
+      "path": "pointcloud_review.py",
+      "bytes": 8004,
+      "sha256": "f5e64c91ae94191d39793f48b48afdfac754de91b1fcfde29041050461a2b520"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2193,
+      "sha256": "fe9665bd2e4126e13a27e5874712148b900b08aad83560663dfd0428c90df360"
+    },
+    {
+      "path": "review_first_service.py",
+      "bytes": 3938,
+      "sha256": "cf5497333fe0c24d41e76f6f541b6fa8e16636e17a5e61fe05ebc7b9f80f2479"
+    },
+    {
+      "path": "test_pointcloud_review.py",
+      "bytes": 1456,
+      "sha256": "b1629697e883cb2cbdbd5228ee8ab15cc5c839986f4ad751b9acf67ca6936434"
+    },
+    {
+      "path": "test_review_first_service.py",
+      "bytes": 2062,
+      "sha256": "bea54a1f1d74fba38011b374fcf83eb685fda4123f0088c25850960fe0c8cf96"
+    },
+    {
+      "path": "zynq-button-scan.service.deployed",
+      "bytes": 865,
+      "sha256": "29a70e63f014e4b2be7e52e97e2fe6b7c83d0eebf206be5ddab66cb8bb31388b"
+    }
+  ]
+}

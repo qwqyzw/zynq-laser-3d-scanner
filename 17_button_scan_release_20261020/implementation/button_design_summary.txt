@@ -1,0 +1,19 @@
+Vivado 2026.1; stage=bit; project=D:/FPGAProjects/teammate_complete_20261020/11_fpga_project/build/button2/ls.xpr
+PYNQ-Z2 xc7z020clg400-1; FCLK0=50MHz; single clock domain
+PS preset pinned Xilinx/PYNQ e054c09c52db3244ef35c8ae08a2e62c1e4955fd
+AXI DMA simple, 32-bit streams, 23-bit BTT, no DRE; align buffers to4 bytes
+DMA base=0x40400000 range=64KiB; laser base=0x43C00000 range=64KiB
+axi_gpio_scan base=0x41200000 range=64KiB; CH1=buttons4 input (pressed=1); CH2=LED4 output
+Buttons BTN0 D19, BTN1 D20, BTN2 L20, BTN3 L19; two FF synchronizers, 50MHz; software debounce required
+UARTLite base=0x42C00000 range=64KiB; 9600 8N1; Arduino D1 TX U12; D0 RX T14; LVCMOS33
+/axi_dma_0/Data_MM2S/SEG_processing_system7_0_HP0_DDR_LOWOCM OFFSET=0x00000000 RANGE=0x20000000
+/axi_dma_0/Data_S2MM/SEG_processing_system7_0_HP0_DDR_LOWOCM OFFSET=0x00000000 RANGE=0x20000000
+/axi_dma_0/S_AXI_LITE/Reg OFFSET= RANGE=0x00001000
+/axi_gpio_scan/S_AXI/Reg OFFSET= RANGE=0x00001000
+/axi_uartlite_0/S_AXI/Reg OFFSET= RANGE=0x00001000
+/laser_stripe_0/S_AXI/reg0 OFFSET= RANGE=0x00010000
+/processing_system7_0/Data/SEG_axi_dma_0_Reg OFFSET=0x40400000 RANGE=0x00010000
+/processing_system7_0/Data/SEG_axi_gpio_scan_Reg OFFSET=0x41200000 RANGE=0x00010000
+/processing_system7_0/Data/SEG_axi_uartlite_0_Reg OFFSET=0x42C00000 RANGE=0x00010000
+/processing_system7_0/Data/SEG_laser_stripe_0_reg0 OFFSET=0x43C00000 RANGE=0x00010000
+/processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM OFFSET= RANGE=0x20000000

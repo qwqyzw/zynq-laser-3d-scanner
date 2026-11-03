@@ -1,0 +1,19 @@
+{
+  "project": "/home/xilinx/jupyter_notebooks/integrated_uart_20261020_193135/teammate_complete_20261020",
+  "overlay_release": "/home/xilinx/jupyter_notebooks/integrated_uart_20261020_193135/teammate_complete_20261020/17_button_scan_release_20261020",
+  "geometry": "/home/xilinx/jupyter_notebooks/integrated_uart_20261020_193135/teammate_complete_20261020/61_current_axis_laser_release_20261024/current_geometry.json",
+  "geometry_sha256": "a6581863f0e89d6bd89d3f70f7787a6f6c1b8c2f891e20e1a494d93a08267f14",
+  "output_root": "/home/xilinx/jupyter_notebooks/button_scan",
+  "client_date": "2026-11-02",
+  "mode": "diagnostic_preview",
+  "roi": [
+    175,
+    210,
+    440,
+    340
+  ],
+  "exposure": 5,
+  "max_angle": 360,
+  "fast_release": "/home/xilinx/jupyter_notebooks/integrated_uart_20261020_193135/teammate_complete_20261020/61_current_axis_laser_release_20261024",
+  "fast_manifest_sha256": "33b50a6ecf2c98923f078506a45cee8ef4d6f391b3ecc64e307c057e30a334db"
+}

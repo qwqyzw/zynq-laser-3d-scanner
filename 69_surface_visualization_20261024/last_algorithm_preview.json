@@ -1,0 +1,89 @@
+{
+  "directory": "/home/xilinx/jupyter_notebooks/integrated_uart_20261020_193135/teammate_complete_20261020/69_surface_visualization_20261024/algorithm_previews/c4b6366bde684795ac579992890dab47",
+  "source": "historical archived39d3 data;not restored as current scan",
+  "result": {
+    "status": "derived_visual_model_exported",
+    "data_origin": "hardware_scan_derived_visualization",
+    "source_run_id": "39d3c9ef936a4de7a587aa87517b0286",
+    "source_input": "/home/xilinx/jupyter_notebooks/button_scan/runs/39d3c9ef936a4de7a587aa87517b0286/model/object_points.csv",
+    "source_sha256": "06910962d3028ab033006f5a64607fdf61ecd6ef66a5840f4d9f0b64260a3332",
+    "historical_algorithm_preview": true,
+    "restores_cancelled_scan_as_current": false,
+    "latest_result_modified": false,
+    "coordinate_producer": "zynq",
+    "execution_platform": {
+      "system": "Linux",
+      "machine": "armv7l",
+      "hostname": "pynq",
+      "python": "3.10.4",
+      "device_tree_model": null,
+      "device_tree_compatible": "xlnx,zynq-7000",
+      "pynq_board": "Pynq-Z2",
+      "is_linux_arm_zynq_or_pynq": true
+    },
+    "processing_seconds": 1.383958034999523,
+    "statistics": {
+      "raw_points": 849,
+      "unique_points": 849,
+      "duplicate_points": 0,
+      "statistical_outliers": 0,
+      "denoised_points": 849,
+      "mesh_vertices": 46,
+      "mesh_faces": 88,
+      "neighbours": 12,
+      "mean_neighbour_distance_median_mm": 1.0401298739719143,
+      "outlier_distance_limit_mm": 3.1664727909238155,
+      "raw_bounds_mm": [
+        [
+          -10.454054733877287,
+          -10.991090113027898,
+          3.036430148347016
+        ],
+        [
+          9.184601821505943,
+          7.532896870644168,
+          17.663583618477084
+        ]
+      ],
+      "denoised_bounds_mm": [
+        [
+          -10.454054733877287,
+          -10.991090113027898,
+          3.036430148347016
+        ],
+        [
+          9.184601821505943,
+          7.532896870644168,
+          17.663583618477084
+        ]
+      ],
+      "singular_values": [
+        126.51504807725689,
+        97.1725432341157,
+        91.28318624698126
+      ],
+      "estimated_volume_mm3": 1388.1203607001214,
+      "estimated_surface_area_mm2": 772.612894482225,
+      "weakly_supported_faces": 2,
+      "weakly_supported_area_fraction": 0.1433558284920369,
+      "face_centroid_support_limit_mm": 3.1203896219157428,
+      "maximum_face_centroid_distance_to_measurement_mm": 4.107458321206552,
+      "all_faces_are_derived": true,
+      "measured_points_moved": false,
+      "new_measured_points_added": 0,
+      "assumption": "convex object; holes/concavities and unobserved underside may be filled incorrectly",
+      "metric_accuracy_accepted": false,
+      "complete_shape_accuracy_verified": false
+    },
+    "algorithm": "exact duplicate removal;robust12NN statistical filter;convex hull estimated surface",
+    "source_scripts": {
+      "surface_model.py": "251579390e664f09ab66360fdd30e411ca8e633f777ad1e4bbf71ea34afaa0bb",
+      "viewer_template.html": "aa753f334d971eaa97181f99e3f4ea37b736d020a64df386d17bb9bbed8690e0"
+    },
+    "references": [
+      "https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.ConvexHull.html",
+      "https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.cKDTree.html"
+    ]
+  },
+  "latest_result_untouched": true
+}

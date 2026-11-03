@@ -1,0 +1,45 @@
+{
+  "version": "20261024.surface_milestone1.evidence",
+  "files": [
+    {
+      "path": "board_validation.json",
+      "bytes": 3092,
+      "sha256": "14c814a48355aaf7d779f84b209948977d979ec71bf2e983df19054a06dd27cf"
+    },
+    {
+      "path": "compatible_button_service.py",
+      "bytes": 2516,
+      "sha256": "f2d9b91305c6a50e8bf784078ad74fe5e09de9bc3f95ad288049a20723ca5f40"
+    },
+    {
+      "path": "compatible_cancel.py",
+      "bytes": 3495,
+      "sha256": "325d874866fbf392f13f0300d665028505527357a1e93a303835fdf24da1b3dc"
+    },
+    {
+      "path": "deployment.json",
+      "bytes": 1296,
+      "sha256": "a9f86bfd16dcea529766e01ab4f328957ce9363f483e9467b97d09ddcd8deb54"
+    },
+    {
+      "path": "final_live_state.json",
+      "bytes": 1363,
+      "sha256": "92afa74b35d76e0a1b9480cc386fca77bc549123008069781ef908674e29d065"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 466,
+      "sha256": "75bddf292ee4807264815cc4898c264e2c8318e5b97a86082fc878cf218069a3"
+    },
+    {
+      "path": "manifest_pin.txt",
+      "bytes": 66,
+      "sha256": "f7eca3e10eb88dd829f94b5f4b6b088e38c3be8f640e3c24b908966ff449c6d8"
+    },
+    {
+      "path": "test_compatible_cancel.py",
+      "bytes": 4551,
+      "sha256": "27b952e7b1fca194897caf61eab6394633444e4e99292a1c1afae4fbc11818e3"
+    }
+  ]
+}

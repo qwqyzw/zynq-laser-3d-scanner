@@ -1,0 +1,212 @@
+{
+  "version": "20261020.pl_uart_button.v1",
+  "client_date": "2026-10-20",
+  "parent_release_manifest_sha256": "e1072e08a02acbfe734d4e61666cbd014e94bbd3f1e014889249097327f55366",
+  "files": [
+    {
+      "path": "build_manifest.txt",
+      "bytes": 500,
+      "sha256": "55c4adaf2cac3a3288972a7127275f5b0712c95d5191176e41187f755e139083"
+    },
+    {
+      "path": "implementation/button_block_design.tcl",
+      "bytes": 43745,
+      "sha256": "1335aea3fb68ed73feca9b4639c9552c61b6f524292c5c34293dee9536144b73"
+    },
+    {
+      "path": "implementation/button_build.jou",
+      "bytes": 1542,
+      "sha256": "76f282077cca216c9e9cff5083bd71059b47167a1ed827fe922a2db3e68529fd"
+    },
+    {
+      "path": "implementation/button_build.log",
+      "bytes": 60500,
+      "sha256": "e9011b30276bd8b16dd08470f35752509c60d31212f36938d0628eb140e68ebd"
+    },
+    {
+      "path": "implementation/button_build_36264.backup.jou",
+      "bytes": 1542,
+      "sha256": "9f9957db779b875df4db194bebbd7ba015f50f755347bec193bae3c7889bed5f"
+    },
+    {
+      "path": "implementation/button_build_36264.backup.log",
+      "bytes": 50678,
+      "sha256": "33ea2183d951e202a80395c32b6f6e99e50506eba4a49eef553902d48ebbbec7"
+    },
+    {
+      "path": "implementation/button_design_summary.txt",
+      "bytes": 1489,
+      "sha256": "fc7c3513a448a0ecf00d44f595bc588ceb9dd1882ebd6cb2d757bb493eab0c57"
+    },
+    {
+      "path": "implementation/button_impl_cdc.rpt",
+      "bytes": 2321,
+      "sha256": "847d6bc64cbed03cdd9b38276249bdae5f61f59911e57787328a7e68dc864dea"
+    },
+    {
+      "path": "implementation/button_impl_check_timing.rpt",
+      "bytes": 3534,
+      "sha256": "716c16dd75c67bcdc2b978e8cfeb071b2d313e47c94aceea2d7d8425970344ea"
+    },
+    {
+      "path": "implementation/button_impl_clocks.rpt",
+      "bytes": 1690,
+      "sha256": "fab89493e5731397bc360f5e68b907c575396ccf3696bac8ff5aec37bccceab2"
+    },
+    {
+      "path": "implementation/button_impl_drc.rpt",
+      "bytes": 31045,
+      "sha256": "5763d183de26c48f025a8c28c31a9d45f96e779a961f01b2bfe51d4c1ab425b3"
+    },
+    {
+      "path": "implementation/button_impl_exceptions.rpt",
+      "bytes": 3875,
+      "sha256": "eb2adb418fa78fae3ab46252ad45d468e8a447b0ea8fe3f4faa25a0e4a07e3c3"
+    },
+    {
+      "path": "implementation/button_impl_io.rpt",
+      "bytes": 124725,
+      "sha256": "ab531049885972af1c8b03859a495cb091e1e2438c7277eface1fadbfcbd6176"
+    },
+    {
+      "path": "implementation/button_impl_timing.rpt",
+      "bytes": 59593,
+      "sha256": "d1f8d3fadc773a1752f155be7edc67a94da8f3b0300e78dfbb81e2e16c0000cf"
+    },
+    {
+      "path": "implementation/button_impl_utilization.rpt",
+      "bytes": 11779,
+      "sha256": "3e5949a66d4d38e811e9a6b889d846c634ebdfeba2042ae0a5e58fd18f4c3713"
+    },
+    {
+      "path": "implementation/button_sync_audit.txt",
+      "bytes": 537,
+      "sha256": "b1e327ced4cf0522d2a6421afb33ec12005c977c2be7cfba52389b5f9487cf71"
+    },
+    {
+      "path": "implementation/button_sync_sim.log",
+      "bytes": 1706,
+      "sha256": "3e22b971c877bab2552f56aace9dd9780b75a878b059fac607a5a99e3f0de084"
+    },
+    {
+      "path": "implementation/button_synth_drc.rpt",
+      "bytes": 24388,
+      "sha256": "ab7ade0819eca4a6f37fb16e84b7ab6f2ab7bc14506ca3d945b603fb11a5f597"
+    },
+    {
+      "path": "implementation/button_synth_settings.tcl",
+      "bytes": 32,
+      "sha256": "0cda7eefd29ceb30a427086620ac51e01864f96cd5c468463e351af7a3ef67cd"
+    },
+    {
+      "path": "implementation/button_synth_timing.rpt",
+      "bytes": 58869,
+      "sha256": "cea6183d4a884250cdca94d921b02d203e7bc982f989b7a910158271d1b0d9a2"
+    },
+    {
+      "path": "implementation/button_synth_utilization.rpt",
+      "bytes": 24398,
+      "sha256": "aea27234e6eb6b05106eb033c3b3b4531ff90c9147da64d9fec0c86b1cf690cd"
+    },
+    {
+      "path": "laser_motor_button.bit",
+      "bytes": 4045765,
+      "sha256": "3bc36e8d0a90bf2880d6943d0c34cecefcbbffa70d6f71e5365b998677b780aa"
+    },
+    {
+      "path": "laser_motor_button.hwh",
+      "bytes": 373476,
+      "sha256": "575b5e4f000ce06a41df01664a0ec8e250ce504b910bb69b420e02bb1593e833"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1599,
+      "sha256": "6777ff13ff95ae3d13c75e92b4ee77302a3ab6a0db8ba3a71853dbbfd15585da"
+    },
+    {
+      "path": "source/button_gpio.xdc",
+      "bytes": 1394,
+      "sha256": "e95a06bb3181a8f355e475c0f65c195e63897b7155ef199df3fa0fe341043888"
+    },
+    {
+      "path": "source/button_sync.sv",
+      "bytes": 741,
+      "sha256": "0febb706870366b401d5cf51b600dfd0fbf930ad7376fe3e531157dd415d9791"
+    },
+    {
+      "path": "source/button_sync_tb.sv",
+      "bytes": 989,
+      "sha256": "780ab921b75959f713735208cb32ffce4cbfe25553a86bfa7d950a17dd03bc1d"
+    }
+  ],
+  "source_sha256": {
+    "04_runtime/fixed_exposure_worker.py": "7fa3cfbbd4f340f54062fb48966cd10c454c50420ad8ce0bf96158da09d8580e",
+    "04_runtime/geometric_calibration.py": "a15c87ff6aafca95977e2e8f92f597e026b3971f1204e3588524810b06af01f2",
+    "04_runtime/geometry_core.py": "d8d13290cabb65c0cd5c0aee112ff46a9fc6caff70d33a0c8f7194cbcfff8368",
+    "04_runtime/host_image_fast.py": "660e4f217c341ce9e69fe13b9128e7da1ec32fb161f36eb04b56b66931036acd",
+    "04_runtime/laser_horizontal_check.py": "b300aa4011e7c4ed9d93d512f8cc2ef3794d38183bec0351d664f5901dc32ca5",
+    "04_runtime/laser_stripe.py": "fcc8b9a45a4d1e4f60f4c43d9c6ad2e80e64f86b93358eaeebb6e3032be62859",
+    "04_runtime/laser_vertical_fast.py": "c95c1a52a2439b3127f7620afef3d89a2d991d955ea4b1cddb230d15e62bab42",
+    "04_runtime/motor_arduino.py": "a61ebfbcf8fe50b25c80a8ac134440417f3aea7c5c2c8c423acaae9602e2910c",
+    "04_runtime/motor_position.py": "26ea14a00817284744f0100e68abe8ef7279d57fb10eea4b79a3c923b6a1782a",
+    "04_runtime/motor_readonly.py": "d582a41e9bc96a44b5f1eb9c83d9136849b991a7da1c0b59f16263251da87740",
+    "04_runtime/motor_uartlite.py": "716ff3b94e687953d24f6f240446b2731f254f59b82b27068b8c5022bd16bb85",
+    "04_runtime/pl_runtime.py": "8fd15475c52ea177ddd0b507a3c033c9ac4a5d9710c31de7941db1ecc2bae7be",
+    "04_runtime/pl_scan_camera.py": "f134f86803debae4a8852648b728fccb456c148c49586d85987ede1fab040fbd",
+    "04_runtime/quality_from_stripes.py": "fd6ee088f427faf3f3580920854696a712cc22659895539b482b2fc4f6fb35a8",
+    "04_runtime/quality_from_stripes_fast.py": "e029abbc65825ec1dfa345d9a7df4780ffa3645a722dfb7a0f73eaabaed0e805",
+    "04_runtime/rig_workflow.py": "42e0df8c660fa35a4ee7db860164cc89c4fd392976a432b97629199aa1fcba78",
+    "04_runtime/rotation_axis.py": "f607e230842194128de564df7300cdec4295b97496fd09221c2b81a7cebf8545",
+    "04_runtime/rotation_scan.py": "bdc37194136330e617dbafc44470e734ade49429f3e2b87a20d991582e554c45",
+    "04_runtime/scan_camera.py": "41e831e9ea53a98e6af1334333c22ef39a6480585be7c399d151b8136024e271",
+    "04_runtime/scan_camera_worker.py": "707b15d6e9990d33a3e68ebcc885522cbec89563f967855dcf65570097a6a6cf",
+    "04_runtime/scan_checked_exposure.py": "3fce384f723e3671ee63a4fa62be87c499bdaca756ace44d82e97fb8fba2adce",
+    "04_runtime/scan_fixed_exposure.py": "d462f479b4f0e199981b127a32c86ebfd45b46e6aa3a2b14481359df768530c4",
+    "04_runtime/scan_simulation.py": "683b88114ef3168fec0b254c31853fe5b084ebb914a34433ffe91d47e3c3539e",
+    "04_runtime/scan_stripe_quality.py": "7a92c3a548051114b40b30c8202c25790de15b4e6d87b9ce08fda3cf1e048fbb",
+    "04_runtime/turntable_coordinates.py": "4c8c4e70a9f24cb8ae3a1e64c9972faa7954f9736ee4847f15abb11beb9c91f5",
+    "09_tools/run_integrated_board.py": "3e6f0f8641bc3aee8bda232a8f71d9f1da4550dfc3e181928055fad6c69f8ed7",
+    "11_fpga_project/constraints/motor_uart.xdc": "83c41b607e06dc46acb10e7a7141052f0eccfe1ffd5694f425084d1bca15f9f6",
+    "11_fpga_project/rtl/laser_stripe_axi.sv": "4395e28c589982d011c576bfaf3f541a0998424b4e280eeb86f6499a17ca91db",
+    "11_fpga_project/rtl/laser_stripe_core.sv": "161bf3b5e63a20a0b229a0c7cbf76b7e47d61734e12c8815d3369d360d0d778c",
+    "11_fpga_project/scripts/audit_motor_uart_overlay.tcl": "a3682a300ab55d2e22bf07e0b635c3cce4b912052977f00a89198d84e92064df",
+    "11_fpga_project/scripts/build_motor_uart_overlay.tcl": "b58c345f4b75dd2b7abe732b553ff081d6b46766ee2be0792da4bdd795e0505e",
+    "11_fpga_project/scripts/project.py": "fe964e90666cc696e00039093a4775557ecaa41d774e3925f122db90d9fa654a",
+    "11_fpga_project/third_party/pynq_z2/base_official.xdc": "05d99c9032ceb21b2f6850955dd897a14a30d77ebda21d57867daa65caef2d3b",
+    "11_fpga_project/third_party/pynq_z2/ps7_settings.tcl": "f82950a8a31c88c19937f90c91af3ec9ff80e25266b8e495aeba130bae67588c",
+    "09_tools/build_button_overlay.tcl": "37d389e1400908055baa514992d632b9aac7f985675435c698f935bc890da828",
+    "09_tools/button_overlay_runtime.py": "428ac4c882a854e38ceb5cde129b68c2b5d3429d754e33f185fce9162296fe77",
+    "09_tools/object_board_scan.py": "4bf377e3533a91580ac0529d50cd8fe41ba3703d2deba60d827573dd00ed3623",
+    "09_tools/reconstruct_object_on_zynq.py": "d829fd9882cfe2a0d969ec0f33793cc4871d014d5130fc635b40aa836f8a7dad",
+    "09_tools/board_button_scan_service.py": "cadee7265f89592a0d2c456ca192832108b6e39d377be5e9b7762789bf55d98f",
+    "09_tools/load_button_overlay.py": "53914d8a50f4b571b4ce98e5327addd8ba467ceb47c17447eb12b2ca7da6732b",
+    "09_tools/check_object_scan_plan.py": "2229b71d0fbe9f7cb798b417d4aab58ddf58cebbba524944577aa1d8b2b94fda",
+    "09_tools/review_integrated_camera_evidence.py": "ee1bca5350e6f302208a4bb7274bdbc3a5029ca2cbbda6ef0f0d420de566c9e7",
+    "09_tools/board_pointcloud_export.py": "eacd1ee017f76a34a11527be5d821c95de7cd368e810c5089994229a196b8d84",
+    "09_tools/render_object_preview.py": "dadafa7b2c70f459e03448c78cc07fc920ca18754b79533eebe8302de9d37ba2",
+    "17_button_scan_release_20261020/source/button_gpio.xdc": "e95a06bb3181a8f355e475c0f65c195e63897b7155ef199df3fa0fe341043888",
+    "17_button_scan_release_20261020/source/button_sync.sv": "0febb706870366b401d5cf51b600dfd0fbf930ad7376fe3e531157dd415d9791",
+    "17_button_scan_release_20261020/source/button_sync_tb.sv": "780ab921b75959f713735208cb32ffce4cbfe25553a86bfa7d950a17dd03bc1d",
+    "09_tools/zynq-button-scan.service.example": "49a4be5d79c98493e7fe6bbd8389a21a325ee345c439e9856e56b1c494c716b8"
+  },
+  "hardware": {
+    "gpio_ip": "axi_gpio_scan",
+    "gpio_address": 1092616192,
+    "input_width": 4,
+    "output_width": 4,
+    "fclk0_mhz": 50,
+    "uart_address": 1119879168,
+    "dma_address": 1077936128,
+    "stripe_address": 1136656384
+  },
+  "build_qualification": {
+    "bit_generated": true,
+    "setup_wns_ns": 0.957,
+    "hold_whs_ns": 0.031,
+    "failing_endpoints": 0,
+    "async_reg_button_ffs": 8,
+    "board_acceptance_included": false,
+    "geometric_accuracy_accepted": false
+  },
+  "software_revision": 4
+}
