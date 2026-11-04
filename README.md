@@ -1,41 +1,53 @@
 # 基于 Zynq 的激光三维扫描系统
 
-2026 年 FPGA 创新设计赛道 AMD 自主选题。系统采用 **TUL PYNQ-Z2，AMD Zynq-7000 XC7Z020-1CLG400**，搭配相机、线激光和电动转台。PL 以 50 MHz 提取激光条纹中心；PS 控制转台、采集、三角测量、拼接与几何拟合；电脑接收点云和模型并展示。
+2026 年 FPGA 创新设计赛道 AMD 自主选题初级组作品。系统采用 TUL PYNQ-Z2，核心器件为 AMD Zynq-7000 XC7Z020-1CLG400，搭配 USB 相机、线激光和电动转台。PL 以 50 MHz 提取激光条纹中心，PS 完成转台控制、采集、三角测量、点云拼接与形状拟合，电脑端接收和展示结果。
 
-## 快速复现
+## 工程结构
 
-建议使用不含空格和非 ASCII 字符的短目录，安装 Python 3.10+。打开[六棱柱实测浏览页](102_simple_object_test_20261102/result_be69ed433655/surface_proposal/model_viewer.html)可离线查看点云与估计表面，无需板卡。运行下面的两条命令可复核真实板测归档：
-
-```sh
-python -m pip install -r requirements-review.txt
-python tools/compare_board_capture.py
+```text
+zynq-laser-3d-scanner/
+├── README.md
+├── src/       # RTL、PL 驱动、PS 扫描建模和电脑展示源码
+├── sim/       # 测试台、参考模型、验证脚本和仿真结果
+├── build/     # 构建脚本、约束、第三方预设和实现报告
+├── board/     # Overlay、上板工具和真实板测输出
+├── data/      # 测试向量、标定参数与扫描示例
+├── skill/     # 可复用的验证方法
+└── report/    # 设计报告、复现手册及大模型协作记录
 ```
 
-完整的[复现手册](reproduce.md)包含 RTL 仿真、Vivado 2026.1 重建、板端静态测试及整机操作。若验证另一块板卡，按其硬件重新检查供电、电平、连接和标定。
+## 下载后先做什么
 
-## 目录
+使用 Python 3.10+，建议在短英文路径解压。运行下面的命令可准备运行目录并执行离线检查。
 
-| 内容 | 位置 |
+```sh
+python -m pip install -r requirements.txt
+python sim/run_checks.py
+```
+
+`sim/run_checks.py` 会先核对文件哈希，再执行独立参考、56 帧历史真实板测对照、Overlay 接口及形状拟合检查。
+
+本次调整按功能归档文件。发布校验清单和代码中的原相对路径保留在源码内部，运行前执行 `python build/prepare_runtime.py`，即可在 `build/runtime/` 生成兼容的执行目录。该目录由源码和 `build/source_map.json` 生成。后续仿真、Vivado 构建及板端部署均从这个运行目录执行。仓库内受版本控制的路径采用英文命名，生成目录保留经过验证的原路径。准备脚本只处理本地文件。
+
+完整操作见 [复现手册](report/reproduce.md)。
+
+## 源码入口
+
+| 功能 | 路径 |
 | --- | --- |
-| 输入、独立参考、接口契约和比对程序 | [01_fpga_baseline](01_fpga_baseline/) |
-| PS 通用运行库 | [04_runtime](04_runtime/runtime_entry.md) |
-| PL 的 RTL、测试台、约束、构建脚本和驱动 | [11_fpga_project](11_fpga_project/) |
-| UART 和按键版本构建与发布；复现入口 | [14_integrated_release](14_integrated_release_20261020/)、[17_button_scan_release](17_button_scan_release_20261020/)、[09_tools](09_tools/) |
-| 搬运后标定、实测版采集和按键服务 | [100_relocation_geometry](100_relocation_geometry_20261102/)、[101_relocation_scan](101_relocation_scan_20261102/) |
-| 当前六棱柱验证所用展示、样例 | [89_multi_shape_display](89_multi_shape_display_20261024/)、[102_simple_object_test](102_simple_object_test_20261102/) |
-| 三棱锥离线候选 | [104_triangular_pyramid_display](104_triangular_pyramid_display_20261103/) |
-| 仿真、板上输出与参考、整机证据及范围 | [evidence](evidence/) |
-| 可复用 PYNQ 技能 | [skill](skill/) |
-| 设计报告、大模型协作节录 | [report](report/) |
+| 激光条纹核心、AXI 接口 | [src/rtl](src/rtl/) |
+| PL 驱动及静态板测 | [src/pl_driver](src/pl_driver/) |
+| 最新整圈采集、按键与异常清理 | [src/ps/101_relocation_scan_20261102](src/ps/101_relocation_scan_20261102/) |
+| 几何坐标恢复 | [src/ps/100_relocation_geometry_20261102](src/ps/100_relocation_geometry_20261102/) |
+| 多形状拟合 | [src/ps/89_multi_shape_display_20261024](src/ps/89_multi_shape_display_20261024/) |
+| 三棱锥拟合候选 | [src/ps/104_triangular_pyramid_display_20261103](src/ps/104_triangular_pyramid_display_20261103/) |
+| 电脑网页和接收程序 | [src/pc](src/pc/) |
 
-其他带日期或版本号的目录主要保存冻结发布所依赖的历史代码、校验清单或复验记录，不应任意重命名或改写。当前实现和板测证据的对应关系见复现手册。路径沿用既有工程组织，不强制搬移到指南的示例目录。
+## 查看示例与已验证范围
 
-[设计报告](report/design_report.pdf)已于 2026 年 11 月 3 日按本次用户提供的官方技术报告模板重排为 15 页。已补入正面、斜俯视整机与独立板卡原照，原图及视角说明见[报告说明](report/README.md)。参赛承诺书由全体队员签署后在比赛系统单独提交，不进入公开仓库。
+- [六棱柱离线浏览页](data/examples/102_simple_object_test_20261102/result_be69ed433655/surface_proposal/model_viewer.html)可直接用浏览器打开。同目录保存估计网格和去噪点云，上级目录保存实测 CSV 和 PLY。
+- [三棱锥历史点云重放](data/examples/104_triangular_pyramid_display_20261103/evidence/saved709_preview/model_viewer.html)展示另一轮 709 个实测点的离线拟合，当前三棱锥版本待部署和新一轮板测。
+- PL 静态板测共 56 帧，每帧 640 列，有效位差异为 0，最大坐标差 0.00390625 像素。[真实板测输出与记录](board/evidence/)支持离线重新比对。
+- 2026-11-02 六棱柱实测包含 36 个独立角度与闭环姿态、222 次 PL 提取，采集耗时 669.18 秒，得到 1,659 个实测点，去噪后 1,650 点。测点主要覆盖顶面，模型侧面、底面及缺测区域使用形状先验估计。独立尺寸精度和异机冷启动仍待验收。
 
-## 验证范围
-
-- PL 静态板测：56 帧，640 列/帧；有效标志无差异，最大坐标差 0.00390625 像素。真实输出可和冻结参考重新比对。
-- 2026-11-02 六棱柱整机实测：36 个独立角度加一闭环姿态，222 次 PL 提取，1,659 个实测点，去噪后 1,650 点。669.18 秒是该轮采集程序记录。测点主要覆盖顶面，侧面和底面是形状先验补全；独立尺寸精度尚未验收。
-- 三棱锥支持用历史实测点云离线复验，尚待部署和新一轮板测。
-
-第三方文件和自研部分的授权状态见 [许可说明](licensing.md)。
+[设计报告](report/design_report.pdf)与[大模型协作记录](report/ai_collaboration_log.md)随源码提供。第三方与自研部分授权状态见 [许可说明](licensing.md)。

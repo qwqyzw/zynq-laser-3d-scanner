@@ -1,0 +1,22 @@
+{
+  "rtl46": {
+    "passed": true,
+    "cases": 46
+  },
+  "axi2": {
+    "passed": true,
+    "cases": 2
+  },
+  "directed20": {
+    "passed": true,
+    "cases": 20
+  },
+  "protocol": {
+    "passed": true
+  },
+  "reference_tests": 5,
+  "overlay_tests": 6,
+  "shape_tests": 14,
+  "archived_real_board_frames": 56,
+  "new_hardware_access": false
+}
